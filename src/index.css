@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Noto Naskh Arabic", "Amiri", "Geeza Pro", "Arabic Typesetting", serif;
+
+  --color-sable-50: #fdf8f1;
+  --color-sable-100: #f8eddc;
+  --color-sable-200: #efd9b6;
+  --color-terre-500: #c2603a;
+  --color-terre-600: #a9492a;
+  --color-terre-700: #8a3a22;
+  --color-nil-500: #148a80;
+  --color-nil-600: #0f6f67;
+  --color-nil-700: #0b5751;
+  --color-encre-900: #2a211b;
+}
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-sable-50 text-encre-900 font-sans antialiased;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { @apply bg-stone-950 text-stone-100; }
+  }
+  /* Le texte arabe a besoin d'un interligne plus généreux pour ses diacritiques. */
+  [lang="ar"] { line-height: 1.9; }
+}
+
+@utility card {
+  @apply rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-900/5 dark:bg-stone-900 dark:ring-white/10;
+}
+
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2 font-semibold transition active:scale-[0.98] disabled:opacity-50;
+}
+
+@utility btn-primary {
+  @apply btn bg-terre-600 text-white hover:bg-terre-700;
+}
+
+@utility btn-soft {
+  @apply btn bg-sable-100 text-encre-900 hover:bg-sable-200 dark:bg-stone-800 dark:text-stone-100 dark:hover:bg-stone-700;
+}
+
+@utility muted {
+  @apply text-stone-500 dark:text-stone-400;
+}
