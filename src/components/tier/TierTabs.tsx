@@ -76,7 +76,7 @@ export function WritingTab({ tier }: { tier: Tier }) {
                 key={l.id}
                 onClick={() => setCurrent(i)}
                 aria-pressed={i === current}
-                className={`size-11 rounded-xl font-arabic text-2xl ${i === current ? 'bg-terre-600 text-white' : 'bg-sable-100 dark:bg-stone-800'}`}
+                className={`size-11 rounded-xl font-arabic text-2xl ${i === current ? 'bg-or-400 text-nuit' : 'bg-abysse-2'}`}
               >
                 {l.char}
               </button>
@@ -91,7 +91,7 @@ export function WritingTab({ tier }: { tier: Tier }) {
 
 export function VocabularyTab({ tier }: { tier: Tier }) {
   return (
-    <div className="card divide-y divide-stone-900/5 dark:divide-white/10">
+    <div className="card divide-y divide-trait">
       {tier.vocabulary.map((w) => (
         <PhraseRow key={w.id} phrase={w} />
       ))}
@@ -103,15 +103,15 @@ export function MindMapTab({ tier }: { tier: Tier }) {
   const { center, branches } = tier.mindmap
   return (
     <div className="space-y-3">
-      <div className="mx-auto flex w-fit flex-col items-center rounded-full bg-terre-600 px-6 py-3 text-white shadow">
+      <div className="mx-auto flex w-fit flex-col items-center rounded-full border border-or-400/60 bg-abysse px-6 py-3 text-or-300 shadow-[0_0_30px_-6px_rgb(221_187_114/0.5)]">
         <Ar text={center.ar} className="text-3xl" />
         <span className="text-sm">{center.fr}</span>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {branches.map((b) => (
-          <div key={b.label} className="card border-t-4 border-nil-500">
+          <div key={b.label} className="card border-t-4 border-lueur-400">
             <h3 className="font-bold">{b.label}</h3>
-            <div className="divide-y divide-stone-900/5 dark:divide-white/10">
+            <div className="divide-y divide-trait">
               {b.items.map((it, i) => (
                 <PhraseRow key={i} phrase={it} />
               ))}
@@ -160,13 +160,13 @@ export function DialectTab({ tier }: { tier: Tier }) {
   const dialects = [...new Set(tier.dialect.map((d) => d.dialect))]
   return (
     <div className="space-y-3">
-      <div className="card border-l-4 border-terre-500 text-sm">
+      <div className="card border-l-4 border-or-400 text-sm">
         <b>Hors tronc commun.</b> Ces expressions appartiennent aux dialectes parlés. Elles ne s’écrivent guère et varient d’un pays à l’autre ; l’arabe standard (en regard) reste compris partout.
       </div>
       {dialects.map((d) => (
         <section key={d} className="card">
           <h3 className="font-bold">{d}</h3>
-          <div className="divide-y divide-stone-900/5 dark:divide-white/10">
+          <div className="divide-y divide-trait">
             {tier.dialect.filter((x) => x.dialect === d).map((x, i) => (
               <div key={i}>
                 <PhraseRow phrase={x} keepTashkeel />

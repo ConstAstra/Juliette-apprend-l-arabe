@@ -18,7 +18,7 @@ export function ReferenceList() {
               <div className="font-bold">{r.title}</div>
               <div className="muted line-clamp-2 text-sm">{r.intro}</div>
             </div>
-            {seen[r.id] && <span className="text-nil-600" aria-label="consultée">✓</span>}
+            {seen[r.id] && <span className="text-lueur-400" aria-label="consultée">✓</span>}
           </Link>
         ))}
       </div>
@@ -38,7 +38,7 @@ export function ReferenceSheet() {
     <div className="space-y-4">
       <Link to="/fiches" className="muted text-sm">← Fiches</Link>
       <h1 className="text-2xl font-extrabold">{sheet.emoji} {sheet.title}</h1>
-      <p className="card border-l-4 border-nil-500">{sheet.intro}</p>
+      <p className="card border-l-4 border-lueur-400">{sheet.intro}</p>
       {sheet.lessons.map((l) => <LessonView key={l.title} lesson={l} />)}
       <Link to="/revisions/grammaire" className="btn-primary w-full">Réviser ces notions ({sheet.cards.length} cartes)</Link>
     </div>

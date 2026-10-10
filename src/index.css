@@ -1,35 +1,73 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
-  --font-arabic: "Noto Naskh Arabic", "Amiri", "Geeza Pro", "Arabic Typesetting", serif;
+/* Un seul univers, assumé : la nuit marine. La variante dark: de Tailwind est neutralisée. */
+@custom-variant dark (&:where(.jamais-sombre, .jamais-sombre *));
 
-  --color-sable-50: #fdf8f1;
-  --color-sable-100: #f8eddc;
-  --color-sable-200: #efd9b6;
-  --color-terre-500: #c2603a;
-  --color-terre-600: #a9492a;
-  --color-terre-700: #8a3a22;
-  --color-nil-500: #148a80;
-  --color-nil-600: #0f6f67;
-  --color-nil-700: #0b5751;
-  --color-encre-900: #2a211b;
+/* Concept : « les abysses lumineux » — nuit marine, or d'astrolabe, lueur de plancton. */
+@theme {
+  --font-sans: "Alegreya Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Marcellus", "Alegreya Sans", Georgia, serif;
+  --font-arabic: "Amiri", "Noto Naskh Arabic", "Geeza Pro", "Arabic Typesetting", serif;
+
+  --color-nuit: #0a0f1f;        /* fond des profondeurs */
+  --color-abysse: #111a31;      /* surface des cartes */
+  --color-abysse-2: #19243f;    /* surface relevée, contrôles */
+  --color-trait: #2a3557;       /* filets et pistes */
+  --color-parchemin: #ece4cf;   /* texte */
+  --color-brume: #959bb3;       /* texte secondaire */
+
+  --color-or-300: #f0d9a0;
+  --color-or-400: #ddbb72;      /* accent : laiton d'astrolabe */
+  --color-or-500: #c49a4e;
+  --color-or-600: #9c7638;
+
+  --color-lueur-300: #9af3e4;
+  --color-lueur-400: #5fdcc9;   /* bioluminescence */
+  --color-lueur-500: #33b3a3;
+  --color-lueur-600: #1d7a72;
+
+  --color-grenat: #e88a83;
 }
 
 @layer base {
-  html { -webkit-tap-highlight-color: transparent; }
+  html {
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: dark;
+  }
   body {
-    @apply bg-sable-50 text-encre-900 font-sans antialiased;
+    @apply font-sans text-[17px] text-parchemin antialiased;
+    background:
+      radial-gradient(ellipse 90% 45% at 70% -5%, rgb(221 187 114 / 0.13), transparent 70%),
+      radial-gradient(ellipse 70% 50% at 10% 110%, rgb(51 179 163 / 0.14), transparent 70%),
+      var(--color-nuit);
+    background-attachment: fixed;
   }
-  @media (prefers-color-scheme: dark) {
-    body { @apply bg-stone-950 text-stone-100; }
+  /* Treillis d'étoiles à huit branches, à peine visible. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23ddbb72' stroke-width='1'%3E%3Crect x='20' y='20' width='24' height='24'/%3E%3Crect x='20' y='20' width='24' height='24' transform='rotate(45 32 32)'/%3E%3Cpath d='M0 32h8M56 32h8M32 0v8M32 56v8'/%3E%3C/g%3E%3C/svg%3E");
   }
-  /* Le texte arabe a besoin d'un interligne plus généreux pour ses diacritiques. */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400 !important;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+  h1 { color: var(--color-or-300); }
   [lang="ar"] { line-height: 1.9; }
+  :focus-visible { outline: 2px solid var(--color-lueur-400); outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: rgb(221 187 114 / 0.35); }
+  input[type="checkbox"], input[type="range"] { accent-color: var(--color-or-400); }
 }
 
 @utility card {
-  @apply rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-900/5 dark:bg-stone-900 dark:ring-white/10;
+  @apply rounded-2xl border border-trait/70 bg-abysse/80 p-4 backdrop-blur-sm;
+  box-shadow: inset 0 1px 0 rgb(236 228 207 / 0.04), 0 10px 30px -18px rgb(0 0 0 / 0.8);
 }
 
 @utility btn {
@@ -37,13 +75,29 @@
 }
 
 @utility btn-primary {
-  @apply btn bg-terre-600 text-white hover:bg-terre-700;
+  @apply btn bg-or-400 text-nuit hover:bg-or-300;
+  box-shadow: 0 0 22px -6px rgb(221 187 114 / 0.55);
 }
 
 @utility btn-soft {
-  @apply btn bg-sable-100 text-encre-900 hover:bg-sable-200 dark:bg-stone-800 dark:text-stone-100 dark:hover:bg-stone-700;
+  @apply btn border border-trait bg-abysse-2 text-parchemin hover:border-or-500/60;
 }
 
 @utility muted {
-  @apply text-stone-500 dark:text-stone-400;
+  @apply text-brume;
+}
+
+/* Halo doré pour l'arabe mis en scène. */
+@utility lueur-or {
+  text-shadow: 0 0 18px rgb(221 187 114 / 0.45);
+}
+
+/* Voile du « mot de la nuit ». */
+@utility voile {
+  filter: blur(9px);
+  opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }

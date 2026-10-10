@@ -21,14 +21,14 @@ export function AlphabetPage() {
         </p>
       </div>
 
-      <div role="tablist" aria-label="Position dans le mot" className="grid grid-cols-4 gap-1 rounded-xl bg-sable-100 p-1 dark:bg-stone-800">
+      <div role="tablist" aria-label="Position dans le mot" className="grid grid-cols-4 gap-1 rounded-xl bg-abysse-2 p-1">
         {FORMS.map((f) => (
           <button
             key={f}
             role="tab"
             aria-selected={form === f}
             onClick={() => setForm(f)}
-            className={`min-h-10 rounded-lg text-sm font-semibold ${form === f ? 'bg-white shadow dark:bg-stone-900' : 'muted'}`}
+            className={`min-h-10 rounded-lg text-sm font-semibold ${form === f ? 'bg-abysse shadow' : 'muted'}`}
           >
             {FORM_LABELS[f]}
           </button>
@@ -41,7 +41,7 @@ export function AlphabetPage() {
             key={l.id}
             to={`/alphabet/${l.id}`}
             dir="ltr"
-            className={`card flex flex-col items-center p-2 ${seen[l.id] ? 'ring-nil-500/40' : ''}`}
+            className={`card flex flex-col items-center p-2 ${seen[l.id] ? 'ring-lueur-400/40' : ''}`}
           >
             <Ar text={letterForm(l.char, l.joins, form)} keepTashkeel className="text-4xl" />
             <span className="text-xs font-semibold">{l.name}</span>
@@ -59,7 +59,7 @@ export function AlphabetPage() {
         <p className="muted mb-2 text-sm">
           Ces petits signes ne s’écrivent presque jamais dans la vie courante, mais ils guident la lecture des débutants.
         </p>
-        <div className="card divide-y divide-stone-900/5 dark:divide-white/10">
+        <div className="card divide-y divide-trait">
           {VOWELS.map((v) => (
             <div key={v.id} className="flex items-center gap-3 py-2">
               <SpeakButton text={v.mark} />

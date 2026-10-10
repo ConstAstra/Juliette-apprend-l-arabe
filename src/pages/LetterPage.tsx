@@ -33,7 +33,7 @@ export function LetterPage() {
       </Link>
 
       <section className="card flex items-center gap-4">
-        <Ar text={letter.char} keepTashkeel className="w-24 text-center text-8xl text-terre-600" />
+        <Ar text={letter.char} keepTashkeel className="w-24 text-center text-8xl text-or-400" />
         <div className="min-w-0 flex-1">
           <h1 className="text-2xl font-extrabold">
             {letter.name} <Ar text={letter.arName} className="text-xl" />
@@ -42,8 +42,8 @@ export function LetterPage() {
             Son : <b>{letter.translit}</b>
           </p>
           <div className="mt-2 flex flex-wrap gap-1 text-xs font-semibold">
-            <span className="rounded-full bg-sable-100 px-2 py-1 dark:bg-stone-800">{letter.sun ? '☀️ Lettre solaire' : '🌙 Lettre lunaire'}</span>
-            {!letter.joins && <span className="rounded-full bg-sable-100 px-2 py-1 dark:bg-stone-800">Ne se lie pas à gauche</span>}
+            <span className="rounded-full bg-abysse-2 px-2 py-1">{letter.sun ? '☀️ Lettre solaire' : '🌙 Lettre lunaire'}</span>
+            {!letter.joins && <span className="rounded-full bg-abysse-2 px-2 py-1">Ne se lie pas à gauche</span>}
           </div>
         </div>
         <SpeakButton text={letter.arName} label="Écouter le nom de la lettre" />

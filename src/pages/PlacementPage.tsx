@@ -39,7 +39,7 @@ export function PlacementPage() {
       {CAN_DO.map((block) => (
         <section key={block.level} className="space-y-2">
           <h2 className="flex items-center gap-2 font-bold">
-            <span className="rounded-lg bg-nil-600 px-2 py-0.5 text-sm text-white">{block.level}</span>
+            <span className="rounded-md border border-lueur-400/50 px-2 py-0.5 font-sans text-sm text-lueur-300">{block.level}</span>
           </h2>
           {block.statements.map((s, i) => {
             const key = `${block.level}-${i}`
@@ -54,7 +54,7 @@ export function PlacementPage() {
                       type="button"
                       aria-pressed={answers[key] === a.value}
                       onClick={() => setAnswers((prev) => ({ ...prev, [key]: a.value }))}
-                      className={`min-h-10 rounded-lg text-sm font-semibold ${answers[key] === a.value ? 'bg-terre-600 text-white' : 'bg-sable-100 dark:bg-stone-800'}`}
+                      className={`min-h-10 rounded-lg text-sm font-semibold ${answers[key] === a.value ? 'bg-or-400 text-nuit' : 'bg-abysse-2'}`}
                     >
                       {a.label}
                     </button>

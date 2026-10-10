@@ -16,7 +16,7 @@ export function SpeakButton({ text, label = 'Écouter', className = '' }: { text
         await speak(text, rate)
         setPlaying(false)
       }}
-      className={`inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-nil-500/10 text-lg text-nil-700 transition hover:bg-nil-500/20 dark:text-nil-500 ${playing ? 'animate-pulse' : ''} ${className}`}
+      className={`inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-lueur-400/10 text-lg text-lueur-300 transition hover:bg-lueur-400/20 ${playing ? 'animate-pulse' : ''} ${className}`}
     >
       🔊
     </button>

@@ -70,7 +70,7 @@ await step('Fiche de lettre : quatre formes, XP gagnée', async () => {
   for (const f of ['Isolée', 'Initiale', 'Médiane', 'Finale']) await page.getByText(f, { exact: true }).waitFor()
   const forms = await page.locator('section .grid [lang="ar"]').allTextContents()
   assert(JSON.stringify(forms) === JSON.stringify(['ب', 'بـ', 'ـبـ', 'ـب']), `formes : ${forms}`)
-  assert(await page.locator('canvas').isVisible(), 'zone de tracé absente')
+  assert(await page.getByLabel(/Zone de tracé/).isVisible(), 'zone de tracé absente')
   await noHorizontalScroll()
   await shot('03-lettre-ba')
 })

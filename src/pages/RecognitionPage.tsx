@@ -112,7 +112,7 @@ export function RecognitionPage() {
 
       <div className="grid grid-cols-2 gap-2">
         {q.options.map((o) => {
-          const state = !picked ? '' : o.id === q.letter.id ? 'bg-nil-500/15 ring-2 ring-nil-500' : o.id === picked ? 'bg-red-500/10 ring-2 ring-red-500' : 'opacity-50'
+          const state = !picked ? '' : o.id === q.letter.id ? 'bg-lueur-400/15 ring-2 ring-lueur-400' : o.id === picked ? 'bg-grenat/15 ring-2 ring-grenat' : 'opacity-50'
           return (
             <button key={o.id} onClick={() => answer(o)} disabled={!!picked} className={`card min-h-16 ${state}`}>
               {q.kind === 'glyph' ? (

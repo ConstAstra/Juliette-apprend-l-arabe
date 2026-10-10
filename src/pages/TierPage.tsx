@@ -46,7 +46,7 @@ export function TierPage() {
     <div className="space-y-4">
       <Link to="/paliers" className="muted text-sm">← Paliers</Link>
       <header>
-        <div className="text-xs font-bold tracking-wide text-terre-600 uppercase">
+        <div className="text-xs font-bold tracking-wide text-or-400 uppercase">
           Palier {tier.level}.{tier.order}
         </div>
         <h1 className="text-2xl font-extrabold">{tier.emoji} {tier.title}</h1>
@@ -72,7 +72,7 @@ export function TierPage() {
               aria-selected={selected}
               onClick={() => navigate(`/paliers/${tier.id}/${t.id}`, { replace: true })}
               className={`flex shrink-0 items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold whitespace-nowrap ${
-                selected ? 'bg-terre-600 text-white' : 'bg-white ring-1 ring-stone-900/10 dark:bg-stone-900 dark:ring-white/10'
+                selected ? 'bg-or-400 text-nuit' : 'bg-abysse ring-1 ring-trait'
               }`}
             >
               <span className={t.id === 'alphabet' ? 'font-arabic' : ''}>{t.emoji}</span>
@@ -87,9 +87,9 @@ export function TierPage() {
         <TabContent key={`${tier.id}-${active.id}`} tier={tier} tab={active.id} complete={complete} />
       </section>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-stone-900/10 pt-4 dark:border-white/10">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-trait pt-4">
         {isDone ? (
-          <span className="font-semibold text-nil-600">✓ Section terminée</span>
+          <span className="font-semibold text-lueur-400">✓ Section terminée</span>
         ) : selfValidating ? (
           <span className="muted text-sm">{active.id === 'grammaire' ? 'Réussissez le quiz pour valider.' : 'Menez la conversation à son terme pour valider.'}</span>
         ) : (

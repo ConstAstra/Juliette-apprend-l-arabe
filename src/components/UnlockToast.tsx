@@ -26,7 +26,7 @@ export function UnlockToast() {
 
   if (!fresh.length) return null
   return (
-    <div role="status" className="fixed inset-x-4 bottom-24 z-30 mx-auto max-w-sm rounded-2xl bg-nil-700 p-4 text-white shadow-lg">
+    <div role="status" className="fixed inset-x-4 bottom-24 z-30 mx-auto max-w-sm rounded-2xl border border-lueur-400/50 bg-abysse p-4 text-parchemin shadow-[0_0_40px_-8px_rgb(95_220_201/0.6)]">
       <p className="font-extrabold">🎉 Niveau {level} ! Nouvel ami marin :</p>
       {fresh.map((a) => (
         <p key={a.id} className="flex items-center gap-2">

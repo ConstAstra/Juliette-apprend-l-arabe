@@ -9,9 +9,8 @@ export function TraceCanvas({ glyph }: { glyph: string }) {
     const ctx = canvas?.getContext('2d')
     if (!canvas || !ctx) return
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    const dark = matchMedia('(prefers-color-scheme: dark)').matches
-    ctx.fillStyle = dark ? 'rgba(255,255,255,0.14)' : 'rgba(42,33,27,0.12)'
-    ctx.font = '340px "Noto Naskh Arabic", serif'
+    ctx.fillStyle = 'rgba(221,187,114,0.16)'
+    ctx.font = '320px "Amiri", "Noto Naskh Arabic", serif'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.direction = 'rtl'
@@ -36,7 +35,9 @@ export function TraceCanvas({ glyph }: { glyph: string }) {
     const down = (e: PointerEvent) => {
       drawing = true
       canvas.setPointerCapture(e.pointerId)
-      ctx.strokeStyle = '#a9492a'
+      ctx.strokeStyle = '#5fdcc9'
+      ctx.shadowColor = 'rgba(95,220,201,0.8)'
+      ctx.shadowBlur = 12
       ctx.lineWidth = 16
       ctx.lineCap = 'round'
       ctx.lineJoin = 'round'
@@ -70,7 +71,7 @@ export function TraceCanvas({ glyph }: { glyph: string }) {
         width={500}
         height={500}
         aria-label={`Zone de tracé de la lettre ${glyph}`}
-        className="mx-auto aspect-square w-full max-w-xs touch-none rounded-2xl bg-white ring-1 ring-stone-900/10 dark:bg-stone-900 dark:ring-white/10"
+        className="mx-auto aspect-square w-full max-w-xs touch-none rounded-2xl bg-abysse ring-1 ring-trait"
       />
       <div className="mt-2 text-center">
         <button className="btn-soft" onClick={drawGuide}>

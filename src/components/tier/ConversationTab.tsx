@@ -60,7 +60,7 @@ export function ConversationTab({ tier, onDone }: { tier: Tier; onDone: () => vo
       {turns.length > 0 && (
         <div className="space-y-1">
           {turns.slice(-3).map((t, i) => (
-            <p key={i} className={`ml-auto w-fit rounded-xl px-3 py-1 ${t.ok ? 'bg-nil-500/15' : 'bg-red-500/10'}`}>
+            <p key={i} className={`ml-auto w-fit rounded-xl px-3 py-1 ${t.ok ? 'bg-lueur-400/15' : 'bg-grenat/15'}`}>
               <Ar text={t.answer} className="text-lg" /> {t.ok ? '✅' : '↻'}
             </p>
           ))}
@@ -78,7 +78,7 @@ export function ConversationTab({ tier, onDone }: { tier: Tier; onDone: () => vo
             <button className="btn-soft" onClick={() => setShowHint((v) => !v)}>💡 Indice</button>
           </div>
           {showHint && (
-            <div className="flex items-center gap-2 rounded-xl bg-sable-100 p-2 dark:bg-stone-800">
+            <div className="flex items-center gap-2 rounded-xl bg-abysse-2 p-2">
               <SpeakButton text={current.hint.ar} />
               <div className="flex-1 text-sm">
                 {current.hint.fr} · <i>{current.hint.tr}</i>
@@ -100,7 +100,7 @@ export function ConversationTab({ tier, onDone }: { tier: Tier; onDone: () => vo
               onChange={(e) => setTyped(e.target.value)}
               placeholder="اُكْتُبِي هُنَا…"
               aria-label="Votre réponse en arabe"
-              className="min-h-11 min-w-0 flex-1 rounded-xl bg-sable-50 px-3 font-arabic text-xl ring-1 ring-stone-900/10 dark:bg-stone-950 dark:ring-white/10"
+              className="min-h-11 min-w-0 flex-1 rounded-xl bg-nuit px-3 font-arabic text-xl ring-1 ring-trait"
             />
             <button className="btn-soft" type="submit">Envoyer</button>
           </form>

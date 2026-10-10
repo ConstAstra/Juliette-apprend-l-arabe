@@ -19,7 +19,7 @@ export function AvatarPage() {
     <div className="space-y-5">
       <h1 className="text-2xl font-extrabold">Mon avatar</h1>
 
-      <section className="card flex items-center gap-4 bg-gradient-to-b from-sky-50 to-teal-50 dark:from-sky-950 dark:to-teal-950">
+      <section className="card flex items-center gap-4 bg-gradient-to-b from-lueur-600/20 to-abysse">
         <Avatar profile={profile} size="lg" />
         <div className="min-w-0 flex-1">
           <div className="text-xl font-extrabold">{profile.name}</div>
@@ -43,7 +43,7 @@ export function AvatarPage() {
               aria-pressed={profile.color === c.id}
               aria-label={c.label}
               title={c.label}
-              className={`size-10 rounded-full ${c.className} ${profile.color === c.id ? 'ring-4 ring-terre-500' : 'ring-1 ring-stone-900/10'}`}
+              className={`size-10 rounded-full ${c.className} ${profile.color === c.id ? 'ring-4 ring-or-400' : 'ring-1 ring-trait'}`}
             />
           ))}
         </div>
@@ -70,9 +70,9 @@ export function AvatarPage() {
                 onClick={() => updateProfile(profile.id, { avatar: a.id })}
                 aria-pressed={chosen}
                 aria-label={open ? `Choisir ${a.fr}` : `${a.fr} : se débloque au niveau ${a.level}`}
-                className={`card flex flex-col items-center gap-1 p-2 ${chosen ? 'ring-2 ring-terre-500' : ''}`}
+                className={`card flex flex-col items-center gap-1 p-2 ${chosen ? 'ring-2 ring-or-400' : ''}`}
               >
-                <span className={`text-4xl ${open ? '' : 'opacity-30 brightness-0 dark:invert'}`}>{a.emoji}</span>
+                <span className={`text-4xl ${open ? '' : 'opacity-25 grayscale'}`}>{a.emoji}</span>
                 {open ? (
                   <>
                     <Ar text={a.ar} className="text-base leading-tight" />

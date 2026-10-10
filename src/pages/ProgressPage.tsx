@@ -21,7 +21,7 @@ function Calendar({ activity }: { activity: Record<string, number> }) {
       return day
     }),
   )
-  const shade = (xp: number) => (xp === 0 ? 'bg-sable-200 dark:bg-stone-800' : xp < 20 ? 'bg-nil-500/40' : xp < 50 ? 'bg-nil-500/70' : 'bg-nil-600')
+  const shade = (xp: number) => (xp === 0 ? 'bg-trait' : xp < 20 ? 'bg-lueur-400/40' : xp < 50 ? 'bg-lueur-400/70' : 'bg-lueur-500')
   return (
     <div className="flex gap-1">
       <div className="muted grid grid-rows-7 gap-1 text-[10px]">

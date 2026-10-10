@@ -34,7 +34,7 @@ export function Quiz({ questions, onFinish }: { questions: QuizQuestion[]; onFin
       {q.ar && <Ar as="p" text={q.ar} keepTashkeel className="my-2 text-center text-4xl" />}
       <div className="mt-3 grid gap-2">
         {q.options.map((o, i) => {
-          const state = picked === null ? '' : i === q.answer ? 'bg-nil-500/15 ring-nil-500' : i === picked ? 'bg-red-500/10 ring-red-500' : 'opacity-60'
+          const state = picked === null ? '' : i === q.answer ? 'bg-lueur-400/15 ring-lueur-400' : i === picked ? 'bg-grenat/15 ring-grenat' : 'opacity-60'
           return (
             <button
               key={i}
@@ -43,7 +43,7 @@ export function Quiz({ questions, onFinish }: { questions: QuizQuestion[]; onFin
                 setPicked(i)
                 if (i === q.answer) setScore((s) => s + 1)
               }}
-              className={`min-h-11 rounded-xl px-4 py-2 text-left ring-1 ring-stone-900/10 dark:ring-white/10 ${state}`}
+              className={`min-h-11 rounded-xl px-4 py-2 text-left ring-1 ring-trait ${state}`}
             >
               {isArabic(o) ? <Ar text={o} keepTashkeel className="text-2xl" /> : o}
             </button>

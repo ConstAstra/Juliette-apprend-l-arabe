@@ -15,14 +15,14 @@ export function TiersPage() {
         return (
           <section key={lvl.level}>
             <h2 className="flex items-baseline gap-2 text-lg font-bold">
-              <span className="rounded-lg bg-nil-600 px-2 py-0.5 text-sm text-white">{lvl.level}</span>
+              <span className="rounded-md border border-lueur-400/50 px-2 py-0.5 font-sans text-sm text-lueur-300">{lvl.level}</span>
               {lvl.title}
             </h2>
             <p className="muted mb-2 text-sm">{lvl.description}</p>
             {tiers.length ? (
               <div className="grid gap-3">{tiers.map((t) => <TierCard key={t.id} tier={t} />)}</div>
             ) : (
-              <div className="card muted text-sm">🔒 En préparation.</div>
+              <div className="card muted text-sm">🔒 Encore scellé — en préparation.</div>
             )}
           </section>
         )

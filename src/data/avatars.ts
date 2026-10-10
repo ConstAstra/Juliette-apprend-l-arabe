@@ -26,13 +26,13 @@ export const AVATARS: SeaAvatar[] = [
 ]
 
 export const AVATAR_COLORS = [
-  { id: 'lagon', label: 'Lagon', className: 'bg-teal-200 dark:bg-teal-800' },
-  { id: 'ocean', label: 'Océan', className: 'bg-sky-200 dark:bg-sky-800' },
-  { id: 'abysses', label: 'Abysses', className: 'bg-indigo-300 dark:bg-indigo-900' },
-  { id: 'corail', label: 'Corail', className: 'bg-orange-200 dark:bg-orange-800' },
-  { id: 'sable', label: 'Sable', className: 'bg-amber-100 dark:bg-amber-800' },
-  { id: 'algue', label: 'Algue', className: 'bg-emerald-200 dark:bg-emerald-800' },
-  { id: 'nacre', label: 'Nacre', className: 'bg-violet-200 dark:bg-violet-800' },
+  { id: 'lagon', label: 'Lagon', className: 'bg-teal-800' },
+  { id: 'ocean', label: 'Océan', className: 'bg-sky-900' },
+  { id: 'abysses', label: 'Abysses', className: 'bg-indigo-950' },
+  { id: 'corail', label: 'Corail', className: 'bg-orange-900' },
+  { id: 'sable', label: 'Sable', className: 'bg-amber-800' },
+  { id: 'algue', label: 'Algue', className: 'bg-emerald-900' },
+  { id: 'nacre', label: 'Nacre', className: 'bg-violet-900' },
 ] as const
 
 export type AvatarColorId = (typeof AVATAR_COLORS)[number]['id']

@@ -47,8 +47,8 @@ export function Dialogue({ podcast }: { podcast: Tier['podcast'] }) {
       </div>
       <div className="space-y-2">
         {podcast.lines.map((l, i) => (
-          <div key={i} className={`card flex items-start gap-3 ${playing === i ? 'ring-2 ring-nil-500' : ''}`}>
-            <span className="w-16 shrink-0 text-sm font-bold text-terre-600">{l.speaker}</span>
+          <div key={i} className={`card flex items-start gap-3 ${playing === i ? 'ring-2 ring-lueur-400' : ''}`}>
+            <span className="w-16 shrink-0 text-sm font-bold text-or-400">{l.speaker}</span>
             <div className="flex-1 text-right">
               {hidden ? (
                 <p className="muted text-left text-sm">• • •</p>

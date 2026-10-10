@@ -8,10 +8,10 @@ export function TierCard({ tier }: { tier: Tier }) {
   const done = useCompletedTabs(tier.id)
   const total = tabsForTier(tier).length
   return (
-    <Link to={`/paliers/${tier.id}`} className="card flex items-center gap-3 transition hover:ring-terre-500/40">
+    <Link to={`/paliers/${tier.id}`} className="card flex items-center gap-3 transition hover:ring-or-400/40">
       <span className="text-3xl">{tier.emoji}</span>
       <div className="min-w-0 flex-1">
-        <div className="text-xs font-bold tracking-wide text-terre-600 uppercase">
+        <div className="text-xs font-bold tracking-wide text-or-400 uppercase">
           {tier.level}.{tier.order}
         </div>
         <div className="font-bold">{tier.title}</div>

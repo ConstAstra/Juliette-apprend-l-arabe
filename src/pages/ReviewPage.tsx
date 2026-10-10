@@ -39,7 +39,7 @@ export function ReviewHome() {
             {s.today ? (
               <Link to={`/revisions/${d.id}`} className="btn-primary w-full">Réviser {s.today} carte{s.today > 1 ? 's' : ''}</Link>
             ) : (
-              <p className="text-center text-sm font-semibold text-nil-600">✓ Rien à revoir aujourd’hui</p>
+              <p className="text-center text-sm font-semibold text-lueur-400">✓ Rien à revoir aujourd’hui</p>
             )}
           </section>
         )
@@ -54,8 +54,8 @@ function CardFace({ card, revealed }: { card: ReviewCard; revealed: boolean }) {
       {card.frontFr && <p className="text-lg font-semibold">{card.frontFr}</p>}
       {card.frontAr && <Ar as="p" text={card.frontAr} keepTashkeel className="text-4xl" />}
       {revealed && (
-        <div className="w-full space-y-1 border-t border-stone-900/10 pt-3 dark:border-white/10">
-          {card.backAr && <Ar as="p" text={card.backAr} keepTashkeel className="text-3xl text-nil-700 dark:text-nil-500" />}
+        <div className="w-full space-y-1 border-t border-trait pt-3">
+          {card.backAr && <Ar as="p" text={card.backAr} keepTashkeel className="text-3xl text-lueur-300" />}
           {card.backFr && <p className="text-lg font-bold">{card.backFr}</p>}
           {card.backTr && <p className="muted italic">{card.backTr}</p>}
         </div>
@@ -109,8 +109,8 @@ export function ReviewSession() {
       <CardFace card={card} revealed={revealed} />
       {revealed ? (
         <div className="grid grid-cols-2 gap-2">
-          <button className="btn bg-red-500/10 text-red-700 dark:text-red-400" onClick={() => answer(false)}>À revoir</button>
-          <button className="btn bg-nil-500/15 text-nil-700 dark:text-nil-500" onClick={() => answer(true)}>Je savais ✓</button>
+          <button className="btn bg-grenat/15 text-grenat" onClick={() => answer(false)}>À revoir</button>
+          <button className="btn bg-lueur-400/15 text-lueur-300" onClick={() => answer(true)}>Je savais ✓</button>
         </div>
       ) : (
         <button className="btn-primary w-full" onClick={() => setRevealed(true)}>Voir la réponse</button>

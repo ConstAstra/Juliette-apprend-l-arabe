@@ -38,7 +38,7 @@ export function ProfilesPage() {
 
       <section className="space-y-2">
         {profiles.map((p) => (
-          <div key={p.id} className={`card flex items-center gap-3 ${p.id === activeId ? 'ring-2 ring-terre-500' : ''}`}>
+          <div key={p.id} className={`card flex items-center gap-3 ${p.id === activeId ? 'ring-2 ring-or-400' : ''}`}>
             <Avatar profile={p} />
             {editing === p.id ? (
               <form
@@ -50,7 +50,7 @@ export function ProfilesPage() {
                   setEditing(null)
                 }}
               >
-                <input name="nom" defaultValue={p.name} aria-label="Nouveau nom" className="min-h-11 min-w-0 flex-1 rounded-xl px-3 ring-1 ring-stone-900/10 dark:bg-stone-950" />
+                <input name="nom" defaultValue={p.name} aria-label="Nouveau nom" className="min-h-11 min-w-0 flex-1 rounded-xl px-3 ring-1 ring-trait" />
                 <button className="btn-soft">OK</button>
               </form>
             ) : (
@@ -60,7 +60,7 @@ export function ProfilesPage() {
               </div>
             )}
             {p.id === activeId ? (
-              <span className="text-sm font-semibold text-terre-600">Actif</span>
+              <span className="text-sm font-semibold text-or-400">Actif</span>
             ) : (
               <button className="btn-soft" onClick={() => switchProfile(p.id)}>Choisir</button>
             )}
@@ -97,21 +97,21 @@ export function ProfilesPage() {
         }}
       >
         <h2 className="font-bold">Nouveau profil</h2>
-        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Prénom" aria-label="Prénom" className="min-h-11 w-full rounded-xl px-3 ring-1 ring-stone-900/10 dark:bg-stone-950 dark:ring-white/10" />
+        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Prénom" aria-label="Prénom" className="min-h-11 w-full rounded-xl px-3 ring-1 ring-trait" />
         <div className="flex items-center gap-3">
           <Avatar profile={{ avatar, color }} />
           <p className="muted text-sm">Quatre animaux pour commencer ; les autres se débloquent en progressant.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {starters.map((a) => (
-            <button type="button" key={a.id} onClick={() => setAvatar(a.id)} aria-pressed={a.id === avatar} aria-label={a.fr} className={`size-11 rounded-full text-2xl ${a.id === avatar ? 'bg-terre-600/20 ring-2 ring-terre-500' : 'bg-sable-100 dark:bg-stone-800'}`}>
+            <button type="button" key={a.id} onClick={() => setAvatar(a.id)} aria-pressed={a.id === avatar} aria-label={a.fr} className={`size-11 rounded-full text-2xl ${a.id === avatar ? 'bg-or-400/20 ring-2 ring-or-400' : 'bg-abysse-2'}`}>
               {a.emoji}
             </button>
           ))}
         </div>
         <div className="flex flex-wrap gap-2">
           {AVATAR_COLORS.map((c) => (
-            <button type="button" key={c.id} onClick={() => setColor(c.id)} aria-pressed={c.id === color} aria-label={`Fond ${c.label}`} title={c.label} className={`size-8 rounded-full ${c.className} ${c.id === color ? 'ring-4 ring-terre-500' : 'ring-1 ring-stone-900/10'}`} />
+            <button type="button" key={c.id} onClick={() => setColor(c.id)} aria-pressed={c.id === color} aria-label={`Fond ${c.label}`} title={c.label} className={`size-8 rounded-full ${c.className} ${c.id === color ? 'ring-4 ring-or-400' : 'ring-1 ring-trait'}`} />
           ))}
         </div>
         <button className="btn-primary w-full" type="submit">Créer et utiliser</button>
@@ -166,7 +166,7 @@ export function ProfilesPage() {
         </div>
         {message && <p className="text-sm font-semibold">{message}</p>}
         <button
-          className="text-sm text-red-600 underline"
+          className="text-sm text-grenat underline"
           onClick={() => {
             if (confirm('Effacer toute la progression de ce profil ?')) reset()
           }}

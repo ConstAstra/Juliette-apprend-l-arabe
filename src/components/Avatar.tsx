@@ -13,7 +13,7 @@ export function Avatar({ profile, size = 'md', className = '' }: { profile: Pick
     <span
       role="img"
       aria-label={animal.fr}
-      className={`inline-flex shrink-0 items-center justify-center rounded-full ring-2 ring-white/70 dark:ring-black/30 ${colorById(profile.color).className} ${SIZES[size]} ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full ring-2 ring-or-400/40 ${colorById(profile.color).className} ${SIZES[size]} ${className}`}
     >
       {animal.emoji}
     </span>

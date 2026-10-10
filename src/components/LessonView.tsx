@@ -23,7 +23,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
             </thead>
             <tbody>
               {lesson.table.rows.map((row, i) => (
-                <tr key={i} className="border-t border-stone-900/5 dark:border-white/10">
+                <tr key={i} className="border-t border-trait">
                   {row.map((cell, j) => (
                     <td key={j} className="py-1 pr-3">
                       {cell.startsWith(AR_PREFIX) ? <Ar text={cell.slice(AR_PREFIX.length)} keepTashkeel className="text-2xl" /> : cell}
@@ -36,7 +36,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
         </div>
       )}
       {lesson.examples && (
-        <div className="divide-y divide-stone-900/5 dark:divide-white/10">
+        <div className="divide-y divide-trait">
           {lesson.examples.map((ex, i) => (
             <PhraseRow key={i} phrase={ex} keepTashkeel />
           ))}
