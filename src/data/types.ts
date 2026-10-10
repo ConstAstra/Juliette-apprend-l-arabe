@@ -94,3 +94,21 @@ export interface Tier {
   conversation: { intro: string; steps: ConversationStep[] }
   dialect: DialectExpression[]
 }
+
+/** Carte de révision de grammaire (paquet Leitner distinct du vocabulaire). */
+export interface GrammarCard {
+  id: string
+  question: string
+  ar?: string
+  answer: string
+  answerAr?: string
+}
+
+export interface RefSheet {
+  id: string
+  title: string
+  emoji: string
+  intro: string
+  lessons: Lesson[]
+  cards: GrammarCard[]
+}

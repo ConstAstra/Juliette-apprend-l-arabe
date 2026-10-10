@@ -136,7 +136,7 @@ await step('Profils : bascule sans rechargement', async () => {
   await page.getByText(/Niveau 1 · 0 XP/).first().waitFor()
   await page.getByRole('link', { name: 'Accueil' }).click()
   await page.getByRole('heading', { name: /Bienvenue, Invité/ }).waitFor()
-  await page.getByRole('link', { name: /Profil/ }).click()
+  await go('/profils')
   await page.getByRole('button', { name: 'Choisir' }).click()
   await page.getByRole('link', { name: 'Accueil' }).click()
   await page.getByRole('heading', { name: /Bienvenue, Juliette/ }).waitFor()
@@ -145,7 +145,95 @@ await step('Profils : bascule sans rechargement', async () => {
   assert((await page.evaluate(() => window.__marqueur)) === 'sans-rechargement', 'la page a été rechargée')
 })
 
-assert(true)
+await step('Avatar : aquarium, choix, couleur et verrous', async () => {
+  await go('/')
+  await page.getByRole('link', { name: /Profil : Juliette/ }).click()
+  await page.getByRole('heading', { name: 'Mon avatar' }).waitFor()
+  assert(await page.getByRole('button', { name: /requin : se débloque au niveau 8/ }).isDisabled(), 'le requin devrait être verrouillé')
+  await page.getByRole('button', { name: 'Choisir le poisson' }).click()
+  await page.getByRole('button', { name: 'Corail' }).click()
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('jaa-profils')).state.profiles.find((p) => p.id === 'juliette'))
+  assert(saved.avatar === 'poisson' && saved.color === 'corail', `avatar enregistré : ${JSON.stringify(saved)}`)
+  await noHorizontalScroll()
+  await shot('10-avatar')
+})
+
+await step('Avatar : notification de déblocage au passage de niveau', async () => {
+  await page.evaluate(() => {
+    const key = 'jaa-progression-juliette'
+    const data = JSON.parse(localStorage.getItem(key))
+    data.state.xp = 99
+    localStorage.setItem(key, JSON.stringify(data))
+  })
+  await page.reload()
+  await go('/alphabet/ra')
+  await page.getByText(/Niveau 2 ! Nouvel ami marin/).waitFor()
+  await page.getByText('la pieuvre').waitFor()
+  await shot('11-deblocage')
+})
+
+await step('Migration des anciens profils (avatar emoji)', async () => {
+  const ctx = await browser.newContext({ ...iphone, locale: 'fr-FR' })
+  const pg = await ctx.newPage()
+  await pg.addInitScript(() => {
+    if (!localStorage.getItem('migration-faite')) {
+      localStorage.setItem('jaa-profils', JSON.stringify({ state: { profiles: [{ id: 'juliette', name: 'Juliette', avatar: '🐬', createdAt: '2026-10-09' }, { id: 'x', name: 'Ancien', avatar: '⛵', createdAt: '2026-10-09' }], activeId: 'juliette' }, version: 0 }))
+      localStorage.setItem('migration-faite', '1')
+    }
+  })
+  await pg.goto(URL_BASE + '#/profils')
+  await pg.getByText('Ancien').waitFor()
+  const profiles = await pg.evaluate(() => JSON.parse(localStorage.getItem('jaa-profils')).state.profiles)
+  assert(profiles[0].avatar === 'dauphin' && profiles[1].avatar === 'dauphin' && profiles[1].color === 'lagon', JSON.stringify(profiles))
+  await ctx.close()
+})
+
+await step('Révisions Leitner : vocabulaire et grammaire séparés', async () => {
+  await go('/revisions')
+  await shot('12-revisions')
+  await page.getByRole('link', { name: /Réviser \d+ carte/ }).first().click()
+  await page.getByRole('button', { name: 'Voir la réponse' }).click()
+  await page.getByRole('button', { name: 'Je savais ✓' }).click()
+  await page.getByRole('button', { name: 'Voir la réponse' }).click()
+  await page.getByRole('button', { name: 'À revoir' }).click()
+  const srs = await page.evaluate(() => JSON.parse(localStorage.getItem('jaa-progression-juliette')).state.srs)
+  const boxes = Object.values(srs.vocabulaire).map((e) => e.box).sort()
+  assert(JSON.stringify(boxes) === '[1,1]', `boîtes inattendues : ${JSON.stringify(boxes)}`)
+  assert(Object.keys(srs.grammaire).length === 0, 'le paquet grammaire ne doit pas bouger')
+  await noHorizontalScroll()
+})
+
+await step('Fiches : racines et dix formes verbales', async () => {
+  await go('/fiches')
+  await page.getByText('Racines et formes verbales').click()
+  for (const f of ['I', 'V', 'X']) await page.getByRole('cell', { name: f, exact: true }).waitFor()
+  await page.getByText('ar:', { exact: false }).count().then((n) => assert(n === 0, 'préfixe ar: visible'))
+  await noHorizontalScroll()
+  await shot('13-fiche-racines')
+  await go('/fiches/cas')
+  await page.getByRole('heading', { name: /Nominatif, accusatif, génitif/ }).waitFor()
+  await go('/revisions')
+  await page.getByText(/questions des paliers/).waitFor()
+})
+
+await step('Test de niveau CECR', async () => {
+  await go('/test-niveau')
+  const blocks = page.locator('fieldset')
+  assert((await blocks.count()) === 20, `affirmations : ${await blocks.count()}`)
+  for (let i = 0; i < 4; i++) await blocks.nth(i).getByRole('button', { name: 'Oui' }).click()
+  await page.getByRole('button', { name: /Voir mon niveau/ }).click()
+  await page.getByRole('heading', { name: 'Votre niveau estimé : A1' }).waitFor()
+})
+
+await step('Onglet « Plus » et progrès', async () => {
+  await go('/plus')
+  await page.getByText('Fiches de référence').waitFor()
+  await go('/progres')
+  await page.getByText('Boussole').waitFor()
+  await noHorizontalScroll()
+  await shot('14-progres')
+})
+
 if (errors.length) {
   failures++
   console.log('✗ Erreurs JavaScript :\n  ' + errors.join('\n  '))

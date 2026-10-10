@@ -10,6 +10,10 @@ Application web progressive (PWA) d’apprentissage de l’arabe, en français. 
 - **Alphabet** : les 28 lettres et leurs quatre formes (isolée, initiale, médiane, finale), la prononciation en synthèse vocale, les lettres solaires et lunaires, un atelier de tracé et un exercice de reconnaissance.
 - **Paliers CECR** : A1.1 à A1.4 pour l’instant (A2 à C1 en préparation). Chaque palier comprend les onglets alphabet, grammaire (avec quiz), prononciation, écriture, vocabulaire, carte mentale, histoire, podcast dialogué (avec écoute active), conversation (reconnaissance vocale ou saisie) et dialectes.
 - **Vocabulaire** : le vocabulaire spécial de Juliette (animaux marins, sports à voile, alcool et cocktails, écriture et lecture), puis des thèmes généraux.
+- **Fiches de référence** : racines trilitères et dix formes verbales (I à X), les trois cas (iʿrāb), conjugaison avec le duel, article et lettres solaires, nombres, expressions idiomatiques.
+- **Révisions espacées (Leitner)** : deux paquets distincts, vocabulaire et grammaire.
+- **Test de niveau CECR** autoévalué (20 affirmations « je peux… »).
+- **Avatars marins** : treize animaux, chacun avec son nom arabe à écouter, débloqués au fil des niveaux (du dauphin à la baleine bleue), sur sept fonds aux couleurs de la mer.
 - **Mode avec ou sans diacritiques**, translittération facultative.
 - **Progression** : XP, niveaux, série quotidienne, badges, calendrier de régularité.
 - **Profils locaux multiples**, sauvegarde et restauration dans un fichier JSON.

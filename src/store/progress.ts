@@ -4,16 +4,37 @@ import { PROFILES_KEY, useProfiles } from './profiles'
 
 export const progressKey = (profileId: string) => `jaa-progression-${profileId}`
 
-export const todayKey = () => {
-  const d = new Date()
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+const dateKey = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+
+export const todayKey = () => dateKey(new Date())
+
+export function addDays(day: string, n: number): string {
+  const [y, m, d] = day.split('-').map(Number)
+  return dateKey(new Date(y, m - 1, d + n))
 }
+
+/** Intervalle (en jours) avant la prochaine révision, selon la boîte atteinte. */
+export const LEITNER_DAYS = [0, 1, 2, 4, 8, 16]
 
 export interface Settings {
   /** Afficher les voyelles brèves et autres diacritiques. */
   tashkeel: boolean
   translit: boolean
   speechRate: number
+}
+
+export interface LeitnerEntry {
+  /** Boîte de 1 à 5. */
+  box: number
+  /** Prochaine révision (AAAA-MM-JJ). */
+  due: string
+}
+
+export type DeckId = 'vocabulaire' | 'grammaire'
+
+export interface Placement {
+  level: string
+  date: string
 }
 
 export interface ProgressData {
@@ -25,6 +46,10 @@ export interface ProgressData {
   completed: Record<string, string[]>
   seenThemes: Record<string, true>
   bestRecognition: number
+  seenRefs: Record<string, true>
+  /** Deux paquets Leitner séparés : vocabulaire et grammaire. */
+  srs: Record<DeckId, Record<string, LeitnerEntry>>
+  placement: Placement | null
   settings: Settings
 }
 
@@ -34,6 +59,9 @@ interface ProgressActions {
   completeTab: (tierId: string, tabId: string, xp?: number) => void
   markThemeSeen: (id: string) => void
   recordRecognition: (score: number) => void
+  markRefSeen: (id: string) => void
+  reviewCard: (deck: DeckId, cardId: string, known: boolean) => void
+  setPlacement: (level: string) => void
   updateSettings: (patch: Partial<Settings>) => void
   reset: () => void
 }
@@ -45,6 +73,9 @@ export const INITIAL_PROGRESS: ProgressData = {
   completed: {},
   seenThemes: {},
   bestRecognition: 0,
+  seenRefs: {},
+  srs: { vocabulaire: {}, grammaire: {} },
+  placement: null,
   settings: { tashkeel: true, translit: true, speechRate: 0.85 },
 }
 
@@ -77,6 +108,22 @@ export const useProgress = create<ProgressData & ProgressActions>()(
         set({ bestRecognition: Math.max(get().bestRecognition, score) })
         get().addXp(score)
       },
+      markRefSeen: (id) => {
+        if (get().seenRefs[id]) return
+        set({ seenRefs: { ...get().seenRefs, [id]: true } })
+        get().addXp(5)
+      },
+      reviewCard: (deck, cardId, known) => {
+        const previous = get().srs[deck][cardId]?.box ?? 0
+        const box = known ? Math.min(previous + 1, 5) : 1
+        const entry = { box, due: addDays(todayKey(), known ? LEITNER_DAYS[box] : 0) }
+        set({ srs: { ...get().srs, [deck]: { ...get().srs[deck], [cardId]: entry } } })
+        get().addXp(known ? 2 : 1)
+      },
+      setPlacement: (level) => {
+        set({ placement: { level, date: todayKey() } })
+        get().addXp(10)
+      },
       updateSettings: (patch) => set({ settings: { ...get().settings, ...patch } }),
       reset: () => set({ ...INITIAL_PROGRESS }),
     }),
@@ -98,6 +145,7 @@ export const useProgress = create<ProgressData & ProgressActions>()(
         ...INITIAL_PROGRESS,
         ...((persisted as Partial<ProgressData>) ?? {}),
         settings: { ...INITIAL_PROGRESS.settings, ...((persisted as Partial<ProgressData>)?.settings ?? {}) },
+        srs: { ...INITIAL_PROGRESS.srs, ...((persisted as Partial<ProgressData>)?.srs ?? {}) },
       }),
     },
   ),

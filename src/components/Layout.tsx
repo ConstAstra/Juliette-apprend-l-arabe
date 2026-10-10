@@ -1,15 +1,20 @@
 import { NavLink, Outlet, Link, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useActiveProfile } from '../store/profiles'
+import { Avatar } from './Avatar'
+import { UnlockToast } from './UnlockToast'
 import { levelInfo, streak, useProgress } from '../store/progress'
 
 const NAV = [
   { to: '/', label: 'Accueil', icon: '🏠', end: true },
   { to: '/alphabet', label: 'Alphabet', icon: 'ب', end: false },
   { to: '/paliers', label: 'Paliers', icon: '🧭', end: false },
-  { to: '/vocabulaire', label: 'Mots', icon: '📚', end: false },
-  { to: '/progres', label: 'Progrès', icon: '🏅', end: false },
+  { to: '/revisions', label: 'Réviser', icon: '🃏', end: false },
+  { to: '/plus', label: 'Plus', icon: '☰', end: false },
 ]
+
+// Pages regroupées sous l'onglet « Plus ».
+const UNDER_MORE = ['/vocabulaire', '/fiches', '/test-niveau', '/progres', '/profils', '/avatar']
 
 export function Layout() {
   const profile = useActiveProfile()
@@ -29,8 +34,8 @@ export function Layout() {
           </Link>
           <span className="text-sm font-semibold" title="Série de jours">🔥 {streak(activity)}</span>
           <span className="text-sm font-semibold" title="Niveau">⭐ {levelInfo(xp).level}</span>
-          <Link to="/profils" className="flex size-9 items-center justify-center rounded-full bg-sable-100 text-lg dark:bg-stone-800" aria-label={`Profil : ${profile.name}`}>
-            {profile.avatar}
+          <Link to="/avatar" aria-label={`Profil : ${profile.name}`}>
+            <Avatar profile={profile} size="sm" />
           </Link>
         </div>
       </header>
@@ -38,6 +43,8 @@ export function Layout() {
       <main className="mx-auto max-w-3xl px-4 py-4">
         <Outlet />
       </main>
+
+      <UnlockToast />
 
       <nav aria-label="Navigation principale" className="fixed inset-x-0 bottom-0 z-20 border-t border-stone-900/10 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur dark:border-white/10 dark:bg-stone-900/95">
         <ul className="mx-auto grid max-w-3xl grid-cols-5">
@@ -47,7 +54,7 @@ export function Layout() {
                 to={n.to}
                 end={n.end}
                 className={({ isActive }) =>
-                  `flex flex-col items-center gap-0.5 py-2 text-xs font-semibold ${isActive ? 'text-terre-600' : 'muted'}`
+                  `flex flex-col items-center gap-0.5 py-2 text-xs font-semibold ${isActive || (n.to === '/plus' && UNDER_MORE.some((p) => pathname.startsWith(p))) ? 'text-terre-600' : 'muted'}`
                 }
               >
                 <span className={`text-xl leading-none ${n.icon === 'ب' ? 'font-arabic' : ''}`}>{n.icon}</span>

@@ -10,6 +10,11 @@ import { VocabularyPage } from './pages/VocabularyPage'
 import { ThemePage } from './pages/ThemePage'
 import { ProgressPage } from './pages/ProgressPage'
 import { ProfilesPage } from './pages/ProfilesPage'
+import { AvatarPage } from './pages/AvatarPage'
+import { ReviewHome, ReviewSession } from './pages/ReviewPage'
+import { ReferenceList, ReferenceSheet } from './pages/ReferencePage'
+import { PlacementPage } from './pages/PlacementPage'
+import { MorePage } from './pages/MorePage'
 
 export function App() {
   return (
@@ -27,6 +32,13 @@ export function App() {
           <Route path="vocabulaire/:themeId" element={<ThemePage />} />
           <Route path="progres" element={<ProgressPage />} />
           <Route path="profils" element={<ProfilesPage />} />
+          <Route path="avatar" element={<AvatarPage />} />
+          <Route path="revisions" element={<ReviewHome />} />
+          <Route path="revisions/:deck" element={<ReviewSession />} />
+          <Route path="fiches" element={<ReferenceList />} />
+          <Route path="fiches/:refId" element={<ReferenceSheet />} />
+          <Route path="test-niveau" element={<PlacementPage />} />
+          <Route path="plus" element={<MorePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

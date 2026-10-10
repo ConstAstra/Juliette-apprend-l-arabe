@@ -1,7 +1,8 @@
 import { LETTERS } from './letters'
 import { JULIETTE_THEMES } from './vocabulary'
 import { TIERS, tabsForTier } from './tiers'
-import { streak, type ProgressData } from '../store/progress'
+import { REFERENCE } from './reference'
+import { levelInfo, streak, type ProgressData } from '../store/progress'
 
 export interface Badge {
   id: string
@@ -27,5 +28,9 @@ export const BADGES: Badge[] = [
   { id: 'serie-3', emoji: '🔥', title: 'Trois jours d’affilée', description: 'Pratiquer trois jours de suite.', earned: (p) => streak(p.activity) >= 3 },
   { id: 'serie-7', emoji: '🌟', title: 'Une semaine entière', description: 'Pratiquer sept jours de suite.', earned: (p) => streak(p.activity) >= 7 },
   { id: 'xp-500', emoji: '💎', title: '500 XP', description: 'Accumuler 500 points d’expérience.', earned: (p) => p.xp >= 500 },
+  { id: 'premiere-revision', emoji: '🃏', title: 'Première révision', description: 'Réviser une carte en méthode Leitner.', earned: (p) => Object.keys(p.srs.vocabulaire).length + Object.keys(p.srs.grammaire).length > 0 },
+  { id: 'bibliothecaire', emoji: '📑', title: 'Rat de bibliothèque', description: 'Consulter toutes les fiches de référence.', earned: (p) => REFERENCE.every((r) => p.seenRefs[r.id]) },
+  { id: 'boussole', emoji: '🧭', title: 'Boussole', description: 'Passer le test de niveau.', earned: (p) => p.placement !== null },
+  { id: 'aquarium', emoji: '🦈', title: 'Grand aquarium', description: 'Atteindre le niveau 8 et débloquer le requin.', earned: (p) => levelInfo(p.xp).level >= 8 },
   { id: 'juliette', emoji: '🐬', title: 'Le monde de Juliette', description: 'Explorer les quatre fiches du vocabulaire spécial.', earned: (p) => JULIETTE_THEMES.every((t) => p.seenThemes[t.id]) },
 ]
