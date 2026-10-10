@@ -183,7 +183,7 @@ export const TIERS: Tier[] = [
             'Au présent, l’arabe se passe du verbe « être » : on juxtapose simplement le sujet et ce qu’on en dit. « Moi étudiante » signifie « je suis étudiante ».',
           ],
           examples: [
-            p('أَنَا طَالِبَةٌ.', 'anā ṭāliba.', 'Je suis étudiante.'),
+            p('أَنَا طَبِيبَةٌ.', 'anā ṭabība.', 'Je suis médecin.'),
             p('هِيَ فَرَنْسِيَّةٌ.', 'hiya faransiyya.', 'Elle est française.'),
             p('اَلْبَيْتُ كَبِيرٌ.', 'al-baytu kabīr.', 'La maison est grande.'),
           ],
@@ -192,6 +192,7 @@ export const TIERS: Tier[] = [
           title: 'Le féminin en ـة (tā’ marbūṭa)',
           paragraphs: ['La plupart des noms et adjectifs forment leur féminin en ajoutant ـة, prononcée « a » en fin de phrase.'],
           examples: [
+            p('طَبِيبٌ ← طَبِيبَةٌ', 'ṭabīb → ṭabība', 'médecin (h) → médecin (f)'),
             p('طَالِبٌ ← طَالِبَةٌ', 'ṭālib → ṭāliba', 'étudiant → étudiante'),
             p('فَرَنْسِيٌّ ← فَرَنْسِيَّةٌ', 'faransī → faransiyya', 'français → française'),
             p('مُعَلِّمٌ ← مُعَلِّمَةٌ', 'muʿallim → muʿallima', 'professeur (h) → professeure'),
@@ -242,6 +243,8 @@ export const TIERS: Tier[] = [
       ['أَنَا مِنْ فَرَنْسَا.', 'anā min faransā.', 'je viens de France'],
       ['فَرَنْسِيٌّ / فَرَنْسِيَّةٌ', 'faransī / faransiyya', 'français / française'],
       ['عَرَبِيٌّ / عَرَبِيَّةٌ', 'ʿarabī / ʿarabiyya', 'arabe (m / f)'],
+      ['طَبِيبٌ / طَبِيبَةٌ', 'ṭabīb / ṭabība', 'médecin (h / f)'],
+      ['مَاذَا تَعْمَلِينَ؟', 'mādhā taʿmalīn ?', 'que fais-tu dans la vie ? (à une femme)'],
       ['طَالِبٌ / طَالِبَةٌ', 'ṭālib / ṭāliba', 'étudiant / étudiante'],
       ['مُعَلِّمٌ / مُعَلِّمَةٌ', 'muʿallim / muʿallima', 'professeur (h / f)'],
       ['صَدِيقٌ / صَدِيقَةٌ', 'ṣadīq / ṣadīqa', 'ami / amie'],
@@ -254,7 +257,7 @@ export const TIERS: Tier[] = [
       branches: [
         { label: 'Mon nom', items: [p('اِسْمِي جُولْيِيت', 'ismī Jūliyet', 'je m’appelle Juliette')] },
         { label: 'Mon origine', items: [p('أَنَا مِنْ فَرَنْسَا', 'anā min faransā', 'je viens de France'), p('فَرَنْسِيَّةٌ', 'faransiyya', 'française')] },
-        { label: 'Mon activité', items: [p('طَالِبَةٌ', 'ṭāliba', 'étudiante'), p('مُعَلِّمَةٌ', 'muʿallima', 'professeure')] },
+        { label: 'Mon métier', items: [p('أَنَا طَبِيبَةٌ', 'anā ṭabība', 'je suis médecin'), p('فِي الْمُسْتَشْفَى', 'fī l-mustashfā', 'à l’hôpital')] },
         { label: 'Mes langues', items: [p('اَلْفَرَنْسِيَّةُ', 'al-faransiyya', 'le français'), p('اَلْعَرَبِيَّةُ', 'al-ʿarabiyya', 'l’arabe')] },
       ],
     },
@@ -263,7 +266,7 @@ export const TIERS: Tier[] = [
       lines: [
         p('اِسْمِي جُولْيِيت.', 'ismī Jūliyet.', 'Je m’appelle Juliette.'),
         p('أَنَا مِنْ فَرَنْسَا.', 'anā min faransā.', 'Je viens de France.'),
-        p('أَنَا طَالِبَةٌ.', 'anā ṭāliba.', 'Je suis étudiante.'),
+        p('أَنَا طَبِيبَةٌ.', 'anā ṭabība.', 'Je suis médecin.'),
         p('صَدِيقِي اسْمُهُ سَامِي.', 'ṣadīqī smuhu Sāmī.', 'Mon ami s’appelle Sami.'),
         p('هُوَ مِنْ لُبْنَانَ، وَهُوَ مُعَلِّمٌ.', 'huwa min lubnān, wa huwa muʿallim.', 'Il vient du Liban, et il est professeur.'),
         p('نَحْنُ صَدِيقَانِ.', 'naḥnu ṣadīqān.', 'Nous sommes deux amis. (duel !)'),
@@ -277,8 +280,9 @@ export const TIERS: Tier[] = [
         { speaker: 'Juliette', ar: 'اِسْمِي جُولْيِيت.', fr: 'Je m’appelle Juliette.' },
         { speaker: 'Layla', ar: 'تَشَرَّفْنَا! مِنْ أَيْنَ أَنْتِ؟', fr: 'Enchantée ! D’où viens-tu ?' },
         { speaker: 'Juliette', ar: 'أَنَا مِنْ فَرَنْسَا. وَأَنْتِ؟', fr: 'Je viens de France. Et toi ?' },
-        { speaker: 'Layla', ar: 'أَنَا مِنْ مِصْرَ. هَلْ أَنْتِ طَالِبَةٌ؟', fr: 'Je viens d’Égypte. Es-tu étudiante ?' },
-        { speaker: 'Juliette', ar: 'نَعَمْ، أَنَا طَالِبَةٌ.', fr: 'Oui, je suis étudiante.' },
+        { speaker: 'Layla', ar: 'أَنَا مِنْ مِصْرَ. مَاذَا تَعْمَلِينَ؟', fr: 'Je viens d’Égypte. Que fais-tu dans la vie ?' },
+        { speaker: 'Juliette', ar: 'أَنَا طَبِيبَةٌ.', fr: 'Je suis médecin.' },
+        { speaker: 'Layla', ar: 'رَائِعٌ!', fr: 'Formidable !' },
       ],
     },
     conversation: {
@@ -286,7 +290,7 @@ export const TIERS: Tier[] = [
       steps: [
         { bot: p('مَا اسْمُكِ؟', 'mā smuki ?', 'Comment t’appelles-tu ?'), expected: ['اسمي', 'انا'], hint: p('اِسْمِي جُولْيِيت.', 'ismī Jūliyet.', 'Je m’appelle Juliette.') },
         { bot: p('مِنْ أَيْنَ أَنْتِ؟', 'min ayna anti ?', 'D’où viens-tu ?'), expected: ['انا من', 'من فرنسا'], hint: p('أَنَا مِنْ فَرَنْسَا.', 'anā min faransā.', 'Je viens de France.') },
-        { bot: p('هَلْ أَنْتِ طَالِبَةٌ؟', 'hal anti ṭāliba ?', 'Es-tu étudiante ?'), expected: ['نعم', 'لا'], hint: p('نَعَمْ، أَنَا طَالِبَةٌ.', 'naʿam, anā ṭāliba.', 'Oui, je suis étudiante.') },
+        { bot: p('مَاذَا تَعْمَلِينَ؟', 'mādhā taʿmalīn ?', 'Que fais-tu dans la vie ?'), expected: ['انا', 'طبيبه'], hint: p('أَنَا طَبِيبَةٌ.', 'anā ṭabība.', 'Je suis médecin.') },
         { bot: p('تَشَرَّفْنَا!', 'tasharrafnā !', 'Enchantée !'), expected: ['تشرفنا', 'شكرا'], hint: p('تَشَرَّفْنَا!', 'tasharrafnā !', 'Enchantée !') },
       ],
     },
@@ -717,7 +721,7 @@ export const TIERS: Tier[] = [
         p('اِسْتَيْقَظَتْ جُولْيِيت فِي السَّاعَةِ السَّادِسَةِ.', 'istayqaẓat Jūliyet fī s-sāʿati s-sādisa.', 'Juliette s’est réveillée à six heures.'),
         p('شَرِبَتِ الْقَهْوَةَ وَأَكَلَتْ خُبْزًا.', 'sharibati l-qahwata wa akalat khubzan.', 'Elle a bu un café et mangé du pain.'),
         p('ثُمَّ ذَهَبَتْ إِلَى الْمُسْتَشْفَى.', 'thumma dhahabat ilā l-mustashfā.', 'Puis elle est allée à l’hôpital.'),
-        p('عَمِلَتْ كَثِيرًا وَسَاعَدَتْ مَرْضَى كَثِيرِينَ.', 'ʿamilat kathīran wa sāʿadat marḍā kathīrīn.', 'Elle a beaucoup travaillé et aidé de nombreux patients.'),
+        p('فَحَصَتْ مَرْضَى كَثِيرِينَ، فَهِيَ طَبِيبَةٌ.', 'faḥaṣat marḍā kathīrīn, fa-hiya ṭabība.', 'Elle a examiné de nombreux patients, car elle est médecin.'),
         p('فِي الْمَسَاءِ، رَجَعَتْ إِلَى الْبَيْتِ.', 'fī l-masā’, rajaʿat ilā l-bayt.', 'Le soir, elle est rentrée à la maison.'),
         p('قَرَأَتْ رِوَايَةً، ثُمَّ نَامَتْ.', 'qara’at riwāyatan, thumma nāmat.', 'Elle a lu un roman, puis elle s’est endormie.'),
       ],

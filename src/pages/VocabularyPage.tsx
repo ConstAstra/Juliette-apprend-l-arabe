@@ -30,7 +30,7 @@ export function VocabularyPage() {
       </section>
       <section className="rounded-3xl border border-or-400/30 bg-gradient-to-br from-or-600/25 to-abysse p-4">
         <h2 className="text-lg font-extrabold">🩺 Comprendre ses patients</h2>
-        <p className="mb-3 text-sm opacity-90">Le corps, les maux, les maladies, la consultation — et les plaintes telles qu’on les entend en dialecte.</p>
+        <p className="mb-3 text-sm opacity-90">Le vocabulaire de la docteure Juliette : le corps, les maux, les maladies, la consultation, et les plaintes telles qu’on les entend en dialecte.</p>
         <div className="grid gap-2 sm:grid-cols-2">
           {MEDICAL_THEMES.map((t) => <ThemeCard key={t.id} theme={t} />)}
         </div>

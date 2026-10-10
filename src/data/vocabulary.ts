@@ -118,7 +118,7 @@ export const JULIETTE_THEMES: VocabTheme[] = [
   },
 ]
 
-/** « Comprendre ses patients » : le vocabulaire de soignante de Juliette. */
+/** « Comprendre ses patients » : le vocabulaire médical de la docteure Juliette. */
 export const MEDICAL_THEMES: VocabTheme[] = [
   {
     id: 'corps',
@@ -222,9 +222,15 @@ export const MEDICAL_THEMES: VocabTheme[] = [
     id: 'consultation',
     title: 'La consultation',
     emoji: '🏥',
-    note: 'Les questions sont données au masculin. À une patiente, la terminaison change : أَيْنَ يُؤْلِمُكِ؟ (yu’limuki), هَلْ تَأْخُذِينَ دَوَاءً؟ Et à tout malade, souhaitez سَلَامَتَكَ / سَلَامَتَكِ, « prompt rétablissement » : c’est la formule de réconfort la plus répandue.',
+    note: 'Les formules sont celles du médecin, c’est-à-dire les vôtres. On appelle volontiers un médecin الدُّكْتُور / الدُّكْتُورَة (« docteur »). Les questions sont données au masculin. À une patiente, la terminaison change : أَيْنَ يُؤْلِمُكِ؟ (yu’limuki), هَلْ تَأْخُذِينَ دَوَاءً؟ Et à tout malade, souhaitez سَلَامَتَكَ / سَلَامَتَكِ, « prompt rétablissement » : c’est la formule de réconfort la plus répandue.',
     words: words('consultation', [
       ['طَبِيبٌ / طَبِيبَةٌ', 'ṭabīb / ṭabība', 'un médecin (h / f)'],
+      ['أَنَا الدُّكْتُورَةُ جُولْيِيت', 'anā d-duktūratu Jūliyet', 'je suis la docteure Juliette'],
+      ['سَأَفْحَصُكَ', 'sa-afḥaṣuka', 'je vais vous examiner'],
+      ['فَحْصٌ', 'faḥṣ', 'un examen'],
+      ['تَشْخِيصٌ', 'tashkhīṣ', 'un diagnostic'],
+      ['صُورَةُ أَشِعَّةٍ', 'ṣūratu ashiʿʿa', 'une radiographie'],
+      ['سَمَّاعَةٌ طِبِّيَّةٌ', 'sammāʿa ṭibbiyya', 'un stéthoscope'],
       ['مُمَرِّضٌ / مُمَرِّضَةٌ', 'mumarriḍ / mumarriḍa', 'un infirmier / une infirmière'],
       ['مُسْتَشْفًى', 'mustashfā', 'un hôpital'],
       ['اَلطَّوَارِئُ', 'aṭ-ṭawāri’', 'les urgences'],
@@ -249,9 +255,9 @@ export const MEDICAL_THEMES: VocabTheme[] = [
     ]),
     dialogue: {
       title: 'Aux urgences',
-      intro: 'Karim arrive aux urgences ; Juliette l’accueille. Écoutez d’abord sans lire, puis révélez la transcription.',
+      intro: 'Karim arrive aux urgences ; la docteure Juliette le reçoit. Écoutez d’abord sans lire, puis révélez la transcription.',
       lines: [
-        { speaker: 'Juliette', ar: 'صَبَاحُ الْخَيْرِ. مَا اسْمُكَ؟', fr: 'Bonjour. Comment vous appelez-vous ?' },
+        { speaker: 'Juliette', ar: 'صَبَاحُ الْخَيْرِ، أَنَا الدُّكْتُورَةُ جُولْيِيت. مَا اسْمُكَ؟', fr: 'Bonjour, je suis la docteure Juliette. Comment vous appelez-vous ?' },
         { speaker: 'Karim', ar: 'اِسْمِي كَرِيمٌ.', fr: 'Je m’appelle Karim.' },
         { speaker: 'Juliette', ar: 'مَاذَا بِكَ يَا كَرِيمُ؟', fr: 'Qu’est-ce qui ne va pas, Karim ?' },
         { speaker: 'Karim', ar: 'بَطْنِي يُؤْلِمُنِي كَثِيرًا.', fr: 'J’ai très mal au ventre.' },
@@ -261,8 +267,8 @@ export const MEDICAL_THEMES: VocabTheme[] = [
         { speaker: 'Karim', ar: 'لَا، لَيْسَ عِنْدِي حُمَّى.', fr: 'Non, je n’ai pas de fièvre.' },
         { speaker: 'Juliette', ar: 'كَمْ أَلَمُكَ مِنْ وَاحِدٍ إِلَى عَشَرَةٍ؟', fr: 'De 1 à 10, combien avez-vous mal ?' },
         { speaker: 'Karim', ar: 'سَبْعَةٌ.', fr: 'Sept.' },
-        { speaker: 'Juliette', ar: 'لَا تَقْلَقْ، سَيَأْتِي الطَّبِيبُ حَالًا. سَلَامَتَكَ!', fr: 'Ne vous inquiétez pas, le médecin arrive tout de suite. Prompt rétablissement !' },
-        { speaker: 'Karim', ar: 'شُكْرًا جَزِيلًا.', fr: 'Merci beaucoup.' },
+        { speaker: 'Juliette', ar: 'لَا تَقْلَقْ، سَأَفْحَصُكَ الْآنَ. سَلَامَتَكَ!', fr: 'Ne vous inquiétez pas, je vais vous examiner tout de suite. Prompt rétablissement !' },
+        { speaker: 'Karim', ar: 'شُكْرًا يَا دُكْتُورَة.', fr: 'Merci, docteure.' },
       ],
     },
   },
