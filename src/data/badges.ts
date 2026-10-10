@@ -35,6 +35,7 @@ export const BADGES: Badge[] = [
   { id: 'bibliothecaire', emoji: '📑', title: 'Rat de bibliothèque', description: 'Consulter toutes les fiches de référence.', earned: (p) => REFERENCE.every((r) => p.seenRefs[r.id]) },
   { id: 'conteuse', emoji: '📜', title: 'Conteuse', description: 'Lire trois textes de la bibliothèque.', earned: (p) => Object.keys(p.readTexts).length >= 3 },
   { id: 'historienne', emoji: '🏛️', title: 'Historienne', description: 'Parcourir toute la frise historique.', earned: (p) => HISTORY.every((h) => p.seenHistory[h.id]) },
+  { id: 'joueuse', emoji: '🎲', title: 'Joueuse', description: 'Jouer aux trois jeux.', earned: (p) => ['racines', 'formes', 'memoire'].every((g) => p.games[g] !== undefined) },
   { id: 'boussole', emoji: '🧭', title: 'Boussole', description: 'Passer le test de niveau.', earned: (p) => p.placement !== null },
   { id: 'aquarium', emoji: '🦈', title: 'Grand aquarium', description: 'Atteindre le niveau 8 et débloquer le requin.', earned: (p) => levelInfo(p.xp).level >= 8 },
   { id: 'blouse-blanche', emoji: '🩺', title: 'Blouse blanche', description: 'Explorer les cinq fiches « Comprendre ses patients ».', earned: (p) => MEDICAL_THEMES.every((t) => p.seenThemes[t.id]) },

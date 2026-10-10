@@ -17,6 +17,7 @@ import { PlacementPage } from './pages/PlacementPage'
 import { MorePage } from './pages/MorePage'
 import { LibraryList, TextReader } from './pages/LibraryPage'
 import { HistoryPage } from './pages/HistoryPage'
+import { GamesHome, GamePlay } from './pages/GamesPage'
 
 export function App() {
   return (
@@ -44,6 +45,8 @@ export function App() {
           <Route path="bibliotheque" element={<LibraryList />} />
           <Route path="bibliotheque/:textId" element={<TextReader />} />
           <Route path="histoire" element={<HistoryPage />} />
+          <Route path="jeux" element={<GamesHome />} />
+          <Route path="jeux/:gameId" element={<GamePlay />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

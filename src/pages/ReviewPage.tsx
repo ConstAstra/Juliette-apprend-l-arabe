@@ -19,6 +19,13 @@ export function ReviewHome() {
       <p className="muted">
         Méthode Leitner : chaque carte réussie monte d’une boîte et revient plus tard (1, 2, 4, 8 puis 16 jours) ; une carte manquée retourne dans la première boîte.
       </p>
+      <Link to="/jeux" className="card flex items-center gap-3 border-or-400/40">
+        <span lang="ar" className="font-arabic text-3xl text-or-300">جـ</span>
+        <div className="flex-1">
+          <div className="font-bold">Envie de jouer ?</div>
+          <div className="muted text-sm">Racines, formes verbales et mémo des abysses</div>
+        </div>
+      </Link>
       {DECKS.map((d) => {
         const s = deckStats(d.id, progress)
         return (

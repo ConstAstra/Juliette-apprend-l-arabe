@@ -76,14 +76,21 @@ export function ProgressPage() {
 
       <section>
         <h2 className="mb-2 font-bold">Badges · {earned.length} / {BADGES.length}</h2>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-x-2 gap-y-4">
           {BADGES.map((b) => {
             const ok = b.earned(progress)
             return (
-              <div key={b.id} className={`card p-3 text-center ${ok ? '' : 'opacity-40 grayscale'}`} title={b.description}>
-                <div className="text-3xl">{b.emoji}</div>
-                <div className="text-sm font-bold">{b.title}</div>
-                <div className="muted text-xs">{b.description}</div>
+              <div key={b.id} className="flex flex-col items-center gap-1 text-center" title={b.description}>
+                <span className={`relative flex size-16 items-center justify-center ${ok ? 'text-or-400 drop-shadow-[0_0_10px_rgb(221_187_114/0.55)]' : 'text-trait'}`}>
+                  <svg viewBox="0 0 48 48" className="absolute inset-0 size-full" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden>
+                    <rect x="9" y="9" width="30" height="30" className={ok ? 'fill-abysse' : 'fill-nuit'} />
+                    <rect x="9" y="9" width="30" height="30" transform="rotate(45 24 24)" className={ok ? 'fill-abysse' : 'fill-nuit'} />
+                    <circle cx="24" cy="24" r="12.5" />
+                  </svg>
+                  <span className={`relative text-2xl ${ok ? '' : 'opacity-25 grayscale'}`}>{b.emoji}</span>
+                </span>
+                <span className={`text-sm leading-tight ${ok ? 'font-bold text-or-300' : 'text-brume'}`}>{b.title}</span>
+                <span className="muted text-[0.7rem] leading-tight">{b.description}</span>
               </div>
             )
           })}

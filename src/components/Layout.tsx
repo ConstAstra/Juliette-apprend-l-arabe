@@ -21,7 +21,7 @@ const NAV: { to: string; label: string; Icon: ComponentType<{ className?: string
 ]
 
 // Pages regroupées sous l'onglet « Plus ».
-const UNDER_MORE = ['/vocabulaire', '/fiches', '/test-niveau', '/progres', '/profils', '/avatar', '/bibliotheque', '/histoire']
+const UNDER_MORE = ['/vocabulaire', '/fiches', '/test-niveau', '/progres', '/profils', '/avatar', '/bibliotheque', '/histoire', '/jeux']
 
 export function Layout() {
   const profile = useActiveProfile()

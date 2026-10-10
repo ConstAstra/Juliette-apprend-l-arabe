@@ -48,6 +48,8 @@ export interface ProgressData {
   bestRecognition: number
   seenRefs: Record<string, true>
   readTexts: Record<string, true>
+  /** Meilleur score par jeu. */
+  games: Record<string, number>
   seenHistory: Record<string, true>
   /** Deux paquets Leitner séparés : vocabulaire et grammaire. */
   srs: Record<DeckId, Record<string, LeitnerEntry>>
@@ -63,6 +65,7 @@ interface ProgressActions {
   recordRecognition: (score: number) => void
   markRefSeen: (id: string) => void
   markTextRead: (id: string) => void
+  recordGame: (id: string, score: number) => void
   markHistorySeen: (id: string) => void
   reviewCard: (deck: DeckId, cardId: string, known: boolean) => void
   setPlacement: (level: string) => void
@@ -79,6 +82,7 @@ export const INITIAL_PROGRESS: ProgressData = {
   bestRecognition: 0,
   seenRefs: {},
   readTexts: {},
+  games: {},
   seenHistory: {},
   srs: { vocabulaire: {}, grammaire: {} },
   placement: null,
@@ -123,6 +127,10 @@ export const useProgress = create<ProgressData & ProgressActions>()(
         if (get().readTexts[id]) return
         set({ readTexts: { ...get().readTexts, [id]: true } })
         get().addXp(15)
+      },
+      recordGame: (id, score) => {
+        set({ games: { ...get().games, [id]: Math.max(get().games[id] ?? 0, score) } })
+        get().addXp(score)
       },
       markHistorySeen: (id) => {
         if (get().seenHistory[id]) return

@@ -15,6 +15,7 @@ Application web progressive (PWA) d’apprentissage de l’arabe, en français. 
 - **Test de niveau CECR** autoévalué (20 affirmations « je peux… »).
 - **Bibliothèque** : contes (Juḥā, Sindbad), fable de Kalīla wa Dimna, vers classiques du domaine public et textes modernes originaux, avec traductions voilées, glossaire et quiz.
 - **Histoire du monde arabophone** : frise en sept époques, des caravanes à la Nahda, avec la médecine arabe et les navigateurs.
+- **Jeux** : le chasseur de racines, devine la forme (I à X), le mémo des abysses.
 - **Avatars marins** : treize animaux, chacun avec son nom arabe à écouter, débloqués au fil des niveaux (du dauphin à la baleine bleue), sur sept fonds aux couleurs de la mer.
 - **Mode avec ou sans diacritiques**, translittération facultative.
 - **Progression** : XP, niveaux, série quotidienne, badges, calendrier de régularité.

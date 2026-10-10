@@ -279,6 +279,27 @@ await step('Histoire : frise et chapitres', async () => {
   await shot('20-histoire')
 })
 
+await step('Jeux : racines, formes et mémo', async () => {
+  await go('/jeux')
+  await page.getByText('Le chasseur de racines').click()
+  for (let i = 0; i < 10; i++) {
+    if (i === 0) await shot('23-racines')
+    await page.locator('.grid.grid-cols-2 button').first().click()
+    await page.getByRole('button', { name: /Suivant|Résultat/ }).click()
+  }
+  await page.getByText(/\/ 10/).waitFor()
+  await go('/jeux/formes')
+  await page.getByText('À quelle forme appartient ce verbe ?').waitFor()
+  await go('/jeux/memoire')
+  const cards = page.getByRole('button', { name: 'Carte retournée' })
+  assert((await cards.count()) === 12, 'le mémo doit compter 12 cartes')
+  await cards.nth(0).click()
+  await cards.nth(0).click()
+  await page.getByText(/1 coup ·/).waitFor()
+  await noHorizontalScroll()
+  await shot('24-memo')
+})
+
 await step('Onglet « Plus » et progrès', async () => {
   await go('/plus')
   await page.getByText('Fiches de référence').waitFor()
