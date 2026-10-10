@@ -15,6 +15,8 @@ import { ReviewHome, ReviewSession } from './pages/ReviewPage'
 import { ReferenceList, ReferenceSheet } from './pages/ReferencePage'
 import { PlacementPage } from './pages/PlacementPage'
 import { MorePage } from './pages/MorePage'
+import { LibraryList, TextReader } from './pages/LibraryPage'
+import { HistoryPage } from './pages/HistoryPage'
 
 export function App() {
   return (
@@ -39,6 +41,9 @@ export function App() {
           <Route path="fiches/:refId" element={<ReferenceSheet />} />
           <Route path="test-niveau" element={<PlacementPage />} />
           <Route path="plus" element={<MorePage />} />
+          <Route path="bibliotheque" element={<LibraryList />} />
+          <Route path="bibliotheque/:textId" element={<TextReader />} />
+          <Route path="histoire" element={<HistoryPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

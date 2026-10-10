@@ -4,6 +4,8 @@ import { useActiveProfile } from '../store/profiles'
 
 const LINKS = [
   { to: '/vocabulaire', emoji: '📚', title: 'Vocabulaire', text: 'Le vocabulaire spécial de Juliette, le vocabulaire médical et les thèmes généraux' },
+  { to: '/bibliotheque', emoji: '📜', title: 'La bibliothèque', text: 'Contes, fables, poésie et textes modernes, du A2 au B2' },
+  { to: '/histoire', emoji: '🏛️', title: 'Histoire du monde arabophone', text: 'Des caravanes à la Nahda : sciences, médecine et navigateurs' },
   { to: '/fiches', emoji: '📑', title: 'Fiches de référence', text: 'Racines et formes verbales, cas, conjugaison, nombres, expressions' },
   { to: '/test-niveau', emoji: '🧭', title: 'Test de niveau', text: 'Autoévaluation selon le CECR' },
   { to: '/progres', emoji: '🏅', title: 'Progrès', text: 'Niveau, badges et calendrier de régularité' },

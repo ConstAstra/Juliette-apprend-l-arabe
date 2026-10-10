@@ -47,6 +47,8 @@ export interface ProgressData {
   seenThemes: Record<string, true>
   bestRecognition: number
   seenRefs: Record<string, true>
+  readTexts: Record<string, true>
+  seenHistory: Record<string, true>
   /** Deux paquets Leitner séparés : vocabulaire et grammaire. */
   srs: Record<DeckId, Record<string, LeitnerEntry>>
   placement: Placement | null
@@ -60,6 +62,8 @@ interface ProgressActions {
   markThemeSeen: (id: string) => void
   recordRecognition: (score: number) => void
   markRefSeen: (id: string) => void
+  markTextRead: (id: string) => void
+  markHistorySeen: (id: string) => void
   reviewCard: (deck: DeckId, cardId: string, known: boolean) => void
   setPlacement: (level: string) => void
   updateSettings: (patch: Partial<Settings>) => void
@@ -74,6 +78,8 @@ export const INITIAL_PROGRESS: ProgressData = {
   seenThemes: {},
   bestRecognition: 0,
   seenRefs: {},
+  readTexts: {},
+  seenHistory: {},
   srs: { vocabulaire: {}, grammaire: {} },
   placement: null,
   settings: { tashkeel: true, translit: true, speechRate: 0.85 },
@@ -111,6 +117,16 @@ export const useProgress = create<ProgressData & ProgressActions>()(
       markRefSeen: (id) => {
         if (get().seenRefs[id]) return
         set({ seenRefs: { ...get().seenRefs, [id]: true } })
+        get().addXp(5)
+      },
+      markTextRead: (id) => {
+        if (get().readTexts[id]) return
+        set({ readTexts: { ...get().readTexts, [id]: true } })
+        get().addXp(15)
+      },
+      markHistorySeen: (id) => {
+        if (get().seenHistory[id]) return
+        set({ seenHistory: { ...get().seenHistory, [id]: true } })
         get().addXp(5)
       },
       reviewCard: (deck, cardId, known) => {

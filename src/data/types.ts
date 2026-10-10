@@ -114,3 +114,27 @@ export interface RefSheet {
   lessons: Lesson[]
   cards: GrammarCard[]
 }
+
+export interface LibraryText {
+  id: string
+  genre: 'Conte' | 'Fable' | 'Poésie' | 'Texte moderne'
+  level: Cefr
+  title: string
+  arTitle: string
+  /** Origine du texte (auteur, recueil, ou adaptation). */
+  source: string
+  intro: string
+  lines: Phrase[]
+  glossary: Word[]
+  quiz: QuizQuestion[]
+}
+
+export interface HistoryChapter {
+  id: string
+  era: string
+  title: string
+  arTitle: string
+  paragraphs: string[]
+  words: Phrase[]
+  fact?: string
+}

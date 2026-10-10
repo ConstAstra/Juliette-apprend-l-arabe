@@ -63,6 +63,16 @@ export function Dashboard() {
             <div className="muted text-sm">{dueToday ? `${dueToday} cartes vous attendent` : 'Tout est à jour'}</div>
           </div>
         </Link>
+        <Link to="/bibliotheque" className="card flex flex-col gap-1">
+          <Ar as="span" text="حِكَايَات" className="text-2xl text-or-400" />
+          <div className="font-bold">La bibliothèque</div>
+          <div className="muted text-sm">Juḥā, Sindbad, poésie</div>
+        </Link>
+        <Link to="/histoire" className="card flex flex-col gap-1">
+          <Ar as="span" text="تَارِيخ" className="text-2xl text-or-400" />
+          <div className="font-bold">L’histoire</div>
+          <div className="muted text-sm">Bagdad, Avicenne, les marins</div>
+        </Link>
         <Link to="/vocabulaire" className="card flex flex-col gap-1">
           <span className="text-2xl">🐬 ⛵</span>
           <div className="font-bold">Le monde de Juliette</div>

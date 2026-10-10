@@ -2,6 +2,7 @@ import { REFERENCE } from '../data/reference'
 import { TIERS } from '../data/tiers'
 import type { Tier } from '../data/types'
 import { ALL_THEMES } from '../data/vocabulary'
+import { LIBRARY } from '../data/library'
 import { shuffle } from './arabic'
 import { todayKey, type DeckId, type ProgressData } from '../store/progress'
 
@@ -19,11 +20,12 @@ export interface ReviewCard {
 
 const tierStarted = (p: ProgressData, t: Tier) => t.order === 1 || (p.completed[t.id]?.length ?? 0) > 0
 
-/** Vocabulaire des paliers entamés et des thèmes consultés. */
+/** Vocabulaire des paliers entamés, des thèmes consultés et des glossaires des textes lus. */
 export function vocabularyCards(p: ProgressData): ReviewCard[] {
   const words = [
     ...TIERS.filter((t) => tierStarted(p, t)).flatMap((t) => t.vocabulary),
     ...ALL_THEMES.filter((t) => p.seenThemes[t.id]).flatMap((t) => t.words),
+    ...LIBRARY.filter((t) => p.readTexts[t.id]).flatMap((t) => t.glossary),
   ]
   return words.map((w) => ({ id: w.id, frontAr: w.ar, backFr: w.fr, backTr: w.tr, speak: w.ar }))
 }

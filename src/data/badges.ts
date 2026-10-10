@@ -2,6 +2,7 @@ import { LETTERS } from './letters'
 import { JULIETTE_THEMES, MEDICAL_THEMES } from './vocabulary'
 import { TIERS, tabsForTier } from './tiers'
 import { REFERENCE } from './reference'
+import { HISTORY } from './history'
 import { levelInfo, streak, type ProgressData } from '../store/progress'
 
 export interface Badge {
@@ -31,6 +32,8 @@ export const BADGES: Badge[] = [
   { id: 'xp-500', emoji: '💎', title: '500 XP', description: 'Accumuler 500 points d’expérience.', earned: (p) => p.xp >= 500 },
   { id: 'premiere-revision', emoji: '🃏', title: 'Première révision', description: 'Réviser une carte en méthode Leitner.', earned: (p) => Object.keys(p.srs.vocabulaire).length + Object.keys(p.srs.grammaire).length > 0 },
   { id: 'bibliothecaire', emoji: '📑', title: 'Rat de bibliothèque', description: 'Consulter toutes les fiches de référence.', earned: (p) => REFERENCE.every((r) => p.seenRefs[r.id]) },
+  { id: 'conteuse', emoji: '📜', title: 'Conteuse', description: 'Lire trois textes de la bibliothèque.', earned: (p) => Object.keys(p.readTexts).length >= 3 },
+  { id: 'historienne', emoji: '🏛️', title: 'Historienne', description: 'Parcourir toute la frise historique.', earned: (p) => HISTORY.every((h) => p.seenHistory[h.id]) },
   { id: 'boussole', emoji: '🧭', title: 'Boussole', description: 'Passer le test de niveau.', earned: (p) => p.placement !== null },
   { id: 'aquarium', emoji: '🦈', title: 'Grand aquarium', description: 'Atteindre le niveau 8 et débloquer le requin.', earned: (p) => levelInfo(p.xp).level >= 8 },
   { id: 'blouse-blanche', emoji: '🩺', title: 'Blouse blanche', description: 'Explorer les cinq fiches « Comprendre ses patients ».', earned: (p) => MEDICAL_THEMES.every((t) => p.seenThemes[t.id]) },

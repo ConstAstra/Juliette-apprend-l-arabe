@@ -247,6 +247,33 @@ await step('Test de niveau CECR', async () => {
   await page.getByRole('heading', { name: 'Votre niveau estimé : A1' }).waitFor()
 })
 
+await step('Bibliothèque : liseuse, traductions voilées et quiz', async () => {
+  await go('/bibliotheque')
+  for (const t of ['Juḥā, son fils et l’âne', 'Sindbad et l’île étrange', 'Quatre vers immortels', 'Une nuit aux urgences']) await page.getByText(t, { exact: true }).waitFor()
+  await go('/bibliotheque/sindbad')
+  assert(!(await page.getByText('Soudain, l’île bougea !').isVisible()), 'traduction visible avant dévoilement')
+  await page.getByRole('button', { name: 'Dévoiler la traduction' }).nth(3).click()
+  await page.getByText('Soudain, l’île bougea !').waitFor()
+  await noHorizontalScroll()
+  await shot('18-sindbad')
+  for (let i = 0; i < 3; i++) {
+    await page.locator('.grid.gap-2 button').first().click()
+    await page.getByRole('button', { name: /Suivant|Résultat/ }).click()
+  }
+  await page.getByText(/Texte lu/).waitFor()
+  await go('/bibliotheque/vers-celebres')
+  await shot('19-poesie')
+})
+
+await step('Histoire : frise et chapitres', async () => {
+  await go('/histoire')
+  await page.getByRole('button', { name: /Bagdad et l’âge d’or/ }).click()
+  await page.getByText(/Canon de la médecine/).waitFor()
+  await page.getByText('Le saviez-vous ?').waitFor()
+  await noHorizontalScroll()
+  await shot('20-histoire')
+})
+
 await step('Onglet « Plus » et progrès', async () => {
   await go('/plus')
   await page.getByText('Fiches de référence').waitFor()
