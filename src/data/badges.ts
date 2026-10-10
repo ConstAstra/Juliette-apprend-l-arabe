@@ -25,6 +25,7 @@ export const BADGES: Badge[] = [
   { id: 'oeil-de-lynx', emoji: '🦉', title: 'Œil de lynx', description: 'Obtenir 10/10 à l’exercice de reconnaissance.', earned: (p) => p.bestRecognition >= 10 },
   { id: 'premier-palier', emoji: '🏁', title: 'Premier palier', description: 'Terminer tous les onglets du palier A1.1.', earned: (p) => tierDone(p, 'a1-1') },
   { id: 'a1', emoji: '🎓', title: 'Niveau A1', description: 'Terminer les quatre paliers A1.', earned: (p) => TIERS.filter((t) => t.level === 'A1').every((t) => tierDone(p, t.id)) },
+  { id: 'a2', emoji: '🗝️', title: 'Niveau A2', description: 'Terminer les trois paliers A2.', earned: (p) => TIERS.filter((t) => t.level === 'A2').every((t) => tierDone(p, t.id)) },
   { id: 'serie-3', emoji: '🔥', title: 'Trois jours d’affilée', description: 'Pratiquer trois jours de suite.', earned: (p) => streak(p.activity) >= 3 },
   { id: 'serie-7', emoji: '🌟', title: 'Une semaine entière', description: 'Pratiquer sept jours de suite.', earned: (p) => streak(p.activity) >= 7 },
   { id: 'xp-500', emoji: '💎', title: '500 XP', description: 'Accumuler 500 points d’expérience.', earned: (p) => p.xp >= 500 },

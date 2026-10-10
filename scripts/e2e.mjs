@@ -112,6 +112,17 @@ await step('Palier A1.1 : dix onglets, validation et diacritiques', async () => 
   await shot('06-palier-grammaire')
 })
 
+await step('Paliers A2 : neuf onglets, sans alphabet', async () => {
+  await go('/paliers')
+  for (const t of ['Raconter sa journée', 'En ville et au marché', 'Au restaurant']) await page.getByText(t, { exact: true }).waitFor()
+  await go('/paliers/a2-3')
+  assert((await page.getByRole('tab').count()) === 9, 'nombre d’onglets A2')
+  await page.getByRole('tab', { name: /Grammaire/ }).click()
+  await page.getByRole('heading', { name: 'Les pluriels brisés' }).waitFor()
+  await noHorizontalScroll()
+  await shot('17-palier-a2')
+})
+
 await step('Vocabulaire spécial de Juliette', async () => {
   await go('/vocabulaire')
   for (const t of ['Animaux marins', 'Sports à voile', 'Alcool et cocktails', 'Écriture et lecture']) await page.getByText(t, { exact: true }).waitFor()

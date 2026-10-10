@@ -37,7 +37,7 @@ export function TierPage() {
   const active = tabs.find((t) => t.id === tab) ?? tabs[0]
   const activeIndex = tabs.indexOf(active)
   const isDone = done.includes(active.id)
-  const nextTier = TIERS.find((t) => t.order === tier.order + 1 && t.level === tier.level)
+  const nextTier = TIERS[TIERS.indexOf(tier) + 1]
   const complete = () => completeTab(tier.id, active.id)
   // La grammaire et la conversation se valident par l'exercice lui-même.
   const selfValidating = active.id === 'grammaire' || active.id === 'conversation'

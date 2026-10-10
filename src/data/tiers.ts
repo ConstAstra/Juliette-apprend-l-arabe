@@ -600,13 +600,445 @@ export const TIERS: Tier[] = [
       { dialect: 'Marocain', ar: 'هْنَا', tr: 'hna', fr: 'ici', msa: 'هُنَا' },
     ],
   },
+  /* ------------------------------------------------------------------ A2.1 */
+  {
+    id: 'a2-1',
+    level: 'A2',
+    order: 1,
+    title: 'Raconter sa journée',
+    subtitle: 'Le passé, sa négation et les repères de temps',
+    emoji: '🌅',
+    grammar: {
+      lessons: [
+        {
+          title: 'L’accompli : conjuguer au passé',
+          paragraphs: [
+            'Le passé se forme en ajoutant des suffixes à la base du verbe (la forme « il »). Prenons ذَهَبَ, « aller » : il suffit d’apprendre la série des terminaisons, identique pour presque tous les verbes réguliers.',
+            'N’oubliez pas le duel : ذَهَبَا, « ils sont allés, tous les deux ».',
+          ],
+          table: {
+            headers: ['Personne', 'Passé', 'Translittération'],
+            rows: [
+              ['je', 'ar:ذَهَبْتُ', 'dhahabtu'],
+              ['tu (h)', 'ar:ذَهَبْتَ', 'dhahabta'],
+              ['tu (f)', 'ar:ذَهَبْتِ', 'dhahabti'],
+              ['il', 'ar:ذَهَبَ', 'dhahaba'],
+              ['elle', 'ar:ذَهَبَتْ', 'dhahabat'],
+              ['eux deux', 'ar:ذَهَبَا', 'dhahabā'],
+              ['nous', 'ar:ذَهَبْنَا', 'dhahabnā'],
+              ['ils', 'ar:ذَهَبُوا', 'dhahabū'],
+            ],
+          },
+        },
+        {
+          title: 'La négation du passé : لَمْ',
+          paragraphs: [
+            'En arabe standard, on nie le passé avec لَمْ suivi du verbe… au présent, sous une forme raccourcie (l’« apocopé ») : la dernière voyelle tombe et devient soukoun.',
+            'À l’oral, on entend aussi مَا suivi du passé : مَا ذَهَبْتُ. C’est correct, mais plus familier.',
+          ],
+          examples: [
+            p('لَمْ أَذْهَبْ', 'lam adhhab', 'je ne suis pas allé(e)'),
+            p('لَمْ يَأْكُلْ', 'lam ya’kul', 'il n’a pas mangé'),
+            p('لَمْ نَفْهَمْ', 'lam nafham', 'nous n’avons pas compris'),
+            p('مَا ذَهَبْتُ', 'mā dhahabtu', 'je ne suis pas allé(e) (plus oral)'),
+          ],
+        },
+        {
+          title: 'Les repères de temps',
+          paragraphs: ['Les adverbes de temps sont souvent des noms à l’accusatif indéfini, d’où leur terminaison en -an : صَبَاحًا, « le matin ».'],
+          examples: [
+            p('أَمْسِ', 'amsi', 'hier'),
+            p('اَلْيَوْمَ', 'al-yawma', 'aujourd’hui'),
+            p('صَبَاحًا / مَسَاءً', 'ṣabāḥan / masā’an', 'le matin / le soir'),
+            p('فِي السَّاعَةِ السَّابِعَةِ', 'fī s-sāʿati s-sābiʿa', 'à sept heures'),
+            p('ثُمَّ / بَعْدَ ذَلِكَ', 'thumma / baʿda dhālika', 'puis / ensuite'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Comment dit-on « je suis allée » ?', options: ['ذَهَبَتْ', 'ذَهَبْتُ', 'ذَهَبْنَا'], answer: 1 },
+        { question: 'Comment dit-on « elle a écrit » ?', options: ['كَتَبَتْ', 'كَتَبْتِ', 'كَتَبُوا'], answer: 0 },
+        { question: 'Comment nie-t-on « il a mangé » en arabe standard ?', options: ['لَا أَكَلَ', 'لَمْ يَأْكُلْ', 'لَنْ يَأْكُلَ'], answer: 1, explanation: 'لَمْ + présent raccourci.' },
+        { question: 'Que veut dire أَمْسِ ?', options: ['demain', 'hier', 'maintenant'], answer: 1 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'La chadda change le sens',
+        paragraphs: ['Doubler une consonne n’est pas un détail : c’est souvent le signe de la forme II, qui donne un sens différent. Tenez la consonne doublée un instant de plus.'],
+        examples: [p('دَرَسَ', 'darasa', 'il a étudié'), p('دَرَّسَ', 'darrasa', 'il a enseigné'), p('عَلِمَ', 'ʿalima', 'il a su'), p('عَلَّمَ', 'ʿallama', 'il a appris (à quelqu’un)')],
+      },
+      {
+        title: 'La hamza : un petit coup de glotte',
+        paragraphs: ['La hamza (ء) est l’arrêt bref qu’on entend dans « un‿hibou » prononcé avec soin. Ne l’avalez pas au milieu du mot.'],
+        examples: [p('أَكَلَ', 'akala', 'il a mangé'), p('سَأَلَ', 'sa’ala', 'il a demandé'), p('قَرَأَ', 'qara’a', 'il a lu')],
+      },
+    ],
+    writing: [
+      {
+        title: 'Premiers pas dans la lecture sans voyelles',
+        paragraphs: [
+          'Sans diacritiques, un même squelette de lettres peut se lire de plusieurs façons. C’est le contexte, et votre connaissance des schèmes, qui tranchent.',
+          'Essayez dès maintenant : dans ce palier, basculez sur « Sans diacritiques » et relisez l’histoire.',
+        ],
+        examples: [p('كَتَبَ', 'kataba', 'il a écrit — كتب'), p('كُتُبٌ', 'kutub', 'des livres — كتب'), p('كُتِبَ', 'kutiba', 'il a été écrit — كتب')],
+      },
+    ],
+    vocabulary: w('a2-1', [
+      ['اِسْتَيْقَظَ', 'istayqaẓa', 'il s’est réveillé'],
+      ['ذَهَبَ إِلَى…', 'dhahaba ilā…', 'il est allé à…'],
+      ['رَجَعَ', 'rajaʿa', 'il est rentré, revenu'],
+      ['أَكَلَ', 'akala', 'il a mangé'],
+      ['شَرِبَ', 'shariba', 'il a bu'],
+      ['عَمِلَ', 'ʿamila', 'il a travaillé'],
+      ['دَرَسَ', 'darasa', 'il a étudié'],
+      ['قَرَأَ', 'qara’a', 'il a lu'],
+      ['شَاهَدَ', 'shāhada', 'il a regardé'],
+      ['سَبَحَ', 'sabaḥa', 'il a nagé'],
+      ['نَامَ', 'nāma', 'il a dormi, il s’est couché'],
+      ['أَمْسِ', 'amsi', 'hier'],
+      ['اَلْيَوْمَ', 'al-yawma', 'aujourd’hui'],
+      ['غَدًا', 'ghadan', 'demain'],
+      ['اَلسَّاعَةُ', 'as-sāʿa', 'l’heure ; la montre'],
+      ['طُولَ الْيَوْمِ', 'ṭūla l-yawm', 'toute la journée'],
+    ]),
+    mindmap: {
+      center: p('يَوْمِي', 'yawmī', 'ma journée'),
+      branches: [
+        { label: 'Le matin', items: [p('اِسْتَيْقَظْتُ', 'istayqaẓtu', 'je me suis réveillée'), p('شَرِبْتُ الْقَهْوَةَ', 'sharibtu l-qahwa', 'j’ai bu le café')] },
+        { label: 'Le travail', items: [p('ذَهَبْتُ إِلَى الْمُسْتَشْفَى', 'dhahabtu ilā l-mustashfā', 'je suis allée à l’hôpital'), p('عَمِلْتُ', 'ʿamiltu', 'j’ai travaillé')] },
+        { label: 'Le soir', items: [p('رَجَعْتُ إِلَى الْبَيْتِ', 'rajaʿtu ilā l-bayt', 'je suis rentrée'), p('أَكَلْتُ', 'akaltu', 'j’ai mangé')] },
+        { label: 'La nuit', items: [p('قَرَأْتُ رِوَايَةً', 'qara’tu riwāya', 'j’ai lu un roman'), p('نِمْتُ', 'nimtu', 'je me suis endormie')] },
+      ],
+    },
+    story: {
+      title: 'Une journée à l’hôpital',
+      lines: [
+        p('اِسْتَيْقَظَتْ جُولْيِيت فِي السَّاعَةِ السَّادِسَةِ.', 'istayqaẓat Jūliyet fī s-sāʿati s-sādisa.', 'Juliette s’est réveillée à six heures.'),
+        p('شَرِبَتِ الْقَهْوَةَ وَأَكَلَتْ خُبْزًا.', 'sharibati l-qahwata wa akalat khubzan.', 'Elle a bu un café et mangé du pain.'),
+        p('ثُمَّ ذَهَبَتْ إِلَى الْمُسْتَشْفَى.', 'thumma dhahabat ilā l-mustashfā.', 'Puis elle est allée à l’hôpital.'),
+        p('عَمِلَتْ كَثِيرًا وَسَاعَدَتْ مَرْضَى كَثِيرِينَ.', 'ʿamilat kathīran wa sāʿadat marḍā kathīrīn.', 'Elle a beaucoup travaillé et aidé de nombreux patients.'),
+        p('فِي الْمَسَاءِ، رَجَعَتْ إِلَى الْبَيْتِ.', 'fī l-masā’, rajaʿat ilā l-bayt.', 'Le soir, elle est rentrée à la maison.'),
+        p('قَرَأَتْ رِوَايَةً، ثُمَّ نَامَتْ.', 'qara’at riwāyatan, thumma nāmat.', 'Elle a lu un roman, puis elle s’est endormie.'),
+      ],
+    },
+    podcast: {
+      title: 'Qu’as-tu fait hier ?',
+      intro: 'Sami demande à Juliette comment s’est passée sa journée.',
+      lines: [
+        { speaker: 'Sami', ar: 'مَاذَا فَعَلْتِ أَمْسِ؟', fr: 'Qu’as-tu fait hier ?' },
+        { speaker: 'Juliette', ar: 'عَمِلْتُ فِي الْمُسْتَشْفَى طُولَ الْيَوْمِ.', fr: 'J’ai travaillé à l’hôpital toute la journée.' },
+        { speaker: 'Sami', ar: 'وَفِي الْمَسَاءِ؟', fr: 'Et le soir ?' },
+        { speaker: 'Juliette', ar: 'ذَهَبْتُ إِلَى الْبَحْرِ مَعَ صَدِيقَتِي.', fr: 'Je suis allée à la mer avec mon amie.' },
+        { speaker: 'Sami', ar: 'هَلْ سَبَحْتُمَا؟', fr: 'Vous avez nagé, toutes les deux ?' },
+        { speaker: 'Juliette', ar: 'لَا، لَمْ نَسْبَحْ. كَانَ الْمَاءُ بَارِدًا.', fr: 'Non, nous n’avons pas nagé. L’eau était froide.' },
+      ],
+    },
+    conversation: {
+      intro: 'Sami vous interroge sur votre journée : répondez au passé.',
+      steps: [
+        { bot: p('مَاذَا فَعَلْتِ أَمْسِ؟', 'mādhā faʿalti amsi ?', 'Qu’as-tu fait hier ?'), expected: ['ذهبت', 'عملت', 'قرات', 'اكلت', 'شربت', 'درست', 'نمت', 'رجعت', 'شاهدت', 'سبحت'], hint: p('ذَهَبْتُ إِلَى الْعَمَلِ.', 'dhahabtu ilā l-ʿamal.', 'Je suis allée au travail.') },
+        { bot: p('مَتَى اسْتَيْقَظْتِ الْيَوْمَ؟', 'matā stayqaẓti l-yawm ?', 'Quand t’es-tu réveillée aujourd’hui ?'), expected: ['استيقظت', 'الساعه', 'في'], hint: p('اِسْتَيْقَظْتُ فِي السَّاعَةِ السَّابِعَةِ.', 'istayqaẓtu fī s-sāʿati s-sābiʿa.', 'Je me suis réveillée à sept heures.') },
+        { bot: p('هَلْ أَكَلْتِ؟', 'hal akalti ?', 'As-tu mangé ?'), expected: ['نعم', 'لا', 'اكلت', 'لم'], hint: p('لَا، لَمْ آكُلْ بَعْدُ.', 'lā, lam ākul baʿdu.', 'Non, je n’ai pas encore mangé.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'شُو عْمِلْتِي مْبَارِح؟', tr: 'shū ʿmilti mbāreḥ ?', fr: 'qu’as-tu fait hier ? (f)', msa: 'مَاذَا فَعَلْتِ أَمْسِ؟' },
+      { dialect: 'Levantin', ar: 'مَا رُحْت', tr: 'ma ruḥt', fr: 'je ne suis pas allé(e)', msa: 'لَمْ أَذْهَبْ' },
+      { dialect: 'Égyptien', ar: 'عَمَلْتِي إِيه إِمْبَارِح؟', tr: 'ʿamalti ēh imbāreḥ ?', fr: 'qu’as-tu fait hier ? (f)', msa: 'مَاذَا فَعَلْتِ أَمْسِ؟' },
+      { dialect: 'Égyptien', ar: 'مَا رُحْتِش', tr: 'ma ruḥtish', fr: 'je ne suis pas allé(e)', msa: 'لَمْ أَذْهَبْ' },
+      { dialect: 'Marocain', ar: 'آشْ دَرْتِي الْبَارَح؟', tr: 'āsh derti l-bāreḥ ?', fr: 'qu’as-tu fait hier ? (f)', msa: 'مَاذَا فَعَلْتِ أَمْسِ؟' },
+      { dialect: 'Marocain', ar: 'مَا مْشِيتْش', tr: 'ma mshītsh', fr: 'je ne suis pas allé(e)', msa: 'لَمْ أَذْهَبْ' },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ A2.2 */
+  {
+    id: 'a2-2',
+    level: 'A2',
+    order: 2,
+    title: 'En ville et au marché',
+    subtitle: 'Le présent, le futur, acheter et s’orienter',
+    emoji: '🏙️',
+    grammar: {
+      lessons: [
+        {
+          title: 'L’inaccompli : le présent',
+          paragraphs: [
+            'Au présent, la personne s’entend d’abord au début du verbe : أَ (je), تَ (tu, elle), يَ (il), نَ (nous). Des suffixes complètent pour le féminin, le duel et le pluriel.',
+          ],
+          table: {
+            headers: ['Personne', 'Présent', 'Translittération'],
+            rows: [
+              ['je', 'ar:أَذْهَبُ', 'adhhabu'],
+              ['tu (h)', 'ar:تَذْهَبُ', 'tadhhabu'],
+              ['tu (f)', 'ar:تَذْهَبِينَ', 'tadhhabīna'],
+              ['il', 'ar:يَذْهَبُ', 'yadhhabu'],
+              ['elle', 'ar:تَذْهَبُ', 'tadhhabu'],
+              ['eux deux', 'ar:يَذْهَبَانِ', 'yadhhabāni'],
+              ['nous', 'ar:نَذْهَبُ', 'nadhhabu'],
+              ['ils', 'ar:يَذْهَبُونَ', 'yadhhabūna'],
+            ],
+          },
+        },
+        {
+          title: 'Le futur : سَـ ou سَوْفَ',
+          paragraphs: [
+            'Pour parler de l’avenir, on place سَـ (collé au verbe) ou سَوْفَ (séparé, un peu plus lointain ou plus solennel) devant le présent.',
+            'Le futur se nie avec لَنْ, suivi du présent dont la voyelle finale devient -a (le « subjonctif »).',
+          ],
+          examples: [
+            p('سَأَذْهَبُ غَدًا', 'sa-adhhabu ghadan', 'j’irai demain'),
+            p('سَوْفَ نُسَافِرُ', 'sawfa nusāfiru', 'nous voyagerons'),
+            p('لَنْ أَذْهَبَ', 'lan adhhaba', 'je n’irai pas'),
+          ],
+        },
+        {
+          title: 'Nier le présent : لَا',
+          paragraphs: ['Le présent se nie très simplement avec لَا, placé devant le verbe.'],
+          examples: [p('لَا أَفْهَمُ', 'lā afhamu', 'je ne comprends pas'), p('لَا يَعْمَلُ الْيَوْمَ', 'lā yaʿmalu l-yawm', 'il ne travaille pas aujourd’hui')],
+        },
+      ],
+      quiz: [
+        { question: 'Comment dit-on « nous allons » ?', options: ['نَذْهَبُ', 'ذَهَبْنَا', 'يَذْهَبُونَ'], answer: 0 },
+        { question: 'Comment dit-on « tu vas » à une femme ?', options: ['تَذْهَبُ', 'تَذْهَبِينَ', 'تَذْهَبَانِ'], answer: 1 },
+        { question: 'Comment dit-on « j’irai » ?', options: ['سَأَذْهَبُ', 'ذَهَبْتُ', 'لَنْ أَذْهَبَ'], answer: 0 },
+        { question: 'Quelle particule nie le futur ?', options: ['لَمْ', 'لَا', 'لَنْ'], answer: 2, explanation: 'لَمْ nie le passé, لَا le présent, لَنْ le futur.' },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'و et ي : consonnes ou voyelles ?',
+        paragraphs: ['Ces deux lettres jouent un double rôle : consonnes (w, y) devant une voyelle, voyelles longues (ū, ī) après une voyelle brève de même timbre.'],
+        examples: [p('وَلَدٌ', 'walad', 'un garçon (w consonne)'), p('نُورٌ', 'nūr', 'la lumière (ū long)'), p('يَوْمٌ', 'yawm', 'un jour (y consonne)'), p('بُيُوتٌ', 'buyūt', 'des maisons')],
+      },
+    ],
+    writing: [
+      {
+        title: 'L’alif madda : آ',
+        paragraphs: ['Quand une hamza est suivie d’un a long, on n’écrit pas deux alifs : on les fond en un seul alif coiffé d’une vague, la madda (آ), qui se lit « ’ā ».'],
+        examples: [p('آسِفٌ / آسِفَةٌ', 'āsif / āsifa', 'désolé / désolée'), p('اَلْآنَ', 'al-āna', 'maintenant'), p('مِرْآةٌ', 'mir’āt', 'un miroir')],
+      },
+    ],
+    vocabulary: w('a2-2', [
+      ['مَدِينَةٌ', 'madīna', 'une ville'],
+      ['شَارِعٌ', 'shāriʿ', 'une rue'],
+      ['سُوقٌ', 'sūq', 'un marché'],
+      ['مَتْجَرٌ', 'matjar', 'un magasin'],
+      ['صَيْدَلِيَّةٌ', 'ṣaydaliyya', 'une pharmacie'],
+      ['مَصْرِفٌ', 'maṣrif', 'une banque'],
+      ['مَحَطَّةٌ', 'maḥaṭṭa', 'une gare, une station'],
+      ['حَافِلَةٌ', 'ḥāfila', 'un bus'],
+      ['أُرِيدُ…', 'urīdu…', 'je veux, je voudrais…'],
+      ['أَشْتَرِي', 'ashtarī', 'j’achète'],
+      ['كَمِ السِّعْرُ؟', 'kami s-siʿr ?', 'quel est le prix ?'],
+      ['غَالٍ / رَخِيصٌ', 'ghālin / rakhīṣ', 'cher / bon marché'],
+      ['نُقُودٌ', 'nuqūd', 'de l’argent'],
+      ['قَرِيبٌ / بَعِيدٌ', 'qarīb / baʿīd', 'proche / loin'],
+      ['اِذْهَبْ مُسْتَقِيمًا', 'idhhab mustaqīman', 'allez tout droit'],
+      ['آسِفٌ / آسِفَةٌ', 'āsif / āsifa', 'désolé / désolée'],
+    ]),
+    mindmap: {
+      center: p('اَلْمَدِينَةُ', 'al-madīna', 'la ville'),
+      branches: [
+        { label: 'Les lieux', items: [p('سُوقٌ', 'sūq', 'marché'), p('صَيْدَلِيَّةٌ', 'ṣaydaliyya', 'pharmacie'), p('مَحَطَّةٌ', 'maḥaṭṭa', 'gare')] },
+        { label: 'Acheter', items: [p('أُرِيدُ…', 'urīdu…', 'je voudrais…'), p('كَمِ السِّعْرُ؟', 'kami s-siʿr ?', 'combien ?'), p('غَالٍ', 'ghālin', 'cher')] },
+        { label: 'S’orienter', items: [p('مُسْتَقِيمًا', 'mustaqīman', 'tout droit'), p('عَلَى الْيَسَارِ', 'ʿalā l-yasār', 'à gauche'), p('قَرِيبٌ', 'qarīb', 'proche')] },
+        { label: 'Se déplacer', items: [p('حَافِلَةٌ', 'ḥāfila', 'bus'), p('سَيْرًا عَلَى الْأَقْدَامِ', 'sayran ʿalā l-aqdām', 'à pied')] },
+      ],
+    },
+    story: {
+      title: 'Au marché de la ville',
+      lines: [
+        p('كُلَّ يَوْمِ سَبْتٍ، تَذْهَبُ جُولْيِيت إِلَى السُّوقِ.', 'kulla yawmi sabt, tadhhabu Jūliyet ilā s-sūq.', 'Chaque samedi, Juliette va au marché.'),
+        p('تَشْتَرِي الْخُضَارَ وَالْفَوَاكِهَ.', 'tashtarī l-khuḍāra wa l-fawākih.', 'Elle achète des légumes et des fruits.'),
+        p('يَقُولُ الْبَائِعُ: أَهْلًا! مَاذَا تُرِيدِينَ؟', 'yaqūlu l-bā’iʿ : ahlan ! mādhā turīdīn ?', 'Le vendeur dit : « Bonjour ! Que voulez-vous ? »'),
+        p('تَقُولُ: أُرِيدُ كِيلُو تُفَّاحٍ، مِنْ فَضْلِكَ.', 'taqūlu : urīdu kīlū tuffāḥ, min faḍlik.', 'Elle dit : « Je voudrais un kilo de pommes, s’il vous plaît. »'),
+        p('ثُمَّ تَسْأَلُ: كَمِ السِّعْرُ؟', 'thumma tas’alu : kami s-siʿr ?', 'Puis elle demande : « Combien ça coûte ? »'),
+        p('غَدًا سَتَذْهَبُ إِلَى الصَّيْدَلِيَّةِ أَيْضًا.', 'ghadan sa-tadhhabu ilā ṣ-ṣaydaliyyati ayḍan.', 'Demain, elle ira aussi à la pharmacie.'),
+      ],
+    },
+    podcast: {
+      title: 'Où est la pharmacie ?',
+      intro: 'Juliette demande son chemin à un passant.',
+      lines: [
+        { speaker: 'Juliette', ar: 'عَفْوًا، أَيْنَ الصَّيْدَلِيَّةُ؟', fr: 'Excusez-moi, où est la pharmacie ?' },
+        { speaker: 'Passant', ar: 'اِذْهَبِي مُسْتَقِيمًا، ثُمَّ عَلَى الْيَسَارِ.', fr: 'Allez tout droit, puis à gauche.' },
+        { speaker: 'Juliette', ar: 'هَلْ هِيَ بَعِيدَةٌ؟', fr: 'Est-ce loin ?' },
+        { speaker: 'Passant', ar: 'لَا، هِيَ قَرِيبَةٌ جِدًّا: خَمْسُ دَقَائِقَ سَيْرًا.', fr: 'Non, c’est tout près : cinq minutes à pied.' },
+        { speaker: 'Juliette', ar: 'شُكْرًا جَزِيلًا!', fr: 'Merci beaucoup !' },
+        { speaker: 'Passant', ar: 'عَفْوًا، مَعَ السَّلَامَةِ.', fr: 'De rien, au revoir.' },
+      ],
+    },
+    conversation: {
+      intro: 'Vous êtes au marché ; le vendeur s’adresse à vous.',
+      steps: [
+        { bot: p('أَهْلًا! مَاذَا تُرِيدِينَ؟', 'ahlan ! mādhā turīdīn ?', 'Bonjour ! Que voulez-vous ?'), expected: ['اريد', 'من فضلك'], hint: p('أُرِيدُ تُفَّاحًا، مِنْ فَضْلِكَ.', 'urīdu tuffāḥan, min faḍlik.', 'Je voudrais des pommes, s’il vous plaît.') },
+        { bot: p('كَمْ كِيلُو تُرِيدِينَ؟', 'kam kīlū turīdīn ?', 'Combien de kilos voulez-vous ?'), expected: ['كيلو', 'واحد', 'اثنين', 'ثلاثه'], hint: p('كِيلُو وَاحِدٌ.', 'kīlū wāḥid.', 'Un kilo.') },
+        { bot: p('شَيْءٌ آخَرُ؟', 'shay’un ākhar ?', 'Autre chose ?'), expected: ['لا', 'شكرا', 'نعم', 'كم'], hint: p('لَا، شُكْرًا. كَمِ السِّعْرُ؟', 'lā, shukran. kami s-siʿr ?', 'Non, merci. Combien ça coûte ?') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'بَدِّي', tr: 'baddī', fr: 'je veux', msa: 'أُرِيدُ' },
+      { dialect: 'Levantin', ar: 'قَدِّيش؟', tr: 'addēsh ?', fr: 'combien ?', msa: 'كَمِ السِّعْرُ؟' },
+      { dialect: 'Égyptien', ar: 'عَايْزَة', tr: 'ʿāyza', fr: 'je veux (au féminin)', msa: 'أُرِيدُ' },
+      { dialect: 'Égyptien', ar: 'بِكَام؟', tr: 'bikām ?', fr: 'combien ?', msa: 'كَمِ السِّعْرُ؟' },
+      { dialect: 'Marocain', ar: 'بْغِيت', tr: 'bghīt', fr: 'je veux', msa: 'أُرِيدُ' },
+      { dialect: 'Marocain', ar: 'بْشْحَال؟', tr: 'bshḥāl ?', fr: 'combien ?', msa: 'كَمِ السِّعْرُ؟' },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ A2.3 */
+  {
+    id: 'a2-3',
+    level: 'A2',
+    order: 3,
+    title: 'Au restaurant',
+    subtitle: 'L’annexion, les pluriels brisés, aimer et vouloir',
+    emoji: '🍽️',
+    grammar: {
+      lessons: [
+        {
+          title: 'L’annexion (اَلْإِضَافَةُ)',
+          paragraphs: [
+            'Pour dire « le livre de l’étudiant » ou « une tasse de café », l’arabe juxtapose deux noms. Le premier perd article et tanwīn ; le second se met au génitif. C’est lui qui rend l’ensemble défini ou indéfini.',
+            'Si le premier nom finit par ـة, celle-ci se prononce alors t : قَائِمَةُ الطَّعَامِ, « qā’imatu ṭ-ṭaʿām ».',
+          ],
+          examples: [
+            p('كِتَابُ الطَّالِبِ', 'kitābu ṭ-ṭālibi', 'le livre de l’étudiant'),
+            p('فِنْجَانُ قَهْوَةٍ', 'finjānu qahwatin', 'une tasse de café'),
+            p('قَائِمَةُ الطَّعَامِ', 'qā’imatu ṭ-ṭaʿāmi', 'le menu (« la liste de la nourriture »)'),
+            p('مَطْعَمُ الْفُنْدُقِ', 'maṭʿamu l-funduqi', 'le restaurant de l’hôtel'),
+          ],
+        },
+        {
+          title: 'Les pluriels brisés',
+          paragraphs: [
+            'La plupart des noms arabes forment leur pluriel en modifiant l’intérieur du mot, autour de la racine : c’est le « pluriel brisé ». Il faut l’apprendre avec le singulier, comme un genre en français.',
+            'Règle d’or : un pluriel qui ne désigne pas des humains s’accorde au féminin singulier. « Les livres sont beaux » se dit اَلْكُتُبُ جَمِيلَةٌ.',
+          ],
+          table: {
+            headers: ['Singulier', 'Pluriel', 'Sens'],
+            rows: [
+              ['ar:كِتَابٌ', 'ar:كُتُبٌ', 'livre'],
+              ['ar:بَيْتٌ', 'ar:بُيُوتٌ', 'maison'],
+              ['ar:وَلَدٌ', 'ar:أَوْلَادٌ', 'garçon, enfant'],
+              ['ar:طَبَقٌ', 'ar:أَطْبَاقٌ', 'plat, assiette'],
+              ['ar:مَطْعَمٌ', 'ar:مَطَاعِمُ', 'restaurant'],
+              ['ar:كَأْسٌ', 'ar:كُؤُوسٌ', 'verre'],
+            ],
+          },
+        },
+        {
+          title: 'Aimer et vouloir',
+          paragraphs: ['أُحِبُّ (j’aime) et أُرِيدُ (je veux) se construisent avec un nom, ou avec أَنْ suivi d’un verbe au subjonctif (voyelle finale -a).'],
+          examples: [
+            p('أُحِبُّ السَّمَكَ', 'uḥibbu s-samak', 'j’aime le poisson'),
+            p('لَا أُحِبُّ اللَّحْمَ', 'lā uḥibbu l-laḥm', 'je n’aime pas la viande'),
+            p('أُرِيدُ أَنْ أَشْرَبَ', 'urīdu an ashraba', 'je veux boire'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Comment dit-on « une tasse de café » ?', options: ['فِنْجَانُ قَهْوَةٍ', 'اَلْفِنْجَانُ الْقَهْوَةُ', 'فِنْجَانٌ قَهْوَةٌ'], answer: 0 },
+        { question: 'Quel est le pluriel de كِتَابٌ ?', options: ['كِتَابَاتٌ', 'كُتُبٌ', 'كِتَابُونَ'], answer: 1 },
+        { question: '« Les plats sont délicieux » : quel accord ?', options: ['اَلْأَطْبَاقُ لَذِيذَةٌ', 'اَلْأَطْبَاقُ لَذِيذُونَ', 'اَلْأَطْبَاقُ لَذِيذٌ'], answer: 0, explanation: 'Pluriel non humain → féminin singulier.' },
+        { question: 'Comment dit-on « je veux boire » ?', options: ['أُرِيدُ شَرِبْتُ', 'أُرِيدُ أَنْ أَشْرَبَ', 'أُحِبُّ شَرِبَ'], answer: 1 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'Le ـة qui se réveille',
+        paragraphs: ['Seule, la tā’ marbūṭa se prononce « a ». Dès que le mot est suivi d’un complément (annexion) ou d’un possessif, elle se réveille en « t ».'],
+        examples: [p('قَائِمَةٌ', 'qā’ima', 'une liste'), p('قَائِمَةُ الطَّعَامِ', 'qā’imatu ṭ-ṭaʿām', 'le menu'), p('كُرَةُ الْقَدَمِ', 'kuratu l-qadam', 'le football')],
+      },
+    ],
+    writing: [
+      {
+        title: 'Les sièges de la hamza',
+        paragraphs: [
+          'La hamza s’assoit sur un support qui dépend des voyelles voisines : sur un alif (أ, إ) avec a ou en début de mot, sur un wāw (ؤ) avec u, sur un yā’ sans points (ئ) avec i. Seule, elle reste sur la ligne (ء).',
+        ],
+        examples: [p('سُؤَالٌ', 'su’āl', 'une question (ؤ)'), p('كُؤُوسٌ', 'ku’ūs', 'des verres (ؤ)'), p('رِئَةٌ', 'ri’a', 'un poumon (ئ)'), p('مَاءٌ', 'mā’', 'de l’eau (ء)')],
+      },
+    ],
+    vocabulary: w('a2-3', [
+      ['مَطْعَمٌ', 'maṭʿam', 'un restaurant'],
+      ['قَائِمَةُ الطَّعَامِ', 'qā’imatu ṭ-ṭaʿām', 'le menu'],
+      ['نَادِلٌ / نَادِلَةٌ', 'nādil / nādila', 'un serveur / une serveuse'],
+      ['طَاوِلَةٌ لِشَخْصَيْنِ', 'ṭāwila li-shakhṣayn', 'une table pour deux'],
+      ['طَبَقٌ / أَطْبَاقٌ', 'ṭabaq / aṭbāq', 'un plat / des plats'],
+      ['فُطُورٌ', 'fuṭūr', 'le petit-déjeuner'],
+      ['غَدَاءٌ', 'ghadā’', 'le déjeuner'],
+      ['عَشَاءٌ', 'ʿashā’', 'le dîner'],
+      ['حِسَاءٌ', 'ḥisā’', 'une soupe'],
+      ['سَلَطَةٌ', 'salaṭa', 'une salade'],
+      ['لَذِيذٌ', 'ladhīdh', 'délicieux'],
+      ['حَارٌّ', 'ḥārr', 'épicé ; chaud'],
+      ['حُلْوٌ / مَالِحٌ', 'ḥulw / māliḥ', 'sucré / salé'],
+      ['نَبَاتِيٌّ / نَبَاتِيَّةٌ', 'nabātī / nabātiyya', 'végétarien / végétarienne'],
+      ['أُحِبُّ', 'uḥibbu', 'j’aime'],
+      ['اَلْحِسَابُ مِنْ فَضْلِكَ', 'al-ḥisābu min faḍlik', 'l’addition, s’il vous plaît'],
+    ]),
+    mindmap: {
+      center: p('اَلْمَطْعَمُ', 'al-maṭʿam', 'le restaurant'),
+      branches: [
+        { label: 'Les repas', items: [p('فُطُورٌ', 'fuṭūr', 'petit-déjeuner'), p('غَدَاءٌ', 'ghadā’', 'déjeuner'), p('عَشَاءٌ', 'ʿashā’', 'dîner')] },
+        { label: 'Les goûts', items: [p('لَذِيذٌ', 'ladhīdh', 'délicieux'), p('حَارٌّ', 'ḥārr', 'épicé'), p('حُلْوٌ', 'ḥulw', 'sucré')] },
+        { label: 'Commander', items: [p('قَائِمَةُ الطَّعَامِ', 'qā’imatu ṭ-ṭaʿām', 'le menu'), p('أُرِيدُ…', 'urīdu…', 'je voudrais…'), p('اَلْحِسَابُ', 'al-ḥisāb', 'l’addition')] },
+        { label: 'Des pluriels', items: [p('طَبَقٌ ← أَطْبَاقٌ', 'ṭabaq → aṭbāq', 'plat → plats'), p('كَأْسٌ ← كُؤُوسٌ', 'ka’s → ku’ūs', 'verre → verres')] },
+      ],
+    },
+    story: {
+      title: 'Dîner sur la plage',
+      lines: [
+        p('ذَهَبَتْ جُولْيِيت وَلَيْلَى إِلَى مَطْعَمٍ عَلَى الشَّاطِئِ.', 'dhahabat Jūliyet wa Laylā ilā maṭʿamin ʿalā sh-shāṭi’.', 'Juliette et Layla sont allées dans un restaurant sur la plage.'),
+        p('طَلَبَتَا طَاوِلَةً لِشَخْصَيْنِ قُرْبَ الْبَحْرِ.', 'ṭalabatā ṭāwilatan li-shakhṣayni qurba l-baḥr.', 'Elles ont demandé une table pour deux près de la mer. (duel)'),
+        p('قَرَأَتْ جُولْيِيت قَائِمَةَ الطَّعَامِ.', 'qara’at Jūliyet qā’imata ṭ-ṭaʿām.', 'Juliette a lu le menu.'),
+        p('أَطْبَاقُ السَّمَكِ لَذِيذَةٌ هُنَا.', 'aṭbāqu s-samaki ladhīdhatun hunā.', 'Les plats de poisson sont délicieux ici.'),
+        p('شَرِبَتَا عَصِيرَ لَيْمُونٍ بِالنَّعْنَاعِ.', 'sharibatā ʿaṣīra laymūnin bi-n-naʿnāʿ.', 'Elles ont bu un jus de citron à la menthe.'),
+        p('فِي النِّهَايَةِ، قَالَتْ لَيْلَى: اَلْحِسَابُ مِنْ فَضْلِكَ!', 'fī n-nihāya, qālat Laylā : al-ḥisābu min faḍlik !', 'À la fin, Layla a dit : « L’addition, s’il vous plaît ! »'),
+      ],
+    },
+    podcast: {
+      title: 'La commande',
+      intro: 'Le serveur accueille Juliette.',
+      lines: [
+        { speaker: 'Serveur', ar: 'مَسَاءُ الْخَيْرِ! تَفَضَّلِي، هَذِهِ قَائِمَةُ الطَّعَامِ.', fr: 'Bonsoir ! Je vous en prie, voici le menu.' },
+        { speaker: 'Juliette', ar: 'شُكْرًا. بِمَاذَا تَنْصَحُنِي؟', fr: 'Merci. Que me conseillez-vous ?' },
+        { speaker: 'Serveur', ar: 'سَمَكُ الْيَوْمِ لَذِيذٌ جِدًّا.', fr: 'Le poisson du jour est excellent.' },
+        { speaker: 'Juliette', ar: 'هَلْ هُوَ حَارٌّ؟', fr: 'Est-il épicé ?' },
+        { speaker: 'Serveur', ar: 'قَلِيلًا فَقَطْ.', fr: 'Juste un peu.' },
+        { speaker: 'Juliette', ar: 'طَيِّبٌ، أُرِيدُ سَمَكَ الْيَوْمِ وَسَلَطَةً.', fr: 'D’accord, je voudrais le poisson du jour et une salade.' },
+        { speaker: 'Serveur', ar: 'وَمَاذَا تَشْرَبِينَ؟', fr: 'Et que buvez-vous ?' },
+        { speaker: 'Juliette', ar: 'كَأْسَ نَبِيذٍ أَبْيَضَ، مِنْ فَضْلِكَ.', fr: 'Un verre de vin blanc, s’il vous plaît.' },
+      ],
+    },
+    conversation: {
+      intro: 'Vous entrez dans un restaurant ; le serveur vous accueille.',
+      steps: [
+        { bot: p('مَسَاءُ الْخَيْرِ! كَمْ شَخْصًا؟', 'masā’u l-khayr ! kam shakhṣan ?', 'Bonsoir ! Combien de personnes ?'), expected: ['شخص', 'واحد', 'اثنين', 'ثلاثه', 'نحن'], hint: p('شَخْصَانِ، مِنْ فَضْلِكَ.', 'shakhṣān, min faḍlik.', 'Deux personnes, s’il vous plaît.') },
+        { bot: p('مَاذَا تُرِيدِينَ أَنْ تَأْكُلِي؟', 'mādhā turīdīna an ta’kulī ?', 'Que voulez-vous manger ?'), expected: ['اريد', 'سمك', 'سلطه', 'حساء', 'لحم'], hint: p('أُرِيدُ السَّمَكَ، مِنْ فَضْلِكَ.', 'urīdu s-samak, min faḍlik.', 'Je voudrais le poisson, s’il vous plaît.') },
+        { bot: p('هَلْ كَانَ الطَّعَامُ لَذِيذًا؟', 'hal kāna ṭ-ṭaʿāmu ladhīdhan ?', 'Le repas était-il bon ?'), expected: ['نعم', 'لذيذ', 'شكرا'], hint: p('نَعَمْ، كَانَ لَذِيذًا جِدًّا!', 'naʿam, kāna ladhīdhan jiddan !', 'Oui, c’était délicieux !') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'كْتِير طَيِّب', tr: 'ktīr ṭayyeb', fr: 'très bon (délicieux)', msa: 'لَذِيذٌ جِدًّا' },
+      { dialect: 'Levantin', ar: 'الْحْسَاب لَوْ سَمَحْت', tr: 'l-ḥsāb law samaḥt', fr: 'l’addition, s’il vous plaît', msa: 'اَلْحِسَابُ مِنْ فَضْلِكَ' },
+      { dialect: 'Égyptien', ar: 'حِلْو أَوِي', tr: 'ḥilw awi', fr: 'très bon', msa: 'لَذِيذٌ جِدًّا' },
+      { dialect: 'Égyptien', ar: 'عَايْزَة أَطْلُب', tr: 'ʿāyza aṭlub', fr: 'je voudrais commander (f)', msa: 'أُرِيدُ أَنْ أَطْلُبَ' },
+      { dialect: 'Marocain', ar: 'بْنِين', tr: 'bnīn', fr: 'délicieux', msa: 'لَذِيذٌ' },
+      { dialect: 'Marocain', ar: 'الْحْسَاب عَافَاك', tr: 'l-ḥsāb ʿafāk', fr: 'l’addition, s’il vous plaît', msa: 'اَلْحِسَابُ مِنْ فَضْلِكَ' },
+    ],
+  },
+
 ]
 
 export const tierById = (id: string) => TIERS.find((t) => t.id === id)
 
 export const CEFR_LEVELS: { level: Cefr; title: string; description: string }[] = [
   { level: 'A1', title: 'Découverte', description: 'L’alphabet, se présenter, la famille, la maison.' },
-  { level: 'A2', title: 'Survie', description: 'Le verbe au passé et au présent, les achats, la ville.' },
+  { level: 'A2', title: 'Survie', description: 'Le passé, le présent et le futur, la ville, le restaurant, l’annexion et les pluriels brisés.' },
   { level: 'B1', title: 'Seuil', description: 'Les formes verbales II à X, raconter, donner son avis.' },
   { level: 'B2', title: 'Avancé', description: 'La presse, l’argumentation, la lecture sans diacritiques.' },
   { level: 'C1', title: 'Autonome', description: 'Littérature, nuances de registre, débats.' },
