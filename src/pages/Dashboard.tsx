@@ -79,6 +79,13 @@ export function Dashboard() {
             <div className="muted text-sm">{dueToday ? `${dueToday} cartes vous attendent (vocabulaire et grammaire)` : 'Tout est à jour ✓'}</div>
           </div>
         </Link>
+        <Link to="/vocabulaire/plaintes-patients" className="card col-span-2 flex items-center gap-3">
+          <span className="text-3xl">🩺</span>
+          <div>
+            <div className="font-bold">Comprendre ses patients</div>
+            <div className="muted text-sm">Le corps, les maux, les maladies, la consultation, les dialectes</div>
+          </div>
+        </Link>
         <Link to="/vocabulaire" className="card col-span-2 flex items-center gap-3">
           <span className="text-3xl">🐬⛵🍹✒️</span>
           <div>

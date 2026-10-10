@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { VocabTheme } from '../data/types'
-import { GENERAL_THEMES, JULIETTE_THEMES } from '../data/vocabulary'
+import { GENERAL_THEMES, JULIETTE_THEMES, MEDICAL_THEMES } from '../data/vocabulary'
 import { useProgress } from '../store/progress'
 
 function ThemeCard({ theme }: { theme: VocabTheme }) {
@@ -26,6 +26,13 @@ export function VocabularyPage() {
         <p className="mb-3 text-sm opacity-90">La mer, la voile, l’art de recevoir et l’amour des livres.</p>
         <div className="grid gap-2 text-encre-900 sm:grid-cols-2 dark:text-stone-100">
           {JULIETTE_THEMES.map((t) => <ThemeCard key={t.id} theme={t} />)}
+        </div>
+      </section>
+      <section className="rounded-3xl bg-gradient-to-br from-sky-600 to-sky-800 p-4 text-white">
+        <h2 className="text-lg font-extrabold">🩺 Comprendre ses patients</h2>
+        <p className="mb-3 text-sm opacity-90">Le corps, les maux, les maladies, la consultation — et les plaintes telles qu’on les entend en dialecte.</p>
+        <div className="grid gap-2 text-encre-900 sm:grid-cols-2 dark:text-stone-100">
+          {MEDICAL_THEMES.map((t) => <ThemeCard key={t.id} theme={t} />)}
         </div>
       </section>
       <section>

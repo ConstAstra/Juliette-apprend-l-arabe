@@ -31,6 +31,8 @@ export interface VocabTheme {
   emoji: string
   words: Word[]
   note?: string
+  /** Dialogue d'écoute facultatif, lu en synthèse vocale. */
+  dialogue?: { title: string; intro: string; lines: DialogueLine[] }
 }
 
 export interface QuizQuestion {

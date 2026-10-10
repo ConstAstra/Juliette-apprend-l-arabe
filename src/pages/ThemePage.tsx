@@ -3,7 +3,8 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Ar } from '../components/Ar'
 import { PhraseRow } from '../components/PhraseRow'
 import { SpeakButton } from '../components/SpeakButton'
-import { JULIETTE_THEMES, themeById } from '../data/vocabulary'
+import { Dialogue } from '../components/Dialogue'
+import { JULIETTE_THEMES, MEDICAL_THEMES, themeById } from '../data/vocabulary'
 import { useProgress } from '../store/progress'
 
 export function ThemePage() {
@@ -19,12 +20,14 @@ export function ThemePage() {
 
   if (!theme) return <Navigate to="/vocabulaire" replace />
   const special = JULIETTE_THEMES.includes(theme)
+  const medical = MEDICAL_THEMES.includes(theme)
 
   return (
     <div className="space-y-4">
       <Link to="/vocabulaire" className="muted text-sm">← Vocabulaire</Link>
       <header>
         {special && <div className="text-xs font-bold tracking-wide text-nil-600 uppercase">Le vocabulaire spécial de Juliette</div>}
+        {medical && <div className="text-xs font-bold tracking-wide text-sky-700 uppercase dark:text-sky-400">Comprendre ses patients</div>}
         <h1 className="text-2xl font-extrabold">{theme.emoji} {theme.title}</h1>
       </header>
       {theme.note && <p className="card border-l-4 border-nil-500 text-sm">{theme.note}</p>}
@@ -56,6 +59,7 @@ export function ThemePage() {
           {theme.words.map((w) => <PhraseRow key={w.id} phrase={w} />)}
         </div>
       )}
+      {theme.dialogue && <Dialogue podcast={theme.dialogue} />}
       {cards && (
         <p className="muted flex items-center gap-2 text-sm">
           Touchez une carte pour la retourner. <SpeakButton text={theme.words.map((w) => w.ar).join('، ')} label="Écouter toute la liste" />

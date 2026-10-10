@@ -3,7 +3,7 @@ import { Avatar } from '../components/Avatar'
 import { useActiveProfile } from '../store/profiles'
 
 const LINKS = [
-  { to: '/vocabulaire', emoji: '📚', title: 'Vocabulaire', text: 'Le vocabulaire spécial de Juliette et les thèmes généraux' },
+  { to: '/vocabulaire', emoji: '📚', title: 'Vocabulaire', text: 'Le vocabulaire spécial de Juliette, le vocabulaire médical et les thèmes généraux' },
   { to: '/fiches', emoji: '📑', title: 'Fiches de référence', text: 'Racines et formes verbales, cas, conjugaison, nombres, expressions' },
   { to: '/test-niveau', emoji: '🧭', title: 'Test de niveau', text: 'Autoévaluation selon le CECR' },
   { to: '/progres', emoji: '🏅', title: 'Progrès', text: 'Niveau, badges et calendrier de régularité' },
