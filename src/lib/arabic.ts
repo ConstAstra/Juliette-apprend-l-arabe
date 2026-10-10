@@ -61,3 +61,7 @@ export function shuffle<T>(items: readonly T[]): T[] {
   }
   return a
 }
+
+const ARABIC_DIGITS = '٠١٢٣٤٥٦٧٨٩'
+/** 12 → « ١٢ » : chiffres arabes orientaux. */
+export const toArabicDigits = (n: number) => String(n).replace(/\d/g, (d) => ARABIC_DIGITS[Number(d)])

@@ -6,6 +6,7 @@ import { Avatar } from './Avatar'
 import { IconArch, IconAstrolabe, IconCards, IconCrescent, IconFlame, IconStar8 } from './Icons'
 import { Plankton } from './Plankton'
 import { UnlockToast } from './UnlockToast'
+import { XpPulse } from './XpPulse'
 
 const LetterIcon = ({ className }: { className?: string }) => (
   <span lang="ar" className={`font-arabic text-[1.6rem] leading-none ${className ?? ''}`}>ب</span>
@@ -42,8 +43,9 @@ export function Layout() {
           <span className="flex items-center gap-1 text-sm text-parchemin" title="Série de jours">
             <IconFlame className="size-4 text-or-400" /> {streak(activity)}
           </span>
-          <span className="flex items-center gap-1 text-sm text-parchemin" title="Niveau">
+          <span className="relative flex items-center gap-1 text-sm text-parchemin" title="Niveau">
             <IconStar8 className="size-4 text-lueur-400" /> {levelInfo(xp).level}
+            <XpPulse />
           </span>
           <Link to="/avatar" aria-label={`Profil : ${profile.name}`}>
             <Avatar profile={profile} size="sm" />
@@ -51,7 +53,7 @@ export function Layout() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-4 py-5">
+      <main key={pathname} className="apparition mx-auto max-w-3xl px-4 py-5">
         <Outlet />
       </main>
 

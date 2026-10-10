@@ -1,5 +1,7 @@
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import { Ar } from '../components/Ar'
 import { ProgressBar } from '../components/ProgressBar'
+import { toArabicDigits } from '../lib/arabic'
 import {
   AlphabetTab, ConversationTab, DialectTab, GrammarTab, LessonsTab, MindMapTab, PodcastTab, StoryTab, VocabularyTab, WritingTab,
 } from '../components/tier/TierTabs'
@@ -46,10 +48,11 @@ export function TierPage() {
     <div className="space-y-4">
       <Link to="/paliers" className="muted text-sm">← Paliers</Link>
       <header>
-        <div className="text-xs font-bold tracking-wide text-or-400 uppercase">
+        <div className="text-xs tracking-[0.18em] text-lueur-300 uppercase">
           Palier {tier.level}.{tier.order}
         </div>
-        <h1 className="text-2xl font-extrabold">{tier.emoji} {tier.title}</h1>
+        <Ar as="p" text={tier.arTitle} className="lueur-or mt-1 text-4xl text-or-300" />
+        <h1 className="text-2xl">{tier.title}</h1>
         <p className="muted">{tier.subtitle}</p>
         <ProgressBar value={done.length / tabs.length} className="mt-2" />
         <div className="mt-2 flex flex-wrap gap-2 text-sm">
@@ -63,7 +66,7 @@ export function TierPage() {
       </header>
 
       <div role="tablist" aria-label="Sections du palier" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
-        {tabs.map((t) => {
+        {tabs.map((t, i) => {
           const selected = t.id === active.id
           return (
             <button
@@ -75,7 +78,7 @@ export function TierPage() {
                 selected ? 'bg-or-400 text-nuit' : 'bg-abysse ring-1 ring-trait'
               }`}
             >
-              <span className={t.id === 'alphabet' ? 'font-arabic' : ''}>{t.emoji}</span>
+              <span lang="ar" className={`font-arabic ${selected ? '' : 'text-or-400'}`}>{toArabicDigits(i + 1)}</span>
               {t.label}
               {done.includes(t.id) && <span aria-label="terminé">✓</span>}
             </button>

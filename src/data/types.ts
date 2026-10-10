@@ -83,6 +83,8 @@ export interface Tier {
   level: Cefr
   order: number
   title: string
+  /** Titre calligraphié du palier. */
+  arTitle: string
   subtitle: string
   emoji: string
   letters?: string[]

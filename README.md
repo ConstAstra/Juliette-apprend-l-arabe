@@ -8,7 +8,7 @@ Application web progressive (PWA) d’apprentissage de l’arabe, en français. 
 
 - **Tronc commun : l’arabe standard moderne** (اَلْفُصْحَى). Les expressions dialectales (levantin, égyptien, marocain) sont présentées à part, dans l’onglet « Dialectes » de chaque palier.
 - **Alphabet** : les 28 lettres et leurs quatre formes (isolée, initiale, médiane, finale), la prononciation en synthèse vocale, les lettres solaires et lunaires, un atelier de tracé et un exercice de reconnaissance.
-- **Paliers CECR** : A1.1 à A1.4 et A2.1 à A2.3 (B1 à C1 en préparation). Chaque palier comprend les onglets alphabet, grammaire (avec quiz), prononciation, écriture, vocabulaire, carte mentale, histoire, podcast dialogué (avec écoute active), conversation (reconnaissance vocale ou saisie) et dialectes.
+- **Paliers CECR** : A1.1 à A1.4, A2.1 à A2.3, B1.1 et B1.2 (B2 et C1 en préparation). Chaque palier comprend les onglets alphabet, grammaire (avec quiz), prononciation, écriture, vocabulaire, carte mentale, histoire, podcast dialogué (avec écoute active), conversation (reconnaissance vocale ou saisie) et dialectes.
 - **Vocabulaire** : le vocabulaire spécial de Juliette (animaux marins, sports à voile, alcool et cocktails, écriture et lecture) ; « Comprendre ses patients » (le corps, maux et symptômes, maladies, consultation avec dialogue d’écoute, plaintes en dialecte égyptien, levantin et marocain) ; des thèmes généraux.
 - **Fiches de référence** : racines trilitères et dix formes verbales (I à X), les trois cas (iʿrāb), conjugaison avec le duel, article et lettres solaires, nombres, expressions idiomatiques.
 - **Révisions espacées (Leitner)** : deux paquets distincts, vocabulaire et grammaire.

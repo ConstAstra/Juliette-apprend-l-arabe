@@ -115,6 +115,11 @@ await step('Palier A1.1 : dix onglets, validation et diacritiques', async () => 
 await step('Paliers A2 : neuf onglets, sans alphabet', async () => {
   await go('/paliers')
   for (const t of ['Raconter sa journée', 'En ville et au marché', 'Au restaurant']) await page.getByText(t, { exact: true }).waitFor()
+  await page.getByText('Les formes dérivées en action', { exact: true }).waitFor()
+  await shot('21-chemin')
+  await go('/paliers/b1-1')
+  await page.getByText('أَوْزَانُ الْفِعْلِ', { exact: true }).first().waitFor()
+  await shot('22-palier-b1')
   await go('/paliers/a2-3')
   assert((await page.getByRole('tab').count()) === 9, 'nombre d’onglets A2')
   await page.getByRole('tab', { name: /Grammaire/ }).click()

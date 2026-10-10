@@ -12,6 +12,7 @@ export const TIERS: Tier[] = [
     level: 'A1',
     order: 1,
     title: 'Premiers pas',
+    arTitle: 'اَلْخُطُوَاتُ الْأُولَى',
     subtitle: 'Six lettres, les voyelles et les salutations',
     emoji: '👋',
     letters: ['alif', 'ba', 'ta', 'tha', 'nun', 'ya'],
@@ -148,6 +149,7 @@ export const TIERS: Tier[] = [
     level: 'A1',
     order: 2,
     title: 'Se présenter',
+    arTitle: 'أُقَدِّمُ نَفْسِي',
     subtitle: 'Les pronoms, le duel et la phrase sans « être »',
     emoji: '🙋‍♀️',
     letters: ['jim', 'ha', 'kha', 'dal', 'dhal', 'ra', 'zay', 'waw'],
@@ -309,6 +311,7 @@ export const TIERS: Tier[] = [
     level: 'A1',
     order: 3,
     title: 'La famille',
+    arTitle: 'اَلْعَائِلَةُ',
     subtitle: 'L’article ال, lettres solaires et lunaires, les possessifs',
     emoji: '👨‍👩‍👧',
     letters: ['sin', 'shin', 'sad', 'dad', 'tta', 'zza', 'ayn', 'ghayn'],
@@ -455,6 +458,7 @@ export const TIERS: Tier[] = [
     level: 'A1',
     order: 4,
     title: 'Chez moi',
+    arTitle: 'فِي الْبَيْتِ',
     subtitle: 'Les dernières lettres, le duel des noms, les nombres',
     emoji: '🏠',
     letters: ['fa', 'qaf', 'kaf', 'lam', 'mim', 'hha'],
@@ -610,6 +614,7 @@ export const TIERS: Tier[] = [
     level: 'A2',
     order: 1,
     title: 'Raconter sa journée',
+    arTitle: 'يَوْمِي',
     subtitle: 'Le passé, sa négation et les repères de temps',
     emoji: '🌅',
     grammar: {
@@ -762,6 +767,7 @@ export const TIERS: Tier[] = [
     level: 'A2',
     order: 2,
     title: 'En ville et au marché',
+    arTitle: 'فِي الْمَدِينَةِ',
     subtitle: 'Le présent, le futur, acheter et s’orienter',
     emoji: '🏙️',
     grammar: {
@@ -898,6 +904,7 @@ export const TIERS: Tier[] = [
     level: 'A2',
     order: 3,
     title: 'Au restaurant',
+    arTitle: 'فِي الْمَطْعَمِ',
     subtitle: 'L’annexion, les pluriels brisés, aimer et vouloir',
     emoji: '🍽️',
     grammar: {
@@ -1036,6 +1043,313 @@ export const TIERS: Tier[] = [
     ],
   },
 
+  /* ------------------------------------------------------------------ B1.1 */
+  {
+    id: 'b1-1',
+    level: 'B1',
+    order: 1,
+    title: 'Les formes dérivées en action',
+    arTitle: 'أَوْزَانُ الْفِعْلِ',
+    subtitle: 'Formes II, V et X, le maṣdar, une journée à l’hôpital',
+    emoji: '🌳',
+    grammar: {
+      lessons: [
+        {
+          title: 'Forme II : intensifier, faire faire',
+          paragraphs: [
+            'En doublant la deuxième consonne de la racine, on obtient la forme II. Elle rend une action plus intense, ou la fait faire à quelqu’un d’autre : savoir → faire savoir, c’est-à-dire enseigner.',
+            'Au présent, les formes II, III et IV prennent le préfixe yu- (et non ya-) : يُدَرِّسُ, « il enseigne ».',
+          ],
+          examples: [
+            p('دَرَسَ ← دَرَّسَ', 'darasa → darrasa', 'étudier → enseigner'),
+            p('عَلِمَ ← عَلَّمَ', 'ʿalima → ʿallama', 'savoir → apprendre (à quelqu’un)'),
+            p('نَظِيفٌ ← نَظَّفَ', 'naẓīf → naẓẓafa', 'propre → nettoyer'),
+            p('يُدَرِّسُ', 'yudarrisu', 'il enseigne (présent en yu-)'),
+          ],
+        },
+        {
+          title: 'Forme V et forme X',
+          paragraphs: [
+            'La forme V ajoute un ت devant la forme II : elle exprime ce qu’on fait pour soi-même. « Faire savoir » devient « se faire savoir » : apprendre.',
+            'La forme X ajoute اِسْتَـ devant la racine : elle exprime souvent la demande, ou le fait de trouver ou de rendre quelque chose tel. Elle est très fréquente dans la langue moderne.',
+          ],
+          examples: [
+            p('تَعَلَّمَ', 'taʿallama', 'apprendre (forme V)'),
+            p('تَكَلَّمَ', 'takallama', 'parler (forme V)'),
+            p('تَذَكَّرَ', 'tadhakkara', 'se souvenir (forme V)'),
+            p('اِسْتَعْمَلَ', 'istaʿmala', 'utiliser (forme X, de عَمِلَ « faire »)'),
+            p('اِسْتَقْبَلَ', 'istaqbala', 'accueillir (forme X)'),
+            p('اِسْتَشَارَ', 'istashāra', 'consulter, demander conseil (forme X)'),
+          ],
+        },
+        {
+          title: 'Le maṣdar : le nom d’action',
+          paragraphs: [
+            'Chaque forme a son nom d’action, le maṣdar, un peu comme nos noms en « -tion ». À partir de la forme II, il est parfaitement régulier : connaître le schème, c’est savoir former des centaines de mots.',
+          ],
+          table: {
+            headers: ['Forme', 'Schème', 'Exemple', 'Sens'],
+            rows: [
+              ['II', 'ar:تَفْعِيلٌ', 'ar:تَعْلِيمٌ', 'l’enseignement'],
+              ['III', 'ar:مُفَاعَلَةٌ', 'ar:مُسَاعَدَةٌ', 'l’aide'],
+              ['IV', 'ar:إِفْعَالٌ', 'ar:إِسْعَافٌ', 'les premiers secours'],
+              ['V', 'ar:تَفَعُّلٌ', 'ar:تَعَلُّمٌ', 'l’apprentissage'],
+              ['VI', 'ar:تَفَاعُلٌ', 'ar:تَعَاوُنٌ', 'la coopération'],
+              ['VIII', 'ar:اِفْتِعَالٌ', 'ar:اِجْتِمَاعٌ', 'la réunion'],
+              ['X', 'ar:اِسْتِفْعَالٌ', 'ar:اِسْتِقْبَالٌ', 'l’accueil'],
+            ],
+          },
+        },
+      ],
+      quiz: [
+        { question: 'À quelle forme appartient تَكَلَّمَ ?', options: ['II', 'V', 'X'], answer: 1 },
+        { question: 'Quel est le maṣdar de عَلَّمَ (forme II) ?', options: ['تَعَلُّمٌ', 'تَعْلِيمٌ', 'عِلْمٌ'], answer: 1 },
+        { question: 'سَيَّارَةُ إِسْعَافٍ (une ambulance) : إِسْعَافٌ est le maṣdar de quelle forme ?', options: ['IV', 'VIII', 'X'], answer: 0 },
+        { question: 'Que veut dire اِسْتَعْمَلَ ?', options: ['travailler', 'utiliser', 'collaborer'], answer: 1 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'yu- ou ya- ? Le préfixe du présent',
+        paragraphs: ['Les formes II, III et IV prennent un préfixe en u (yu-, tu-, nu-, u-) ; toutes les autres un préfixe en a. Écoutez la différence :'],
+        examples: [
+          p('يُدَرِّسُ', 'yudarrisu', 'il enseigne (II)'),
+          p('يُسَاعِدُ', 'yusāʿidu', 'il aide (III)'),
+          p('يُسْعِفُ', 'yusʿifu', 'il porte secours (IV)'),
+          p('يَتَعَلَّمُ', 'yataʿallamu', 'il apprend (V)'),
+          p('يَسْتَعْمِلُ', 'yastaʿmilu', 'il utilise (X)'),
+        ],
+      },
+    ],
+    writing: [
+      {
+        title: 'Retrouver la racine : سَأَلْتُمُونِيهَا',
+        paragraphs: [
+          'Seules dix lettres peuvent s’ajouter à une racine. Les grammairiens les ont rassemblées dans un mot plaisant : سَأَلْتُمُونِيهَا, « vous me l’avez demandée ». Pour trouver la racine d’un mot inconnu, retirez ces lettres ajoutées.',
+          'Exemple : dans مُسْتَشْفًى (hôpital), on retire م, س, ت : il reste ش ف ي, la racine de la guérison. L’hôpital est « le lieu où l’on cherche la guérison », un schème de forme X.',
+        ],
+        examples: [
+          p('سَأَلْتُمُونِيهَا', 'sa’altumūnīhā', 'les dix lettres d’augmentation'),
+          p('مُسْتَشْفًى', 'mustashfā', 'hôpital — racine ش ف ي'),
+          p('اِسْتِقْبَالٌ', 'istiqbāl', 'accueil — racine ق ب ل'),
+        ],
+      },
+    ],
+    vocabulary: w('b1-1', [
+      ['دَرَّسَ', 'darrasa', 'enseigner'],
+      ['نَظَّفَ', 'naẓẓafa', 'nettoyer'],
+      ['سَاعَدَ', 'sāʿada', 'aider'],
+      ['أَسْعَفَ', 'asʿafa', 'porter secours'],
+      ['تَكَلَّمَ', 'takallama', 'parler'],
+      ['تَذَكَّرَ', 'tadhakkara', 'se souvenir'],
+      ['اِجْتَمَعَ', 'ijtamaʿa', 'se réunir'],
+      ['اِسْتَعْمَلَ', 'istaʿmala', 'utiliser'],
+      ['اِسْتَقْبَلَ', 'istaqbala', 'accueillir'],
+      ['اِسْتَشَارَ', 'istashāra', 'consulter'],
+      ['تَعْلِيمٌ', 'taʿlīm', 'l’enseignement'],
+      ['مُسَاعَدَةٌ', 'musāʿada', 'l’aide'],
+      ['اِجْتِمَاعٌ', 'ijtimāʿ', 'une réunion'],
+      ['اِسْتِقْبَالٌ', 'istiqbāl', 'l’accueil'],
+      ['اِسْتِشَارَةٌ', 'istishāra', 'une consultation, un avis'],
+      ['مُتَدَرِّبٌ', 'mutadarrib', 'un stagiaire, un interne'],
+    ]),
+    mindmap: {
+      center: p('ش ف ي', 'sh-f-y', 'la racine de la guérison'),
+      branches: [
+        { label: 'Les verbes', items: [p('شَفَى', 'shafā', 'guérir (quelqu’un)'), p('اِسْتَشْفَى', 'istashfā', 'se faire soigner (X)')] },
+        { label: 'Les noms', items: [p('شِفَاءٌ', 'shifā’', 'la guérison'), p('مُسْتَشْفًى', 'mustashfā', 'l’hôpital')] },
+        { label: 'Un souhait', items: [p('شِفَاءً عَاجِلًا', 'shifā’an ʿājilan', 'prompt rétablissement')] },
+        { label: 'Une autre racine : ع م ل', items: [p('عَمِلَ', 'ʿamila', 'travailler'), p('اِسْتَعْمَلَ', 'istaʿmala', 'utiliser'), p('عَامِلٌ', 'ʿāmil', 'un ouvrier')] },
+      ],
+    },
+    story: {
+      title: 'Le premier jour d’Adam',
+      lines: [
+        p('وَصَلَ آدَمُ، الطَّبِيبُ الْمُتَدَرِّبُ، إِلَى الْمُسْتَشْفَى فِي الصَّبَاحِ الْبَاكِرِ.', 'waṣala Ādamu, aṭ-ṭabību l-mutadarribu, ilā l-mustashfā fī ṣ-ṣabāḥi l-bākir.', 'Adam, le jeune interne, arriva à l’hôpital tôt le matin.'),
+        p('اِسْتَقْبَلَتْهُ الدُّكْتُورَةُ جُولْيِيت بِابْتِسَامَةٍ.', 'istaqbalathu d-duktūratu Jūliyet bi-btisāma.', 'La docteure Juliette l’accueillit avec un sourire.'),
+        p('قَالَتْ: سَأُعَلِّمُكَ كُلَّ شَيْءٍ، لَا تَقْلَقْ.', 'qālat : sa-uʿallimuka kulla shay’, lā taqlaq.', 'Elle dit : « Je vais tout t’apprendre, ne t’inquiète pas. »'),
+        p('تَعَلَّمَ آدَمُ كَيْفَ يَسْتَعْمِلُ الْأَجْهِزَةَ، وَكَيْفَ يَتَكَلَّمُ مَعَ الْمَرْضَى.', 'taʿallama Ādamu kayfa yastaʿmilu l-ajhiza, wa-kayfa yatakallamu maʿa l-marḍā.', 'Adam apprit à utiliser les appareils et à parler aux patients.'),
+        p('فِي الظُّهْرِ، اِجْتَمَعَ الْفَرِيقُ لِمُنَاقَشَةِ الْحَالَاتِ الصَّعْبَةِ.', 'fī ẓ-ẓuhr, ijtamaʿa l-farīqu li-munāqashati l-ḥālāti ṣ-ṣaʿba.', 'À midi, l’équipe se réunit pour discuter des cas difficiles.'),
+        p('وَفِي الْمَسَاءِ، تَذَكَّرَ آدَمُ كَلِمَاتِ جُولْيِيت: اَلتَّعَلُّمُ رِحْلَةٌ طَوِيلَةٌ.', 'wa-fī l-masā’, tadhakkara Ādamu kalimāti Jūliyet : at-taʿallumu riḥlatun ṭawīla.', 'Le soir, Adam se souvint des mots de Juliette : « Apprendre est un long voyage. »'),
+      ],
+    },
+    podcast: {
+      title: 'Un avis médical',
+      intro: 'Adam demande conseil à la docteure Juliette au sujet d’une patiente.',
+      lines: [
+        { speaker: 'Adam', ar: 'دُكْتُورَة، هَلْ يُمْكِنُ أَنْ أَسْتَشِيرَكِ فِي حَالَةٍ؟', fr: 'Docteure, puis-je vous demander votre avis sur un cas ?' },
+        { speaker: 'Juliette', ar: 'طَبْعًا، تَفَضَّلْ.', fr: 'Bien sûr, je t’écoute.' },
+        { speaker: 'Adam', ar: 'مَرِيضَةٌ عِنْدَهَا حُمَّى وَسُعَالٌ مُنْذُ أُسْبُوعٍ.', fr: 'Une patiente a de la fièvre et de la toux depuis une semaine.' },
+        { speaker: 'Juliette', ar: 'هَلِ اسْتَعْمَلْتَ السَّمَّاعَةَ؟', fr: 'As-tu utilisé le stéthoscope ?' },
+        { speaker: 'Adam', ar: 'نَعَمْ، وَسَمِعْتُ صَوْتًا غَرِيبًا فِي الرِّئَةِ الْيُمْنَى.', fr: 'Oui, et j’ai entendu un bruit étrange dans le poumon droit.' },
+        { speaker: 'Juliette', ar: 'أَحْسَنْتَ. سَنَطْلُبُ صُورَةَ أَشِعَّةٍ لِلتَّأَكُّدِ.', fr: 'Bravo. Nous allons demander une radio pour confirmer.' },
+      ],
+    },
+    conversation: {
+      intro: 'Adam s’intéresse à votre apprentissage de l’arabe.',
+      steps: [
+        { bot: p('مُنْذُ مَتَى تَتَعَلَّمِينَ الْعَرَبِيَّةَ؟', 'mundhu matā tataʿallamīna l-ʿarabiyya ?', 'Depuis quand apprenez-vous l’arabe ?'), expected: ['منذ', 'اتعلم'], hint: p('أَتَعَلَّمُ الْعَرَبِيَّةَ مُنْذُ شَهْرٍ.', 'ataʿallamu l-ʿarabiyya mundhu shahr.', 'J’apprends l’arabe depuis un mois.') },
+        { bot: p('هَلْ تَسْتَعْمِلِينَ الْعَرَبِيَّةَ فِي عَمَلِكِ؟', 'hal tastaʿmilīna l-ʿarabiyya fī ʿamaliki ?', 'Utilisez-vous l’arabe dans votre travail ?'), expected: ['نعم', 'لا', 'استعمل'], hint: p('نَعَمْ، أَسْتَعْمِلُهَا مَعَ الْمَرْضَى.', 'naʿam, astaʿmiluhā maʿa l-marḍā.', 'Oui, je l’utilise avec les patients.') },
+        { bot: p('مَعَ مَنْ تَتَكَلَّمِينَ بِالْعَرَبِيَّةِ؟', 'maʿa man tatakallamīna bi-l-ʿarabiyya ?', 'Avec qui parlez-vous arabe ?'), expected: ['اتكلم', 'مع'], hint: p('أَتَكَلَّمُ مَعَ الْمَرْضَى وَالْأَصْدِقَاءِ.', 'atakallamu maʿa l-marḍā wa-l-aṣdiqā’.', 'Je parle avec les patients et les amis.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'بِحْكِي', tr: 'baḥki', fr: 'je parle', msa: 'أَتَكَلَّمُ' },
+      { dialect: 'Levantin', ar: 'عَمْ بِتْعَلَّم', tr: 'ʿam bitʿallam', fr: 'je suis en train d’apprendre', msa: 'أَتَعَلَّمُ' },
+      { dialect: 'Égyptien', ar: 'بَتْكَلِّم', tr: 'batkallim', fr: 'je parle', msa: 'أَتَكَلَّمُ' },
+      { dialect: 'Égyptien', ar: 'بَسْتَعْمِل', tr: 'bastaʿmil', fr: 'j’utilise', msa: 'أَسْتَعْمِلُ' },
+      { dialect: 'Marocain', ar: 'كَنْهْضَر', tr: 'kanhḍer', fr: 'je parle', msa: 'أَتَكَلَّمُ' },
+      { dialect: 'Marocain', ar: 'كَنْتْعَلَّم', tr: 'kantʿallem', fr: 'j’apprends', msa: 'أَتَعَلَّمُ' },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ B1.2 */
+  {
+    id: 'b1-2',
+    level: 'B1',
+    order: 2,
+    title: 'Raconter et donner son avis',
+    arTitle: 'ذِكْرَيَاتٌ وَآرَاءٌ',
+    subtitle: 'كَانَ et l’imparfait, l’opinion, إِنَّ et ses sœurs',
+    emoji: '💭',
+    grammar: {
+      lessons: [
+        {
+          title: 'كَانَ : l’imparfait et l’attribut',
+          paragraphs: [
+            'كَانَ (« être », au passé) sert d’auxiliaire. Suivi d’un verbe au présent, il exprime l’habitude ou la durée dans le passé, comme notre imparfait : كُنْتُ أَسْبَحُ, « je nageais ».',
+            'Suivi d’un nom ou d’un adjectif, il met cet attribut à l’accusatif : كَانَ الْبَحْرُ هَادِئًا, « la mer était calme ». Ses « sœurs » font de même : أَصْبَحَ (devenir), مَا زَالَ (être encore), لَيْسَ (ne pas être).',
+          ],
+          table: {
+            headers: ['Personne', 'Passé de كَانَ', 'Translittération'],
+            rows: [
+              ['je', 'ar:كُنْتُ', 'kuntu'],
+              ['tu (h)', 'ar:كُنْتَ', 'kunta'],
+              ['tu (f)', 'ar:كُنْتِ', 'kunti'],
+              ['il', 'ar:كَانَ', 'kāna'],
+              ['elle', 'ar:كَانَتْ', 'kānat'],
+              ['nous', 'ar:كُنَّا', 'kunnā'],
+              ['ils', 'ar:كَانُوا', 'kānū'],
+            ],
+          },
+        },
+        {
+          title: 'Donner son avis',
+          paragraphs: ['Quelques tournures indispensables pour exprimer une opinion et la nuancer :'],
+          examples: [
+            p('فِي رَأْيِي…', 'fī ra’yī…', 'à mon avis…'),
+            p('أَعْتَقِدُ أَنَّ…', 'aʿtaqidu anna…', 'je crois que…'),
+            p('أَظُنُّ أَنَّ…', 'aẓunnu anna…', 'je pense que…'),
+            p('أُوَافِقُكَ / لَا أُوَافِقُكَ', 'uwāfiquka / lā uwāfiquka', 'je suis d’accord / pas d’accord avec toi'),
+            p('مِنْ نَاحِيَةٍ… وَمِنْ نَاحِيَةٍ أُخْرَى…', 'min nāḥiya… wa-min nāḥiyatin ukhrā…', 'd’un côté… de l’autre…'),
+          ],
+        },
+        {
+          title: 'إِنَّ, أَنَّ et leurs sœurs : le sujet passe à l’accusatif',
+          paragraphs: [
+            'Après إِنَّ (« certes », et après le verbe « dire »), أَنَّ (« que »), لِأَنَّ (« parce que ») et لَكِنَّ (« mais »), le sujet de la phrase nominale se met à l’accusatif, tandis que son attribut reste au nominatif.',
+            'Avec un pronom, on l’accroche directement : لِأَنَّهُ, « parce qu’il » ; لَكِنَّنِي, « mais moi ».',
+          ],
+          examples: [
+            p('اَلْبَحْرُ جَمِيلٌ ← إِنَّ الْبَحْرَ جَمِيلٌ', 'al-baḥru jamīl → inna l-baḥra jamīl', 'la mer est belle → certes, la mer est belle'),
+            p('أَعْتَقِدُ أَنَّ اللُّغَةَ مُهِمَّةٌ', 'aʿtaqidu anna l-lughata muhimma', 'je crois que la langue est importante'),
+            p('لِأَنَّ الْمَاءَ بَارِدٌ', 'li-anna l-mā’a bārid', 'parce que l’eau est froide'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Comment dit-on « je nageais chaque jour » ?', options: ['سَبَحْتُ كُلَّ يَوْمٍ', 'كُنْتُ أَسْبَحُ كُلَّ يَوْمٍ', 'سَأَسْبَحُ كُلَّ يَوْمٍ'], answer: 1 },
+        { question: 'Après أَنَّ, à quel cas se met le sujet ?', options: ['Nominatif', 'Accusatif', 'Génitif'], answer: 1 },
+        { question: 'Quelle phrase est correcte ?', options: ['لِأَنَّ الْمَاءُ بَارِدٌ', 'لِأَنَّ الْمَاءَ بَارِدٌ', 'لِأَنَّ الْمَاءِ بَارِدًا'], answer: 1 },
+        { question: 'Que signifie فِي رَأْيِي ?', options: ['à mon avis', 'dans ma tête', 'selon lui'], answer: 0 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'La chadda des petites particules',
+        paragraphs: ['إِنَّ, أَنَّ, لَكِنَّ, لِأَنَّ portent toutes une chadda sur le ن : appuyez-la nettement, c’est elle qui les distingue de إِنْ (« si ») ou أَنْ (« que » devant un verbe).'],
+        examples: [p('إِنَّ', 'inna', 'certes'), p('إِنْ', 'in', 'si'), p('أَنَّ', 'anna', 'que (+ nom)'), p('أَنْ', 'an', 'que (+ verbe)')],
+      },
+    ],
+    writing: [
+      {
+        title: 'La ponctuation arabe',
+        paragraphs: [
+          'La ponctuation arabe suit le sens de l’écriture : la virgule (،) et le point-virgule (؛) sont retournés, et le point d’interrogation (؟) regarde vers la gauche. Le point et le point d’exclamation ne changent pas.',
+        ],
+        examples: [
+          p('نَعَمْ، أُوَافِقُكَ.', 'naʿam, uwāfiquka.', 'Oui, je suis d’accord avec toi. (virgule ،)'),
+          p('مَا رَأْيُكَ؟', 'mā ra’yuka ?', 'Qu’en penses-tu ? (point d’interrogation ؟)'),
+        ],
+      },
+    ],
+    vocabulary: w('b1-2', [
+      ['رَأْيٌ / آرَاءٌ', 'ra’y / ārā’', 'un avis / des avis'],
+      ['فِي رَأْيِي', 'fī ra’yī', 'à mon avis'],
+      ['أَعْتَقِدُ أَنَّ', 'aʿtaqidu anna', 'je crois que'],
+      ['أُوَافِقُ', 'uwāfiqu', 'je suis d’accord'],
+      ['لِأَنَّ', 'li-anna', 'parce que'],
+      ['لَكِنَّ', 'lākinna', 'mais'],
+      ['لِذَلِكَ', 'li-dhālika', 'c’est pourquoi'],
+      ['بَيْنَمَا', 'baynamā', 'tandis que'],
+      ['عَلَى الرَّغْمِ مِنْ', 'ʿalā r-raghmi min', 'malgré'],
+      ['أَصْبَحَ', 'aṣbaḥa', 'devenir'],
+      ['مَا زَالَ', 'mā zāla', 'être encore, toujours'],
+      ['عِنْدَمَا', 'ʿindamā', 'quand, lorsque'],
+      ['ذِكْرَيَاتٌ', 'dhikrayāt', 'des souvenirs'],
+      ['طُفُولَةٌ', 'ṭufūla', 'l’enfance'],
+      ['مُهِمٌّ', 'muhimm', 'important'],
+      ['مُفِيدٌ', 'mufīd', 'utile'],
+    ]),
+    mindmap: {
+      center: p('رَأْيِي', 'ra’yī', 'mon avis'),
+      branches: [
+        { label: 'Donner son avis', items: [p('فِي رَأْيِي', 'fī ra’yī', 'à mon avis'), p('أَعْتَقِدُ أَنَّ', 'aʿtaqidu anna', 'je crois que')] },
+        { label: 'Être d’accord ou non', items: [p('أُوَافِقُ', 'uwāfiqu', 'je suis d’accord'), p('لَا أُوَافِقُ', 'lā uwāfiqu', 'je ne suis pas d’accord')] },
+        { label: 'Justifier', items: [p('لِأَنَّ', 'li-anna', 'parce que'), p('لِذَلِكَ', 'li-dhālika', 'c’est pourquoi')] },
+        { label: 'Nuancer', items: [p('لَكِنَّ', 'lākinna', 'mais'), p('عَلَى الرَّغْمِ مِنْ', 'ʿalā r-raghmi min', 'malgré')] },
+      ],
+    },
+    story: {
+      title: 'Souvenirs d’enfance au bord de la mer',
+      lines: [
+        p('عِنْدَمَا كُنْتُ صَغِيرَةً، كُنْتُ أَقْضِي الصَّيْفَ عِنْدَ جَدَّتِي قُرْبَ الْبَحْرِ.', 'ʿindamā kuntu ṣaghīra, kuntu aqḍī ṣ-ṣayfa ʿinda jaddatī qurba l-baḥr.', 'Quand j’étais petite, je passais l’été chez ma grand-mère, près de la mer.'),
+        p('كُنَّا نَسْتَيْقِظُ بَاكِرًا وَنَذْهَبُ إِلَى الشَّاطِئِ.', 'kunnā nastayqiẓu bākiran wa-nadhhabu ilā sh-shāṭi’.', 'Nous nous levions tôt et allions à la plage.'),
+        p('كَانَتْ جَدَّتِي تَقُولُ إِنَّ الْبَحْرَ أَفْضَلُ طَبِيبٍ.', 'kānat jaddatī taqūlu inna l-baḥra afḍalu ṭabīb.', 'Ma grand-mère disait que la mer est le meilleur des médecins.'),
+        p('فِي رَأْيِي، كَانَتْ عَلَى حَقٍّ، لِأَنَّ تِلْكَ الْأَيَّامَ كَانَتْ أَجْمَلَ أَيَّامِ حَيَاتِي.', 'fī ra’yī, kānat ʿalā ḥaqq, li-anna tilka l-ayyāma kānat ajmala ayyāmi ḥayātī.', 'À mon avis, elle avait raison, car ces jours-là furent les plus beaux de ma vie.'),
+        p('لَكِنَّنِي أَعْتَقِدُ أَنَّ الطِّبَّ يَحْتَاجُ إِلَى الْعِلْمِ أَيْضًا!', 'lākinnanī aʿtaqidu anna ṭ-ṭibba yaḥtāju ilā l-ʿilmi ayḍan !', 'Mais je crois que la médecine a aussi besoin de science !'),
+        p('لِذَلِكَ أَصْبَحْتُ طَبِيبَةً… وَمَا زِلْتُ أُحِبُّ الْبَحْرَ.', 'li-dhālika aṣbaḥtu ṭabība… wa-mā ziltu uḥibbu l-baḥr.', 'C’est pourquoi je suis devenue médecin… et j’aime toujours la mer.'),
+      ],
+    },
+    podcast: {
+      title: 'Faut-il apprendre les dialectes ?',
+      intro: 'Sami et Juliette ne sont pas tout à fait du même avis.',
+      lines: [
+        { speaker: 'Sami', ar: 'هَلْ تَعْتَقِدِينَ أَنَّ الْفُصْحَى تَكْفِي؟', fr: 'Crois-tu que l’arabe standard suffit ?' },
+        { speaker: 'Juliette', ar: 'فِي رَأْيِي، هِيَ ضَرُورِيَّةٌ لِلْقِرَاءَةِ وَالْأَخْبَارِ.', fr: 'À mon avis, il est indispensable pour lire et suivre les informations.' },
+        { speaker: 'Sami', ar: 'لَكِنَّ النَّاسَ يَتَكَلَّمُونَ اللَّهَجَاتِ فِي الشَّارِعِ!', fr: 'Mais dans la rue, les gens parlent les dialectes !' },
+        { speaker: 'Juliette', ar: 'أُوَافِقُكَ، لِذَلِكَ أَتَعَلَّمُ بَعْضَ الْعِبَارَاتِ الْعَامِّيَّةِ أَيْضًا.', fr: 'Je suis d’accord, c’est pourquoi j’apprends aussi quelques expressions dialectales.' },
+        { speaker: 'Sami', ar: 'فِكْرَةٌ مُمْتَازَةٌ، خُصُوصًا مَعَ مَرْضَاكِ.', fr: 'Excellente idée, surtout avec tes patients.' },
+      ],
+    },
+    conversation: {
+      intro: 'Sami vous interroge sur votre enfance et votre opinion.',
+      steps: [
+        { bot: p('مَاذَا كُنْتِ تُحِبِّينَ عِنْدَمَا كُنْتِ صَغِيرَةً؟', 'mādhā kunti tuḥibbīna ʿindamā kunti ṣaghīra ?', 'Qu’aimais-tu quand tu étais petite ?'), expected: ['كنت', 'احب'], hint: p('كُنْتُ أُحِبُّ الْبَحْرَ.', 'kuntu uḥibbu l-baḥr.', 'J’aimais la mer.') },
+        { bot: p('مَا رَأْيُكِ فِي تَعَلُّمِ اللَّهَجَاتِ؟', 'mā ra’yuki fī taʿallumi l-lahajāt ?', 'Que penses-tu de l’apprentissage des dialectes ?'), expected: ['رايي', 'اعتقد', 'اظن', 'مهم', 'مفيد'], hint: p('فِي رَأْيِي، هُوَ مُفِيدٌ جِدًّا.', 'fī ra’yī, huwa mufīdun jiddan.', 'À mon avis, c’est très utile.') },
+        { bot: p('لِمَاذَا؟', 'limādhā ?', 'Pourquoi ?'), expected: ['لان'], hint: p('لِأَنَّ الْمَرْضَى يَتَكَلَّمُونَ اللَّهَجَاتِ.', 'li-anna l-marḍā yatakallamūna l-lahajāt.', 'Parce que les patients parlent les dialectes.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'بْرَأْيِي', tr: 'b-ra’yi', fr: 'à mon avis', msa: 'فِي رَأْيِي' },
+      { dialect: 'Levantin', ar: 'لِأَنُّو', tr: 'la’annu', fr: 'parce que', msa: 'لِأَنَّ' },
+      { dialect: 'Égyptien', ar: 'عَشَان', tr: 'ʿashān', fr: 'parce que ; pour', msa: 'لِأَنَّ' },
+      { dialect: 'Égyptien', ar: 'أَنَا شَايْفَة إِنّ…', tr: 'ana shayfa inn…', fr: 'je trouve que… (f)', msa: 'أَعْتَقِدُ أَنَّ' },
+      { dialect: 'Marocain', ar: 'حِيتْ', tr: 'ḥit', fr: 'parce que', msa: 'لِأَنَّ' },
+      { dialect: 'Marocain', ar: 'كَنْظَنّ', tr: 'kanḍenn', fr: 'je pense', msa: 'أَظُنُّ' },
+    ],
+  },
+
 ]
 
 export const tierById = (id: string) => TIERS.find((t) => t.id === id)
@@ -1043,7 +1357,7 @@ export const tierById = (id: string) => TIERS.find((t) => t.id === id)
 export const CEFR_LEVELS: { level: Cefr; title: string; description: string }[] = [
   { level: 'A1', title: 'Découverte', description: 'L’alphabet, se présenter, la famille, la maison.' },
   { level: 'A2', title: 'Survie', description: 'Le passé, le présent et le futur, la ville, le restaurant, l’annexion et les pluriels brisés.' },
-  { level: 'B1', title: 'Seuil', description: 'Les formes verbales II à X, raconter, donner son avis.' },
+  { level: 'B1', title: 'Seuil', description: 'Les formes dérivées en action, le maṣdar, raconter au passé, donner son avis.' },
   { level: 'B2', title: 'Avancé', description: 'La presse, l’argumentation, la lecture sans diacritiques.' },
   { level: 'C1', title: 'Autonome', description: 'Littérature, nuances de registre, débats.' },
 ]
