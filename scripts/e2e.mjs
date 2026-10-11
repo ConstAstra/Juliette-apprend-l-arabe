@@ -215,6 +215,30 @@ await step('Migration des anciens profils (avatar emoji)', async () => {
   await ctx.close()
 })
 
+await step('Mise à jour : une ancienne progression est conservée', async () => {
+  const ctx = await browser.newContext({ ...iphone, locale: 'fr-FR' })
+  const pg = await ctx.newPage()
+  await pg.addInitScript(() => {
+    if (localStorage.getItem('ancienne-progression')) return
+    // Progression enregistrée par une version antérieure, sans les champs ajoutés depuis.
+    localStorage.setItem('jaa-progression-juliette', JSON.stringify({
+      state: { xp: 420, activity: { '2026-10-09': 420 }, seenLetters: { ba: true }, completed: { 'a1-1': ['grammaire'] }, seenThemes: {}, bestRecognition: 8, settings: { tashkeel: false, translit: true, speechRate: 0.85 } },
+      version: 1,
+    }))
+    localStorage.setItem('ancienne-progression', '1')
+  })
+  await pg.goto(URL_BASE + '#/progres')
+  await pg.getByText('420 XP au total').waitFor()
+  const state = await pg.evaluate(() => JSON.parse(localStorage.getItem('jaa-progression-juliette')).state)
+  assert(state.xp === 420 && state.seenLetters.ba && state.completed['a1-1'][0] === 'grammaire' && state.settings.tashkeel === false, 'progression altérée')
+  // Les fonctions apparues depuis fonctionnent avec cette ancienne progression.
+  await pg.goto(URL_BASE + '#/revisions')
+  await pg.getByText(/Réviser \d+ carte/).first().waitFor()
+  await pg.goto(URL_BASE + '#/jeux')
+  await pg.getByText('Le chasseur de racines').waitFor()
+  await ctx.close()
+})
+
 await step('Révisions Leitner : vocabulaire et grammaire séparés', async () => {
   await go('/revisions')
   await shot('12-revisions')

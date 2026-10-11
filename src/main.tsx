@@ -9,6 +9,9 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
+// Demande au navigateur de ne pas effacer la progression pour libérer de l'espace.
+navigator.storage?.persist?.().catch(() => {})
+
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => {})
 }
