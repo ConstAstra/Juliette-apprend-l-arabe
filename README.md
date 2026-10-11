@@ -35,7 +35,7 @@ Les tests de bout en bout utilisent `playwright-core` et le Chromium indiqué pa
 
 ## Déploiement
 
-Le workflow `.github/workflows/deploy.yml` construit et publie le site sur GitHub Pages à chaque push sur `main`. Dans les réglages du dépôt, choisissez **Pages → Source : GitHub Actions**.
+Le site est en ligne sur **https://constastra.github.io/Juliette-apprend-l-arabe/**, servi par GitHub Pages depuis la branche `gh-pages`. Le workflow `.github/workflows/deploy.yml` reconstruit et republie cette branche à chaque push sur `main` (ou à la demande).
 
 ## Organisation
 
