@@ -1350,6 +1350,301 @@ export const TIERS: Tier[] = [
     ],
   },
 
+  /* ------------------------------------------------------------------ B2.1 */
+  {
+    id: 'b2-1',
+    level: 'B2',
+    order: 1,
+    title: 'La presse et l’information',
+    arTitle: 'اَلصِّحَافَةُ',
+    subtitle: 'Le passif, les relatifs, la langue des journaux',
+    emoji: '📰',
+    realReading: true,
+    grammar: {
+      lessons: [
+        {
+          title: 'Le passif',
+          paragraphs: [
+            'Le passif « interne » ne change que les voyelles du verbe : u-i au passé, u-a au présent. Sans diacritiques, فتح peut donc se lire « il a ouvert » ou « il a été ouvert » : seul le contexte tranche.',
+            'La presse moderne préfère une tournure plus transparente : تَمَّ (« a été accompli ») suivi d’un maṣdar. تَمَّ افْتِتَاحُ الْمُسْتَشْفَى, « l’hôpital a été inauguré ».',
+          ],
+          examples: [
+            p('فَتَحَ ← فُتِحَ', 'fataḥa → futiḥa', 'il a ouvert → il a été ouvert'),
+            p('يَكْتُبُ ← يُكْتَبُ', 'yaktubu → yuktabu', 'il écrit → il est écrit'),
+            p('تَمَّ افْتِتَاحُ الْمُسْتَشْفَى', 'tamma ftitāḥu l-mustashfā', 'l’hôpital a été inauguré'),
+            p('سَيَتِمُّ نَشْرُ النَّتَائِجِ', 'sa-yatimmu nashru n-natā’ij', 'les résultats seront publiés'),
+          ],
+        },
+        {
+          title: 'Les pronoms relatifs… avec le duel',
+          paragraphs: [
+            'Le relatif s’accorde avec le nom qu’il reprend, y compris au duel. Il ne s’emploie qu’après un nom défini.',
+            'Après un nom indéfini, on n’en met pas du tout : كِتَابٌ قَرَأْتُهُ, « un livre que j’ai lu ». Le pronom suffixe ـهُ rappelle le nom repris.',
+          ],
+          table: {
+            headers: ['', 'Masculin', 'Féminin'],
+            rows: [
+              ['Singulier', 'ar:اَلَّذِي', 'ar:اَلَّتِي'],
+              ['Duel', 'ar:اَللَّذَانِ', 'ar:اَللَّتَانِ'],
+              ['Pluriel', 'ar:اَلَّذِينَ', 'ar:اَللَّوَاتِي'],
+            ],
+          },
+          examples: [
+            p('اَلطَّبِيبَةُ الَّتِي فَحَصَتْنِي', 'aṭ-ṭabībatu llatī faḥaṣatnī', 'la médecin qui m’a examiné'),
+            p('اَلْمَرِيضَانِ اللَّذَانِ وَصَلَا أَمْسِ', 'al-marīḍāni lladhāni waṣalā amsi', 'les deux patients qui sont arrivés hier'),
+          ],
+        },
+        {
+          title: 'Les verbes de la presse',
+          paragraphs: ['Les journalistes rapportent les propos avec un petit nombre de verbes, presque tous de formes dérivées. Les repérer, c’est comprendre qui parle.'],
+          examples: [
+            p('أَعْلَنَ أَنَّ…', 'aʿlana anna…', 'il a annoncé que… (IV)'),
+            p('صَرَّحَ بِأَنَّ…', 'ṣarraḥa bi-anna…', 'il a déclaré que… (II)'),
+            p('أَفَادَ', 'afāda', 'il a indiqué, rapporté (IV)'),
+            p('وَفْقًا لِـ…', 'wafqan li-…', 'selon…'),
+            p('أَشَارَ إِلَى…', 'ashāra ilā…', 'il a souligné… (IV)'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Comment lire فتح dans « فتح المستشفى أمس » (l’hôpital a ouvert hier) ?', options: ['fataḥa (il a ouvert)', 'futiḥa (il a été ouvert)'], answer: 1, explanation: 'L’hôpital ne s’ouvre pas lui-même : c’est le passif.' },
+        { question: 'Que signifie تَمَّ نَشْرُ التَّقْرِيرِ ?', options: ['Le rapport a été publié', 'Le rapport est terminé', 'Il a publié le rapport'], answer: 0 },
+        { question: 'Quel relatif pour « les deux infirmières qui… » ?', options: ['اَلَّتِي', 'اَللَّتَانِ', 'اَللَّوَاتِي'], answer: 1 },
+        { question: '« Un article que j’ai lu » se dit…', options: ['مَقَالَةٌ الَّتِي قَرَأْتُهَا', 'مَقَالَةٌ قَرَأْتُهَا', 'اَلْمَقَالَةُ قَرَأْتُ'], answer: 1, explanation: 'Pas de relatif après un nom indéfini.' },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'Lire un titre à voix haute',
+        paragraphs: [
+          'Les titres de presse omettent souvent l’article et le verbe « être ». Lus à voix haute, on y fait sentir les cas avec soin : c’est le registre des journaux télévisés.',
+        ],
+        examples: [
+          p('اِرْتِفَاعُ عَدَدِ الزُّوَّارِ', 'irtifāʿu ʿadadi z-zuwwār', 'Hausse du nombre de visiteurs'),
+          p('اِفْتِتَاحُ مُسْتَشْفًى جَدِيدٍ فِي الْمَدِينَةِ', 'iftitāḥu mustashfan jadīdin fī l-madīna', 'Inauguration d’un nouvel hôpital en ville'),
+        ],
+      },
+    ],
+    writing: [
+      {
+        title: 'Lire sans voyelles : la méthode',
+        paragraphs: [
+          'Face à un mot non vocalisé : 1. repérez les lettres ajoutées (سَأَلْتُمُونِيهَا) pour trouver la racine ; 2. reconnaissez le schème ; 3. vérifiez que le sens convient à la phrase.',
+          'Avec la pratique, l’œil lit des mots entiers, comme vous lisez « jrnl » pour « journal ».',
+        ],
+        examples: [p('مستشفى', 'mustashfā', 'm-s-t + ش ف ي : un lieu (forme X)'), p('تم الإعلان', 'tamma l-iʿlān', 'l’annonce a été faite (maṣdar de forme IV)')],
+      },
+    ],
+    vocabulary: w('b2-1', [
+      ['صَحِيفَةٌ / صُحُفٌ', 'ṣaḥīfa / ṣuḥuf', 'un journal / des journaux'],
+      ['مَقَالَةٌ', 'maqāla', 'un article'],
+      ['عُنْوَانٌ', 'ʿunwān', 'un titre ; une adresse'],
+      ['خَبَرٌ / أَخْبَارٌ', 'khabar / akhbār', 'une nouvelle / les informations'],
+      ['صَحَفِيٌّ / صَحَفِيَّةٌ', 'ṣaḥafī / ṣaḥafiyya', 'un ou une journaliste'],
+      ['تَقْرِيرٌ', 'taqrīr', 'un rapport, un reportage'],
+      ['أَعْلَنَ', 'aʿlana', 'annoncer'],
+      ['صَرَّحَ', 'ṣarraḥa', 'déclarer'],
+      ['وَزَارَةُ الصِّحَّةِ', 'wizāratu ṣ-ṣiḥḥa', 'le ministère de la Santé'],
+      ['دِرَاسَةٌ', 'dirāsa', 'une étude'],
+      ['نَتِيجَةٌ / نَتَائِجُ', 'natīja / natā’ij', 'un résultat / des résultats'],
+      ['اِرْتِفَاعٌ / اِنْخِفَاضٌ', 'irtifāʿ / inkhifāḍ', 'une hausse / une baisse'],
+      ['نِسْبَةٌ مِئَوِيَّةٌ', 'nisba mi’awiyya', 'un pourcentage'],
+      ['وَفْقًا لِـ', 'wafqan li-', 'selon'],
+      ['تَمَّ…', 'tamma…', 'a été (+ maṣdar)'],
+    ]),
+    mindmap: {
+      center: p('اَلْخَبَرُ', 'al-khabar', 'l’information'),
+      branches: [
+        { label: 'Les supports', items: [p('صَحِيفَةٌ', 'ṣaḥīfa', 'journal'), p('مَقَالَةٌ', 'maqāla', 'article')] },
+        { label: 'Rapporter', items: [p('أَعْلَنَ', 'aʿlana', 'annoncer'), p('صَرَّحَ', 'ṣarraḥa', 'déclarer'), p('وَفْقًا لِـ', 'wafqan li-', 'selon')] },
+        { label: 'Les chiffres', items: [p('اِرْتِفَاعٌ', 'irtifāʿ', 'hausse'), p('اِنْخِفَاضٌ', 'inkhifāḍ', 'baisse'), p('نِسْبَةٌ', 'nisba', 'taux')] },
+        { label: 'Le passif', items: [p('تَمَّ النَّشْرُ', 'tamma n-nashr', 'publication faite'), p('فُتِحَ', 'futiḥa', 'a été ouvert')] },
+      ],
+    },
+    story: {
+      title: 'Brève : un nouveau service d’urgences',
+      lines: [
+        p('أَعْلَنَتْ وَزَارَةُ الصِّحَّةِ أَمْسِ عَنِ افْتِتَاحِ قِسْمِ طَوَارِئَ جَدِيدٍ فِي الْمُسْتَشْفَى الْجَامِعِيِّ.', 'aʿlanat wizāratu ṣ-ṣiḥḥati amsi ʿani ftitāḥi qismi ṭawāri’a jadīdin fī l-mustashfā l-jāmiʿī.', 'Le ministère de la Santé a annoncé hier l’ouverture d’un nouveau service d’urgences au CHU.'),
+        p('وَصَرَّحَ الْمُدِيرُ بِأَنَّ الْقِسْمَ يَسْتَطِيعُ اسْتِقْبَالَ مِئَتَيْ مَرِيضٍ يَوْمِيًّا.', 'wa-ṣarraḥa l-mudīru bi-anna l-qisma yastaṭīʿu stiqbāla mi’atay marīḍin yawmiyyan.', 'Le directeur a déclaré que le service pourrait accueillir deux cents patients par jour.'),
+        p('وَقَدْ تَمَّ تَجْهِيزُهُ بِأَحْدَثِ الْأَجْهِزَةِ الطِّبِّيَّةِ.', 'wa-qad tamma tajhīzuhu bi-aḥdathi l-ajhizati ṭ-ṭibbiyya.', 'Il a été équipé des appareils médicaux les plus récents.'),
+        p('وَفْقًا لِدِرَاسَةٍ حَدِيثَةٍ، اِرْتَفَعَ عَدَدُ الزِّيَارَاتِ إِلَى الطَّوَارِئِ بِنِسْبَةِ عِشْرِينَ فِي الْمِئَةِ.', 'wafqan li-dirāsatin ḥadītha, irtafaʿa ʿadadu z-ziyārāti ilā ṭ-ṭawāri’i bi-nisbati ʿishrīna fī l-mi’a.', 'Selon une étude récente, le nombre de passages aux urgences a augmenté de vingt pour cent.'),
+        p('وَأَشَارَ الْأَطِبَّاءُ الَّذِينَ يَعْمَلُونَ فِي الْقِسْمِ إِلَى أَهَمِّيَّةِ الْوِقَايَةِ.', 'wa-ashāra l-aṭibbā’u lladhīna yaʿmalūna fī l-qismi ilā ahammiyyati l-wiqāya.', 'Les médecins qui travaillent dans le service ont souligné l’importance de la prévention.'),
+      ],
+    },
+    podcast: {
+      title: 'Le journal du soir',
+      intro: 'Une présentatrice et un correspondant : le registre soutenu de l’information.',
+      lines: [
+        { speaker: 'Studio', ar: 'مَسَاءَ الْخَيْرِ، وَهَذِهِ أَهَمُّ الْأَخْبَارِ.', fr: 'Bonsoir, voici les principales informations.' },
+        { speaker: 'Studio', ar: 'تَمَّ الْيَوْمَ افْتِتَاحُ مُسْتَشْفًى جَدِيدٍ فِي الْعَاصِمَةِ. مَعَنَا مُرَاسِلُنَا.', fr: 'Un nouvel hôpital a été inauguré aujourd’hui dans la capitale. Notre correspondant est avec nous.' },
+        { speaker: 'Terrain', ar: 'شُكْرًا. أَعْلَنَ الْوَزِيرُ أَنَّ الْمُسْتَشْفَى سَيَسْتَقْبِلُ أَوَّلَ الْمَرْضَى غَدًا.', fr: 'Merci. Le ministre a annoncé que l’hôpital accueillera ses premiers patients demain.' },
+        { speaker: 'Studio', ar: 'وَمَا رَأْيُ السُّكَّانِ؟', fr: 'Et qu’en pensent les habitants ?' },
+        { speaker: 'Terrain', ar: 'اَلسُّكَّانُ الَّذِينَ تَحَدَّثْنَا مَعَهُمْ سُعَدَاءُ جِدًّا بِهَذَا الْمَشْرُوعِ.', fr: 'Les habitants avec qui nous avons parlé sont très heureux de ce projet.' },
+      ],
+    },
+    conversation: {
+      intro: 'Un journaliste vous interroge sur votre hôpital. Répondez avec les tournures de la presse.',
+      steps: [
+        { bot: p('مَتَى تَمَّ افْتِتَاحُ الْقِسْمِ؟', 'matā tamma ftitāḥu l-qism ?', 'Quand le service a-t-il été ouvert ?'), expected: ['تم', 'افتتاح', 'امس', 'منذ', 'في'], hint: p('تَمَّ افْتِتَاحُهُ مُنْذُ شَهْرٍ.', 'tamma ftitāḥuhu mundhu shahr.', 'Il a été ouvert il y a un mois.') },
+        { bot: p('كَمْ مَرِيضًا تَسْتَقْبِلُونَ يَوْمِيًّا؟', 'kam marīḍan tastaqbilūna yawmiyyan ?', 'Combien de patients accueillez-vous par jour ?'), expected: ['نستقبل', 'مريض', 'مئه', 'خمسين', 'حوالي'], hint: p('نَسْتَقْبِلُ حَوَالَيْ مِئَةِ مَرِيضٍ.', 'nastaqbilu ḥawālay mi’ati marīḍ.', 'Nous accueillons environ cent patients.') },
+        { bot: p('مَا الرِّسَالَةُ الَّتِي تُرِيدِينَ تَوْجِيهَهَا لِلنَّاسِ؟', 'mā r-risālatu llatī turīdīna tawjīhahā li-n-nās ?', 'Quel message voulez-vous adresser au public ?'), expected: ['الوقايه', 'اهميه', 'اريد', 'يجب'], hint: p('أُرِيدُ أَنْ أُشِيرَ إِلَى أَهَمِّيَّةِ الْوِقَايَةِ.', 'urīdu an ushīra ilā ahammiyyati l-wiqāya.', 'Je voudrais souligner l’importance de la prévention.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'شُو فِي أَخْبَار؟', tr: 'shū fī akhbār ?', fr: 'quoi de neuf ?', msa: 'مَا الْأَخْبَارُ؟' },
+      { dialect: 'Levantin', ar: 'سْمِعْت إِنُّو…', tr: 'smiʿt innu…', fr: 'j’ai entendu dire que…', msa: 'سَمِعْتُ أَنَّ…' },
+      { dialect: 'Égyptien', ar: 'إِيه الْأَخْبَار؟', tr: 'ēh il-akhbār ?', fr: 'quoi de neuf ?', msa: 'مَا الْأَخْبَارُ؟' },
+      { dialect: 'Égyptien', ar: 'بِيْقُولُوا إِنّ…', tr: 'biyʾūlu inn…', fr: 'on dit que…', msa: 'يُقَالُ إِنَّ…' },
+      { dialect: 'Marocain', ar: 'آشْ كَايْن مَا يْتْقَال؟', tr: 'āsh kāyn ma ytqāl ?', fr: 'quoi de neuf ? (« qu’y a-t-il à dire ? »)', msa: 'مَا الْأَخْبَارُ؟' },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ B2.2 */
+  {
+    id: 'b2-2',
+    level: 'B2',
+    order: 2,
+    title: 'Argumenter : la santé de tous',
+    arTitle: 'اَلْحِوَارُ وَالْحُجَّةُ',
+    subtitle: 'La condition, le comparatif, les connecteurs du raisonnement',
+    emoji: '⚖️',
+    realReading: true,
+    grammar: {
+      lessons: [
+        {
+          title: 'La condition : إِذَا, إِنْ et لَوْ',
+          paragraphs: [
+            'إِذَا introduit une condition réaliste ; curieusement, on la fait suivre du passé, même pour l’avenir. إِنْ, plus littéraire, appelle le jussif.',
+            'لَوْ exprime l’irréel : « si j’avais… ». La conséquence s’introduit souvent par لَـ.',
+          ],
+          examples: [
+            p('إِذَا شَعَرْتَ بِأَلَمٍ، اِتَّصِلْ بِالطَّبِيبِ.', 'idhā shaʿarta bi-alamin, ittaṣil bi-ṭ-ṭabīb.', 'Si tu ressens une douleur, appelle le médecin.'),
+            p('إِنْ تَدْرُسْ تَنْجَحْ.', 'in tadrus tanjaḥ.', 'Si tu étudies, tu réussiras.'),
+            p('لَوْ نِمْتَ أَكْثَرَ، لَكُنْتَ أَقَلَّ تَعَبًا.', 'law nimta akthara, la-kunta aqalla taʿaban.', 'Si tu avais dormi davantage, tu serais moins fatigué.'),
+          ],
+        },
+        {
+          title: 'Le comparatif et le superlatif : أَفْعَلُ',
+          paragraphs: [
+            'Un seul schème, أَفْعَلُ, sert de comparatif (avec مِنْ) et de superlatif (avec l’article ou en annexion). Il ne s’accorde pas en genre : أَكْبَرُ vaut pour le masculin comme pour le féminin.',
+          ],
+          table: {
+            headers: ['Adjectif', 'Comparatif', 'Sens'],
+            rows: [
+              ['ar:كَبِيرٌ', 'ar:أَكْبَرُ مِنْ', 'plus grand que'],
+              ['ar:مُهِمٌّ', 'ar:أَهَمُّ مِنْ', 'plus important que'],
+              ['ar:جَيِّدٌ', 'ar:أَفْضَلُ مِنْ', 'meilleur que'],
+              ['ar:سَهْلٌ', 'ar:أَسْهَلُ مِنْ', 'plus facile que'],
+            ],
+          },
+          examples: [p('اَلْوِقَايَةُ خَيْرٌ مِنَ الْعِلَاجِ.', 'al-wiqāyatu khayrun mina l-ʿilāj.', 'Mieux vaut prévenir que guérir (« la prévention vaut mieux que le traitement »).'), p('أَهَمُّ شَيْءٍ هُوَ النَّوْمُ.', 'ahammu shay’in huwa n-nawm.', 'La chose la plus importante, c’est le sommeil.')],
+        },
+        {
+          title: 'Les connecteurs du raisonnement',
+          paragraphs: ['Pour enchaîner des arguments comme dans un essai ou un débat télévisé :'],
+          examples: [
+            p('أَوَّلًا… ثَانِيًا…', 'awwalan… thāniyan…', 'premièrement… deuxièmement…'),
+            p('بِالْإِضَافَةِ إِلَى ذَلِكَ', 'bi-l-iḍāfati ilā dhālika', 'de plus'),
+            p('أَمَّا… فَـ…', 'ammā… fa-…', 'quant à…'),
+            p('مِمَّا يَعْنِي أَنَّ…', 'mimmā yaʿnī anna…', 'ce qui signifie que…'),
+            p('فِي الْخِتَامِ', 'fī l-khitām', 'en conclusion'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Quelle particule pour une condition irréelle (« si j’avais su ») ?', options: ['إِذَا', 'لَوْ', 'إِنْ'], answer: 1 },
+        { question: 'Après إِذَا, le verbe est le plus souvent…', options: ['au passé', 'au futur', 'à l’impératif'], answer: 0 },
+        { question: '« Plus important que » se dit…', options: ['مُهِمٌّ مِنْ', 'أَهَمُّ مِنْ', 'اَلْمُهِمَّةُ'], answer: 1 },
+        { question: 'Que signifie أَمَّا الْمَرْضَى فَيَحْتَاجُونَ إِلَى الرَّاحَةِ ?', options: ['Les patients n’ont pas besoin de repos', 'Quant aux patients, ils ont besoin de repos', 'Si les patients se reposent…'], answer: 1 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'Le rythme de l’argumentation',
+        paragraphs: ['À l’oral soutenu, on marque une légère pause après chaque connecteur, et l’on fait entendre la terminaison des mots qui le précèdent. Écoutez :'],
+        examples: [
+          p('أَوَّلًا، اَلنَّوْمُ ضَرُورِيٌّ.', 'awwalan, an-nawmu ḍarūrī.', 'Premièrement, le sommeil est indispensable.'),
+          p('بِالْإِضَافَةِ إِلَى ذَلِكَ، يَجِبُ أَنْ نَأْكُلَ جَيِّدًا.', 'bi-l-iḍāfati ilā dhālik, yajibu an na’kula jayyidan.', 'De plus, il faut bien manger.'),
+        ],
+      },
+    ],
+    writing: [
+      {
+        title: 'Construire un paragraphe argumenté',
+        paragraphs: [
+          'Le paragraphe arabe soutenu aime les phrases longues, reliées par وَ et فَـ, là où le français mettrait des points. N’ayez pas peur d’enchaîner : c’est le style attendu.',
+          'Plan type : une thèse (أَرَى أَنَّ…), deux arguments (أَوَّلًا… ثَانِيًا…), une concession (صَحِيحٌ أَنَّ… لَكِنَّ…), une conclusion (فِي الْخِتَامِ…).',
+        ],
+        examples: [p('صَحِيحٌ أَنَّ الْعِلَاجَ مُهِمٌّ، لَكِنَّ الْوِقَايَةَ أَهَمُّ.', 'ṣaḥīḥun anna l-ʿilāja muhimm, lākinna l-wiqāyata ahamm.', 'Certes, le traitement est important, mais la prévention l’est davantage.')],
+      },
+    ],
+    vocabulary: w('b2-2', [
+      ['اَلصِّحَّةُ الْعَامَّةُ', 'aṣ-ṣiḥḥatu l-ʿāmma', 'la santé publique'],
+      ['اَلْوِقَايَةُ', 'al-wiqāya', 'la prévention'],
+      ['اَلْعِلَاجُ', 'al-ʿilāj', 'le traitement'],
+      ['لُقَاحٌ', 'luqāḥ', 'un vaccin'],
+      ['عَادَاتٌ صِحِّيَّةٌ', 'ʿādāt ṣiḥḥiyya', 'des habitudes saines'],
+      ['اَلنَّوْمُ', 'an-nawm', 'le sommeil'],
+      ['اَلرِّيَاضَةُ', 'ar-riyāḍa', 'le sport'],
+      ['حُجَّةٌ', 'ḥujja', 'un argument'],
+      ['أَرَى أَنَّ…', 'arā anna…', 'j’estime que…'],
+      ['صَحِيحٌ أَنَّ… لَكِنَّ…', 'ṣaḥīḥun anna… lākinna…', 'certes… mais…'],
+      ['بِالْإِضَافَةِ إِلَى', 'bi-l-iḍāfati ilā', 'en plus de'],
+      ['مِمَّا يَعْنِي', 'mimmā yaʿnī', 'ce qui signifie'],
+      ['فِي الْخِتَامِ', 'fī l-khitām', 'en conclusion'],
+      ['إِذَا / لَوْ', 'idhā / law', 'si (réel) / si (irréel)'],
+      ['أَفْضَلُ / أَسْوَأُ', 'afḍal / aswa’', 'meilleur / pire'],
+    ]),
+    mindmap: {
+      center: p('اَلْحُجَّةُ', 'al-ḥujja', 'l’argument'),
+      branches: [
+        { label: 'Poser sa thèse', items: [p('أَرَى أَنَّ', 'arā anna', 'j’estime que'), p('فِي رَأْيِي', 'fī ra’yī', 'à mon avis')] },
+        { label: 'Enchaîner', items: [p('أَوَّلًا', 'awwalan', 'premièrement'), p('بِالْإِضَافَةِ إِلَى ذَلِكَ', 'bi-l-iḍāfati ilā dhālik', 'de plus')] },
+        { label: 'Concéder', items: [p('صَحِيحٌ أَنَّ… لَكِنَّ', 'ṣaḥīḥun anna… lākinna', 'certes… mais')] },
+        { label: 'Conclure', items: [p('فِي الْخِتَامِ', 'fī l-khitām', 'en conclusion'), p('مِمَّا يَعْنِي', 'mimmā yaʿnī', 'ce qui signifie')] },
+      ],
+    },
+    story: {
+      title: 'Tribune : mieux vaut prévenir',
+      lines: [
+        p('يُقَالُ إِنَّ الْوِقَايَةَ خَيْرٌ مِنَ الْعِلَاجِ، وَأَنَا، بِصِفَتِي طَبِيبَةً، أُوَافِقُ تَمَامًا.', 'yuqālu inna l-wiqāyata khayrun mina l-ʿilāj, wa-anā, bi-ṣifatī ṭabība, uwāfiqu tamāman.', 'On dit que mieux vaut prévenir que guérir, et moi, en tant que médecin, j’en suis pleinement d’accord.'),
+        p('أَوَّلًا، لَوْ نَامَ النَّاسُ ثَمَانِيَ سَاعَاتٍ، لَقَلَّتْ أَمْرَاضٌ كَثِيرَةٌ.', 'awwalan, law nāma n-nāsu thamāniya sāʿāt, la-qallat amrāḍun kathīra.', 'Premièrement, si les gens dormaient huit heures, bien des maladies se feraient plus rares.'),
+        p('ثَانِيًا، اَلرِّيَاضَةُ أَرْخَصُ مِنْ أَيِّ دَوَاءٍ.', 'thāniyan, ar-riyāḍatu arkhaṣu min ayyi dawā’.', 'Deuxièmement, le sport coûte moins cher que n’importe quel médicament.'),
+        p('صَحِيحٌ أَنَّ الْعِلَاجَ ضَرُورِيٌّ أَحْيَانًا، لَكِنَّ الْوَقْتَ الَّذِي نَقْضِيهِ فِي الطَّوَارِئِ يُمْكِنُ تَجَنُّبُهُ فِي حَالَاتٍ كَثِيرَةٍ.', 'ṣaḥīḥun anna l-ʿilāja ḍarūriyyun aḥyānan, lākinna l-waqta lladhī naqḍīhi fī ṭ-ṭawāri’i yumkinu tajannubuhu fī ḥālātin kathīra.', 'Certes, le traitement est parfois indispensable, mais le temps passé aux urgences pourrait souvent être évité.'),
+        p('أَمَّا الْبَحْرُ، فَهُوَ فِي رَأْيِي أَفْضَلُ مَكَانٍ لِلرَّاحَةِ!', 'ammā l-baḥru, fa-huwa fī ra’yī afḍalu makānin li-r-rāḥa !', 'Quant à la mer, c’est à mon avis le meilleur endroit pour se reposer !'),
+        p('فِي الْخِتَامِ، إِذَا اعْتَنَيْنَا بِأَنْفُسِنَا الْيَوْمَ، اِرْتَحْنَا غَدًا.', 'fī l-khitām, idhā ʿtanaynā bi-anfusinā l-yawm, irtaḥnā ghadan.', 'En conclusion, si nous prenons soin de nous aujourd’hui, nous serons tranquilles demain.'),
+      ],
+    },
+    podcast: {
+      title: 'Le débat',
+      intro: 'Sami joue l’avocat du diable face à la docteure Juliette.',
+      lines: [
+        { speaker: 'Sami', ar: 'أَلَا تَرَيْنَ أَنَّ الطِّبَّ الْحَدِيثَ يَكْفِي لِعِلَاجِ كُلِّ شَيْءٍ؟', fr: 'Ne crois-tu pas que la médecine moderne suffit à tout soigner ?' },
+        { speaker: 'Juliette', ar: 'صَحِيحٌ أَنَّهُ تَقَدَّمَ كَثِيرًا، لَكِنَّهُ لَا يَسْتَطِيعُ كُلَّ شَيْءٍ.', fr: 'Certes, elle a beaucoup progressé, mais elle ne peut pas tout.' },
+        { speaker: 'Sami', ar: 'مِثْلَ مَاذَا؟', fr: 'Comme quoi ?' },
+        { speaker: 'Juliette', ar: 'لَوْ تَوَقَّفَ النَّاسُ عَنِ التَّدْخِينِ، لَانْخَفَضَ عَدَدُ أَمْرَاضِ الْقَلْبِ.', fr: 'Si les gens arrêtaient de fumer, le nombre de maladies cardiaques baisserait.' },
+        { speaker: 'Sami', ar: 'إِذَنْ أَنْتِ تَقُولِينَ إِنَّ الْمَسْؤُولِيَّةَ مُشْتَرَكَةٌ؟', fr: 'Tu dis donc que la responsabilité est partagée ?' },
+        { speaker: 'Juliette', ar: 'تَمَامًا: اَلطَّبِيبُ يُعَالِجُ، أَمَّا الْوِقَايَةُ فَهِيَ مَسْؤُولِيَّةُ الْجَمِيعِ.', fr: 'Exactement : le médecin soigne ; quant à la prévention, elle est l’affaire de tous.' },
+      ],
+    },
+    conversation: {
+      intro: 'Sami lance le débat. Argumentez avec les connecteurs du palier.',
+      steps: [
+        { bot: p('مَا هُوَ أَهَمُّ شَيْءٍ لِلصِّحَّةِ فِي رَأْيِكِ؟', 'mā huwa ahammu shay’in li-ṣ-ṣiḥḥa fī ra’yiki ?', 'Selon toi, quelle est la chose la plus importante pour la santé ?'), expected: ['اهم', 'النوم', 'الرياضه', 'الوقايه', 'اري', 'رايي'], hint: p('أَرَى أَنَّ النَّوْمَ أَهَمُّ شَيْءٍ.', 'arā anna n-nawma ahammu shay’.', 'J’estime que le sommeil est la chose la plus importante.') },
+        { bot: p('لِمَاذَا؟ أَعْطِينِي حُجَّةً.', 'limādhā ? aʿṭīnī ḥujja.', 'Pourquoi ? Donne-moi un argument.'), expected: ['لان', 'اولا', 'اذا', 'لو'], hint: p('لِأَنَّ الْجِسْمَ يَحْتَاجُ إِلَى الرَّاحَةِ.', 'li-anna l-jisma yaḥtāju ilā r-rāḥa.', 'Parce que le corps a besoin de repos.') },
+        { bot: p('وَمَاذَا لَوْ لَمْ يَكُنْ عِنْدَ النَّاسِ وَقْتٌ؟', 'wa-mādhā law lam yakun ʿinda n-nāsi waqt ?', 'Et si les gens n’avaient pas le temps ?'), expected: ['صحيح', 'لكن', 'اذا', 'لو', 'يجب'], hint: p('صَحِيحٌ، لَكِنَّ الصِّحَّةَ أَهَمُّ مِنَ الْعَمَلِ.', 'ṣaḥīḥ, lākinna ṣ-ṣiḥḥata ahammu mina l-ʿamal.', 'C’est vrai, mais la santé est plus importante que le travail.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'إِذَا بِدَّك', tr: 'iza baddak', fr: 'si tu veux', msa: 'إِذَا أَرَدْتَ' },
+      { dialect: 'Levantin', ar: 'أَحْسَن مِن…', tr: 'aḥsan min…', fr: 'mieux que…', msa: 'أَفْضَلُ مِنْ…' },
+      { dialect: 'Égyptien', ar: 'لَوْ عَايِز', tr: 'law ʿāyiz', fr: 'si tu veux', msa: 'إِذَا أَرَدْتَ' },
+      { dialect: 'Égyptien', ar: 'أَحْسَن حَاجَة', tr: 'aḥsan ḥāga', fr: 'la meilleure chose', msa: 'أَفْضَلُ شَيْءٍ' },
+      { dialect: 'Marocain', ar: 'إِلَا بْغِيتِي', tr: 'ila bghīti', fr: 'si tu veux', msa: 'إِذَا أَرَدْتَ' },
+      { dialect: 'Marocain', ar: 'حْسَن مِن…', tr: 'ḥsen men…', fr: 'mieux que…', msa: 'أَفْضَلُ مِنْ…' },
+    ],
+  },
+
 ]
 
 export const tierById = (id: string) => TIERS.find((t) => t.id === id)
@@ -1358,7 +1653,7 @@ export const CEFR_LEVELS: { level: Cefr; title: string; description: string }[] 
   { level: 'A1', title: 'Découverte', description: 'L’alphabet, se présenter, la famille, la maison.' },
   { level: 'A2', title: 'Survie', description: 'Le passé, le présent et le futur, la ville, le restaurant, l’annexion et les pluriels brisés.' },
   { level: 'B1', title: 'Seuil', description: 'Les formes dérivées en action, le maṣdar, raconter au passé, donner son avis.' },
-  { level: 'B2', title: 'Avancé', description: 'La presse, l’argumentation, la lecture sans diacritiques.' },
+  { level: 'B2', title: 'Avancé', description: 'La presse, le passif, les relatifs, la condition et l’argumentation, en lecture sans diacritiques.' },
   { level: 'C1', title: 'Autonome', description: 'Littérature, nuances de registre, débats.' },
 ]
 

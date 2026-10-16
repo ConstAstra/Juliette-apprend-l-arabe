@@ -21,6 +21,8 @@ export interface Settings {
   tashkeel: boolean
   translit: boolean
   speechRate: number
+  /** XP visée chaque jour. */
+  dailyGoal: number
 }
 
 export interface LeitnerEntry {
@@ -86,7 +88,7 @@ export const INITIAL_PROGRESS: ProgressData = {
   seenHistory: {},
   srs: { vocabulaire: {}, grammaire: {} },
   placement: null,
-  settings: { tashkeel: true, translit: true, speechRate: 0.85 },
+  settings: { tashkeel: true, translit: true, speechRate: 0.85, dailyGoal: 30 },
 }
 
 export const useProgress = create<ProgressData & ProgressActions>()(
