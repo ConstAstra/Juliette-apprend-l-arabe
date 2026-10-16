@@ -120,6 +120,9 @@ await step('Paliers A2 : neuf onglets, sans alphabet', async () => {
   await go('/paliers/b1-1')
   await page.getByText('أَوْزَانُ الْفِعْلِ', { exact: true }).first().waitFor()
   await shot('22-palier-b1')
+  await go('/paliers/b2-1')
+  await page.getByRole('button', { name: 'Passer en lecture réelle' }).waitFor()
+  await shot('27-palier-b2')
   await go('/paliers/a2-3')
   assert((await page.getByRole('tab').count()) === 9, 'nombre d’onglets A2')
   await page.getByRole('tab', { name: /Grammaire/ }).click()
@@ -236,6 +239,31 @@ await step('Mise à jour : une ancienne progression est conservée', async () =>
   await pg.getByText(/Réviser \d+ carte/).first().waitFor()
   await pg.goto(URL_BASE + '#/jeux')
   await pg.getByText('Le chasseur de racines').waitFor()
+  await ctx.close()
+})
+
+await step('Cérémonie : un palier se scelle', async () => {
+  const ctx = await browser.newContext({ ...iphone, locale: 'fr-FR' })
+  const pg = await ctx.newPage()
+  await pg.addInitScript(() => {
+    if (localStorage.getItem('ceremonie-preparee')) return
+    const tabs = ['alphabet', 'grammaire', 'prononciation', 'ecriture', 'vocabulaire', 'carte', 'histoire', 'podcast', 'conversation']
+    localStorage.setItem('jaa-progression-juliette', JSON.stringify({ state: { xp: 200, completed: { 'a1-1': tabs } }, version: 1 }))
+    localStorage.setItem('ceremonie-preparee', '1')
+  })
+  await pg.goto(URL_BASE + '#/paliers/a1-1/dialectes')
+  await pg.getByRole('button', { name: /J’ai terminé/ }).click()
+  await pg.getByRole('dialog', { name: 'Palier scellé' }).waitFor()
+  await pg.waitForTimeout(1200)
+  await pg.screenshot({ path: join(SHOTS, '25-ceremonie.png') })
+  await pg.getByRole('link', { name: /Ouvrir le palier suivant/ }).click()
+  await pg.getByText('Se présenter', { exact: true }).first().waitFor()
+  const xp = await pg.evaluate(() => JSON.parse(localStorage.getItem('jaa-progression-juliette')).state.xp)
+  assert(xp === 260, `XP après cérémonie : ${xp} (attendu 200 + 10 + 50)`)
+  await pg.goto(URL_BASE + '#/')
+  await pg.getByText('Objectif du jour').waitFor()
+  await pg.getByText(/60 \/ 30 XP/).waitFor()
+  await pg.screenshot({ path: join(SHOTS, '26-objectif.png') })
   await ctx.close()
 })
 

@@ -88,6 +88,8 @@ export interface Tier {
   subtitle: string
   emoji: string
   letters?: string[]
+  /** Palier pensé pour la lecture réelle, sans diacritiques. */
+  realReading?: boolean
   grammar: { lessons: Lesson[]; quiz: QuizQuestion[] }
   pronunciation: Lesson[]
   writing: Lesson[]

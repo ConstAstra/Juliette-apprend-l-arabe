@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Ar } from '../components/Ar'
 import { IconCards } from '../components/Icons'
+import { DailyGoal } from '../components/DailyGoal'
 import { NightWord } from '../components/NightWord'
 import { ProgressBar } from '../components/ProgressBar'
 import { TierCard } from '../components/TierCard'
@@ -35,6 +36,10 @@ export function Dashboard() {
           <ProgressBar value={lvl.ratio} />
           <p className="muted text-xs">{lvl.needed - lvl.current} XP avant le niveau {lvl.level + 1}</p>
         </div>
+      </section>
+
+      <section className="card">
+        <DailyGoal />
       </section>
 
       <NightWord />

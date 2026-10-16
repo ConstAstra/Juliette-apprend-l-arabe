@@ -130,6 +130,22 @@ export function ProfilesPage() {
           <span>Translittération latine</span>
           <input type="checkbox" className="size-5" checked={settings.translit} onChange={(e) => updateSettings({ translit: e.target.checked })} />
         </label>
+        <div>
+          <span>Objectif quotidien</span>
+          <div className="mt-1 grid grid-cols-4 gap-1">
+            {[10, 30, 50, 100].map((g) => (
+              <button
+                key={g}
+                type="button"
+                aria-pressed={settings.dailyGoal === g}
+                onClick={() => updateSettings({ dailyGoal: g })}
+                className={`min-h-10 rounded-lg text-sm font-semibold ${settings.dailyGoal === g ? 'bg-or-400 text-nuit' : 'bg-abysse-2'}`}
+              >
+                {g} XP
+              </button>
+            ))}
+          </div>
+        </div>
         <label className="block">
           <span>Vitesse de la voix : {settings.speechRate.toFixed(2)}</span>
           <input type="range" min={0.5} max={1.2} step={0.05} value={settings.speechRate} onChange={(e) => updateSettings({ speechRate: Number(e.target.value) })} className="w-full" />

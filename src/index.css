@@ -117,3 +117,12 @@
 @utility envol {
   animation: envol 1.6s ease-out forwards;
 }
+
+@keyframes sceau {
+  0% { opacity: 0; transform: scale(0.4) rotate(-90deg); }
+  60% { opacity: 1; transform: scale(1.08) rotate(8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@utility sceau-entree {
+  animation: sceau 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}

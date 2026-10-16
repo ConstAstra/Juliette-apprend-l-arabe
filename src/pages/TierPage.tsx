@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import { TierSealed } from '../components/TierSealed'
 import { Ar } from '../components/Ar'
 import { ProgressBar } from '../components/ProgressBar'
 import { toArabicDigits } from '../lib/arabic'
@@ -33,6 +35,21 @@ export function TierPage() {
   const tashkeel = useProgress((s) => s.settings.tashkeel)
   const translit = useProgress((s) => s.settings.translit)
   const updateSettings = useProgress((s) => s.updateSettings)
+  const addXp = useProgress((s) => s.addXp)
+  const [sealed, setSealed] = useState(false)
+  const previous = useRef<{ tierId: string; count: number } | null>(null)
+  const total = tier ? tabsForTier(tier).length : 0
+
+  // La cérémonie n'a lieu qu'au moment où la dernière section est validée sous nos yeux.
+  useEffect(() => {
+    const before = previous.current
+    previous.current = { tierId, count: done.length }
+    if (!before || before.tierId !== tierId) return
+    if (before.count < total && done.length === total) {
+      addXp(50)
+      setSealed(true)
+    }
+  }, [tierId, done.length, total, addXp])
 
   if (!tier) return <Navigate to="/paliers" replace />
   const tabs = tabsForTier(tier)
@@ -64,6 +81,15 @@ export function TierPage() {
           </button>
         </div>
       </header>
+
+      {tier.realReading && tashkeel && (
+        <div className="card flex flex-wrap items-center justify-between gap-3 border-lueur-400/40">
+          <p className="text-sm">Ce palier se lit comme la presse : <b className="text-lueur-300">sans diacritiques</b>. Prête à essayer ?</p>
+          <button className="btn-soft" onClick={() => updateSettings({ tashkeel: false })}>Passer en lecture réelle</button>
+        </div>
+      )}
+
+      {sealed && <TierSealed tier={tier} next={nextTier} onClose={() => setSealed(false)} />}
 
       <div role="tablist" aria-label="Sections du palier" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
         {tabs.map((t, i) => {
