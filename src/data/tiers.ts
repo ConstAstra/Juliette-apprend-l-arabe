@@ -1645,6 +1645,292 @@ export const TIERS: Tier[] = [
     ],
   },
 
+  /* ------------------------------------------------------------------ C1.1 */
+  {
+    id: 'c1-1',
+    level: 'C1',
+    order: 1,
+    title: 'La langue littéraire',
+    arTitle: 'لُغَةُ الْأَدَبِ',
+    subtitle: 'Les modes du verbe, le complément absolu, le ḥāl',
+    emoji: '🖋️',
+    realReading: true,
+    grammar: {
+      lessons: [
+        {
+          title: 'Les trois modes de l’inaccompli',
+          paragraphs: [
+            'Le présent arabe a trois modes, marqués par sa terminaison. L’indicatif (مَرْفُوعٌ) finit en -u. Le subjonctif (مَنْصُوبٌ) finit en -a après أَنْ, لَنْ, كَيْ, حَتَّى. Le jussif (مَجْزُومٌ) perd sa voyelle après لَمْ, après لَا de défense, et dans les conditionnelles en إِنْ.',
+            'Aux personnes en -ūna et -īna, le ن final tombe au subjonctif comme au jussif : يَكْتُبُونَ devient لَنْ يَكْتُبُوا. C’est une marque très visible à l’écrit, même sans voyelles.',
+          ],
+          table: {
+            headers: ['Mode', 'Après…', 'Exemple'],
+            rows: [
+              ['Indicatif', '—', 'ar:يَكْتُبُ / يَكْتُبُونَ'],
+              ['Subjonctif', 'أَنْ، لَنْ، كَيْ، حَتَّى', 'ar:لَنْ يَكْتُبَ / لَنْ يَكْتُبُوا'],
+              ['Jussif', 'لَمْ، لَا (défense)، إِنْ', 'ar:لَمْ يَكْتُبْ / لَا تَكْتُبُوا'],
+            ],
+          },
+        },
+        {
+          title: 'Le complément absolu (اَلْمَفْعُولُ الْمُطْلَقُ)',
+          paragraphs: [
+            'On répète le verbe sous forme de maṣdar, à l’accusatif, pour insister ou pour qualifier la manière : « il dormit un sommeil profond ». C’est l’une des élégances favorites de la prose arabe.',
+          ],
+          examples: [
+            p('نَامَ نَوْمًا عَمِيقًا', 'nāma nawman ʿamīqan', 'il dormit profondément (« d’un sommeil profond »)'),
+            p('فَرِحْتُ فَرَحًا شَدِيدًا', 'fariḥtu faraḥan shadīdan', 'je me suis réjouie intensément'),
+            p('شُكْرًا جَزِيلًا', 'shukran jazīlan', 'merci beaucoup — un maṣdar à l’accusatif que vous connaissez déjà !'),
+          ],
+        },
+        {
+          title: 'Le complément d’état (اَلْحَالُ) et le complément de but',
+          paragraphs: [
+            'Le ḥāl décrit l’état du sujet ou de l’objet pendant l’action : un adjectif ou un participe indéfini, à l’accusatif. جَاءَتْ مُبْتَسِمَةً, « elle vint en souriant ».',
+            'Le complément de but (اَلْمَفْعُولُ لِأَجْلِهِ) est un maṣdar indéfini à l’accusatif qui donne la raison d’agir : سَافَرَتْ طَلَبًا لِلْعِلْمِ, « elle voyagea en quête de savoir ».',
+          ],
+          examples: [
+            p('دَخَلَتِ الطَّبِيبَةُ مُسْرِعَةً', 'dakhalati ṭ-ṭabībatu musriʿatan', 'la médecin entra en hâte (ḥāl)'),
+            p('عَادَ الْبَحَّارُ سَالِمًا', 'ʿāda l-baḥḥāru sāliman', 'le marin revint sain et sauf (ḥāl)'),
+            p('وَقَفَ النَّاسُ احْتِرَامًا لَهَا', 'waqafa n-nāsu ḥtirāman lahā', 'les gens se levèrent par respect pour elle (but)'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Après لَنْ, le verbe est…', options: ['à l’indicatif', 'au subjonctif', 'au jussif'], answer: 1 },
+        { question: 'Que devient يَذْهَبُونَ après لَمْ ?', options: ['لَمْ يَذْهَبُونَ', 'لَمْ يَذْهَبُوا', 'لَمْ يَذْهَبَ'], answer: 1, explanation: 'Le ن des personnes en -ūna tombe au jussif.' },
+        { question: 'Dans نَامَ نَوْمًا عَمِيقًا, نَوْمًا est…', options: ['un ḥāl', 'un complément absolu', 'un sujet'], answer: 1 },
+        { question: 'Dans جَاءَتْ مُبْتَسِمَةً, مُبْتَسِمَةً décrit…', options: ['le but de l’action', 'l’état du sujet pendant l’action', 'le lieu'], answer: 1 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'Lire en prose soutenue',
+        paragraphs: ['En lecture littéraire, on prononce les finales de cas et de mode, sauf à la pause. Écoutez la musique des accusatifs en -an qui ponctuent la phrase :'],
+        examples: [
+          p('سَارَتْ وَحِيدَةً عَلَى الشَّاطِئِ', 'sārat waḥīdatan ʿalā sh-shāṭi’', 'elle marcha seule sur la plage'),
+          p('وَابْتَسَمَ الْبَحْرُ ابْتِسَامًا خَفِيفًا', 'wa-btasama l-baḥru btisāman khafīfan', 'et la mer sourit d’un sourire léger'),
+        ],
+      },
+    ],
+    writing: [
+      {
+        title: 'Imiter une phrase d’auteur',
+        paragraphs: [
+          'Un exercice classique consiste à reprendre une phrase et à n’en changer que les mots, en gardant sa construction. Prenez « عَادَ الْبَحَّارُ سَالِمًا » et remplacez le sujet et le ḥāl : عَادَتِ الطَّبِيبَةُ مُتْعَبَةً, « la médecin rentra fatiguée ».',
+          'Écrivez ensuite trois phrases sur votre journée avec un ḥāl et un complément absolu.',
+        ],
+        examples: [p('عَادَتِ الطَّبِيبَةُ مُتْعَبَةً', 'ʿādati ṭ-ṭabībatu mutʿabatan', 'la médecin rentra fatiguée')],
+      },
+    ],
+    vocabulary: w('c1-1', [
+      ['أَدَبٌ', 'adab', 'la littérature ; la politesse'],
+      ['رِوَائِيٌّ / رِوَائِيَّةٌ', 'riwā’ī / riwā’iyya', 'un romancier / une romancière'],
+      ['نَثْرٌ', 'nathr', 'la prose'],
+      ['وَصْفٌ', 'waṣf', 'la description'],
+      ['خَيَالٌ', 'khayāl', 'l’imagination'],
+      ['حَنِينٌ', 'ḥanīn', 'la nostalgie'],
+      ['أُفُقٌ', 'ufuq', 'l’horizon'],
+      ['غُرُوبُ الشَّمْسِ', 'ghurūbu sh-shams', 'le coucher du soleil'],
+      ['ضَوْءُ الْقَمَرِ', 'ḍaw’u l-qamar', 'le clair de lune'],
+      ['مَرْفَأٌ', 'marfa’', 'un port (littéraire)'],
+      ['هَمَسَ', 'hamasa', 'murmurer'],
+      ['تَأَمَّلَ', 'ta’ammala', 'contempler (V)'],
+      ['وَحِيدًا', 'waḥīdan', 'seul (en ḥāl)'],
+      ['مُسْرِعًا', 'musriʿan', 'en hâte (en ḥāl)'],
+    ]),
+    mindmap: {
+      center: p('اَلْجُمْلَةُ الْأَدَبِيَّةُ', 'al-jumlatu l-adabiyya', 'la phrase littéraire'),
+      branches: [
+        { label: 'Les modes', items: [p('لَنْ يَكْتُبَ', 'lan yaktuba', 'subjonctif'), p('لَمْ يَكْتُبْ', 'lam yaktub', 'jussif')] },
+        { label: 'Insister', items: [p('نَامَ نَوْمًا عَمِيقًا', 'nāma nawman ʿamīqan', 'complément absolu')] },
+        { label: 'Décrire l’état', items: [p('جَاءَتْ مُبْتَسِمَةً', 'jā’at mubtasimatan', 'ḥāl')] },
+        { label: 'Dire le but', items: [p('طَلَبًا لِلْعِلْمِ', 'ṭalaban li-l-ʿilm', 'en quête de savoir')] },
+      ],
+    },
+    story: {
+      title: 'Nuit sur le port',
+      lines: [
+        p('خَرَجَتْ جُولْيِيت مِنَ الْمُسْتَشْفَى مُتْعَبَةً بَعْدَ مُنْتَصَفِ اللَّيْلِ.', 'kharajat Jūliyet mina l-mustashfā mutʿabatan baʿda muntaṣafi l-layl.', 'Juliette sortit de l’hôpital, fatiguée, après minuit.'),
+        p('سَارَتْ وَحِيدَةً نَحْوَ الْمَرْفَأِ، طَلَبًا لِلْهَوَاءِ وَالْهُدُوءِ.', 'sārat waḥīdatan naḥwa l-marfa’, ṭalaban li-l-hawā’i wa-l-hudū’.', 'Elle marcha seule vers le port, en quête d’air et de calme.'),
+        p('كَانَ ضَوْءُ الْقَمَرِ يَرْقُصُ عَلَى الْمَاءِ رَقْصًا هَادِئًا.', 'kāna ḍaw’u l-qamari yarquṣu ʿalā l-mā’i raqṣan hādi’an.', 'Le clair de lune dansait sur l’eau d’une danse paisible.'),
+        p('وَقَفَتْ تَتَأَمَّلُ الْأُفُقَ، وَهَمَسَتْ: لَنْ أَنْسَى هَذِهِ اللَّيْلَةَ أَبَدًا.', 'waqafat tata’ammalu l-ufuq, wa-hamasat : lan ansā hādhihi l-laylata abadan.', 'Elle s’arrêta pour contempler l’horizon et murmura : « Je n’oublierai jamais cette nuit. »'),
+        p('وَفَجْأَةً، قَفَزَ دُلْفِينٌ مِنَ الْمَاءِ قَفْزَةً عَالِيَةً، ثُمَّ اخْتَفَى.', 'wa-faj’atan, qafaza dulfīnun mina l-mā’i qafzatan ʿāliyatan, thumma khtafā.', 'Et soudain, un dauphin bondit hors de l’eau d’un bond immense, puis disparut.'),
+        p('فَعَادَتْ إِلَى بَيْتِهَا مُبْتَسِمَةً، وَنَامَتْ نَوْمًا عَمِيقًا.', 'fa-ʿādat ilā baytihā mubtasimatan, wa-nāmat nawman ʿamīqan.', 'Elle rentra chez elle en souriant et dormit d’un sommeil profond.'),
+      ],
+    },
+    podcast: {
+      title: 'Entretien avec une romancière',
+      intro: 'Une émission littéraire : Layla interroge une autrice sur son dernier roman.',
+      lines: [
+        { speaker: 'Layla', ar: 'رِوَايَتُكِ الْجَدِيدَةُ تَدُورُ عَلَى شَاطِئِ الْبَحْرِ، لِمَاذَا؟', fr: 'Votre nouveau roman se déroule au bord de la mer : pourquoi ?' },
+        { speaker: 'Autrice', ar: 'لِأَنَّ الْبَحْرَ يَحْمِلُ الْحَنِينَ حَمْلًا لَا يَحْمِلُهُ شَيْءٌ آخَرُ.', fr: 'Parce que la mer porte la nostalgie comme rien d’autre ne la porte.' },
+        { speaker: 'Layla', ar: 'وَبَطَلَتُكِ طَبِيبَةٌ، أَلَيْسَ كَذَلِكَ؟', fr: 'Et votre héroïne est médecin, n’est-ce pas ?' },
+        { speaker: 'Autrice', ar: 'نَعَمْ، تَعْمَلُ لَيْلًا وَتَكْتُبُ فَجْرًا، بَحْثًا عَنِ الْكَلِمَاتِ الَّتِي تَشْفِي.', fr: 'Oui, elle travaille la nuit et écrit à l’aube, en quête des mots qui guérissent.' },
+        { speaker: 'Layla', ar: 'عُنْوَانٌ جَمِيلٌ لِلْحَلَقَةِ الْقَادِمَةِ!', fr: 'Un beau titre pour notre prochaine émission !' },
+      ],
+    },
+    conversation: {
+      intro: 'Layla vous invite à parler de littérature. Soignez la langue.',
+      steps: [
+        { bot: p('مَا الْكِتَابُ الَّذِي لَنْ تَنْسَيْهِ أَبَدًا؟', 'mā l-kitābu lladhī lan tansayhi abadan ?', 'Quel est le livre que vous n’oublierez jamais ?'), expected: ['لن انسي', 'كتاب', 'روايه'], hint: p('لَنْ أَنْسَى رِوَايَةَ «اَلْأَمِيرُ الصَّغِيرُ».', 'lan ansā riwāyata « al-amīru ṣ-ṣaghīr ».', 'Je n’oublierai jamais « Le Petit Prince ».') },
+        { bot: p('كَيْفَ قَرَأْتِهِ أَوَّلَ مَرَّةٍ؟', 'kayfa qara’tihi awwala marra ?', 'Comment l’avez-vous lu la première fois ?'), expected: ['قراته', 'وحيده', 'صغيره', 'سعيده'], hint: p('قَرَأْتُهُ صَغِيرَةً، وَحِيدَةً فِي غُرْفَتِي.', 'qara’tuhu ṣaghīratan, waḥīdatan fī ghurfatī.', 'Je l’ai lu enfant, seule dans ma chambre.') },
+        { bot: p('وَلِمَاذَا تَقْرَئِينَ؟', 'wa-limādhā taqra’īn ?', 'Et pourquoi lisez-vous ?'), expected: ['اقرا', 'طلبا', 'بحثا', 'لان'], hint: p('أَقْرَأُ بَحْثًا عَنِ الْجَمَالِ.', 'aqra’u baḥthan ʿani l-jamāl.', 'Je lis en quête de beauté.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'نِمْت مِتْل الْقَتِيل', tr: 'nimt mitl il-atīl', fr: 'j’ai dormi comme une souche (« comme un mort »)', msa: 'نِمْتُ نَوْمًا عَمِيقًا' },
+      { dialect: 'Égyptien', ar: 'رِجِعْت تَعْبَانَة', tr: 'rigiʿt taʿbāna', fr: 'je suis rentrée fatiguée', msa: 'عُدْتُ مُتْعَبَةً' },
+      { dialect: 'Marocain', ar: 'رْجَعْت عْيَّانَة', tr: 'rjeʿt ʿyyāna', fr: 'je suis rentrée fatiguée', msa: 'عُدْتُ مُتْعَبَةً' },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ C1.2 */
+  {
+    id: 'c1-2',
+    level: 'C1',
+    order: 2,
+    title: 'Registres et nuances',
+    arTitle: 'لِكُلِّ مَقَامٍ مَقَالٌ',
+    subtitle: 'Choisir son registre, la politesse soutenue, la négation fine',
+    emoji: '🎭',
+    realReading: true,
+    grammar: {
+      lessons: [
+        {
+          title: '« À chaque situation son discours »',
+          paragraphs: [
+            'Le titre de ce palier est un adage des rhétoriciens arabes : لِكُلِّ مَقَامٍ مَقَالٌ. Un arabophone cultivé passe sans cesse d’un registre à l’autre, parfois dans la même conversation.',
+            'On distingue souvent : l’arabe classique des textes anciens ; l’arabe standard des médias et de l’administration ; un « arabe médian » des gens instruits, standard dans son vocabulaire mais allégé des cas ; et le dialecte de la vie quotidienne.',
+          ],
+          table: {
+            headers: ['Registre', 'Comment allez-vous ?', 'Usage'],
+            rows: [
+              ['Soutenu', 'ar:كَيْفَ حَالُ حَضْرَتِكَ؟', 'lettre, discours, supérieur'],
+              ['Standard', 'ar:كَيْفَ حَالُكَ؟', 'médias, cours'],
+              ['Levantin', 'ar:كِيفَك؟', 'famille, amis, patients'],
+            ],
+          },
+        },
+        {
+          title: 'Les formules de la politesse soutenue',
+          paragraphs: ['Dans une lettre ou un courriel professionnel, quelques formules suffisent à donner le ton juste :'],
+          examples: [
+            p('حَضْرَةَ الْمُدِيرِ الْمُحْتَرَمِ', 'ḥaḍrata l-mudīri l-muḥtaram', 'Monsieur le Directeur (en-tête)'),
+            p('تَحِيَّةً طَيِّبَةً وَبَعْدُ', 'taḥiyyatan ṭayyibatan wa-baʿd', 'formule d’ouverture : « salutations, et ensuite »'),
+            p('يُسْعِدُنِي أَنْ…', 'yusʿidunī an…', 'j’ai le plaisir de…'),
+            p('أَرْجُو التَّكَرُّمَ بِـ…', 'arjū t-takarruma bi-…', 'je vous prie de bien vouloir…'),
+            p('وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الِاحْتِرَامِ', 'wa-tafaḍḍalū bi-qabūli fā’iqi l-iḥtirām', 'veuillez agréer l’expression de ma haute considération'),
+          ],
+        },
+        {
+          title: 'La négation dans tous ses états',
+          paragraphs: [
+            'Chaque négation a son domaine : لَا (présent), لَمْ (passé), لَنْ (futur), لَيْسَ (phrase nominale, se conjugue), مَا (passé, oral ou littéraire).',
+            'Deux nuances raffinées : لَا « de négation absolue », suivie d’un nom à l’accusatif sans tanwīn (لَا شَكَّ, « nul doute ») ; et غَيْرُ, qui forme des adjectifs négatifs (غَيْرُ مُمْكِنٍ, « impossible »).',
+          ],
+          examples: [
+            p('لَسْتُ مُتَأَكِّدَةً', 'lastu muta’akkidatan', 'je ne suis pas sûre (لَيْسَ conjugué)'),
+            p('لَا شَكَّ فِي ذَلِكَ', 'lā shakka fī dhālik', 'cela ne fait aucun doute'),
+            p('لَا بَأْسَ', 'lā ba’sa', 'ce n’est pas grave, ça va'),
+            p('هَذَا غَيْرُ مُمْكِنٍ', 'hādhā ghayru mumkin', 'c’est impossible'),
+          ],
+        },
+      ],
+      quiz: [
+        { question: 'Que signifie لِكُلِّ مَقَامٍ مَقَالٌ ?', options: ['À chaque situation son discours', 'Chaque article a son titre', 'Chacun à sa place'], answer: 0 },
+        { question: 'Quelle formule clôt une lettre officielle ?', options: ['مَعَ السَّلَامَةِ', 'وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الِاحْتِرَامِ', 'إِلَى اللِّقَاءِ'], answer: 1 },
+        { question: '« Je ne suis pas sûre » se dit…', options: ['لَا مُتَأَكِّدَةً', 'لَسْتُ مُتَأَكِّدَةً', 'لَمْ مُتَأَكِّدَةٌ'], answer: 1 },
+        { question: 'Dans لَا شَكَّ, pourquoi شَكَّ n’a-t-il pas de tanwīn ?', options: ['C’est une faute', 'C’est la « négation absolue » : accusatif sans tanwīn', 'Il est défini'], answer: 1 },
+      ],
+    },
+    pronunciation: [
+      {
+        title: 'Changer de voix selon le registre',
+        paragraphs: ['Comparez la même idée, d’abord en standard soutenu, puis telle qu’on la dirait à un patient levantin. Le rythme, les voyelles et même les consonnes changent (ق devient souvent un coup de glotte au Levant).'],
+        examples: [
+          p('هَلْ تَشْعُرُ بِأَلَمٍ؟', 'hal tashʿuru bi-alam ?', 'avez-vous mal ? (standard)'),
+          p('عَمْ يُوجَعَك شِي؟', 'ʿam yūjaʿak shi ?', 'tu as mal quelque part ? (levantin)'),
+          p('قَلْبٌ / ألب', 'qalb / ’alb', 'cœur : standard / prononciation levantine'),
+        ],
+      },
+    ],
+    writing: [
+      {
+        title: 'La lettre officielle',
+        paragraphs: [
+          'Structure attendue : en-tête (حَضْرَةَ… الْمُحْتَرَمِ), salutation d’ouverture (تَحِيَّةً طَيِّبَةً وَبَعْدُ), objet (اَلْمَوْضُوعُ: …), corps, formule de clôture, signature avec titre.',
+          'L’histoire de ce palier en donne un modèle complet : relisez-la comme un gabarit.',
+        ],
+        examples: [p('اَلْمَوْضُوعُ: طَلَبُ إِجَازَةٍ', 'al-mawḍūʿ : ṭalabu ijāza', 'Objet : demande de congé')],
+      },
+    ],
+    vocabulary: w('c1-2', [
+      ['مَقَامٌ', 'maqām', 'une situation, un contexte ; un mode musical'],
+      ['لَهْجَةٌ / لَهَجَاتٌ', 'lahja / lahajāt', 'un dialecte / des dialectes'],
+      ['فُصْحَى', 'fuṣḥā', 'l’arabe standard ou classique'],
+      ['عَامِّيَّةٌ', 'ʿāmmiyya', 'la langue parlée, le dialecte'],
+      ['حَضْرَتُكَ', 'ḥaḍratuka', 'vous (forme de respect)'],
+      ['اَلْمُحْتَرَمُ', 'al-muḥtaram', 'respecté (dans un en-tête)'],
+      ['طَلَبٌ', 'ṭalab', 'une demande'],
+      ['إِجَازَةٌ', 'ijāza', 'un congé'],
+      ['مُؤْتَمَرٌ', 'mu’tamar', 'un congrès'],
+      ['يُسْعِدُنِي أَنْ', 'yusʿidunī an', 'j’ai le plaisir de'],
+      ['أَرْجُو', 'arjū', 'je prie, je souhaite'],
+      ['لَا شَكَّ', 'lā shakka', 'nul doute'],
+      ['لَا بَأْسَ', 'lā ba’sa', 'ce n’est pas grave'],
+      ['غَيْرُ مُمْكِنٍ', 'ghayru mumkin', 'impossible'],
+      ['لَسْتُ…', 'lastu…', 'je ne suis pas…'],
+    ]),
+    mindmap: {
+      center: p('اَلْمَقَامُ', 'al-maqām', 'la situation'),
+      branches: [
+        { label: 'Écrire à un supérieur', items: [p('حَضْرَةَ الْمُدِيرِ', 'ḥaḍrata l-mudīr', 'Monsieur le Directeur'), p('أَرْجُو التَّكَرُّمَ', 'arjū t-takarrum', 'je vous prie de')] },
+        { label: 'Parler aux médias', items: [p('يُسْعِدُنِي أَنْ', 'yusʿidunī an', 'j’ai le plaisir de'), p('لَا شَكَّ', 'lā shakka', 'nul doute')] },
+        { label: 'Rassurer un patient', items: [p('لَا بَأْسَ', 'lā ba’sa', 'ce n’est rien'), p('سَلَامْتَك', 'salāmtak', 'prompt rétablissement')] },
+        { label: 'Nier finement', items: [p('لَسْتُ…', 'lastu…', 'je ne suis pas'), p('غَيْرُ مُمْكِنٍ', 'ghayru mumkin', 'impossible')] },
+      ],
+    },
+    story: {
+      title: 'Une lettre au directeur',
+      lines: [
+        p('حَضْرَةَ مُدِيرِ الْمُسْتَشْفَى الْمُحْتَرَمِ،', 'ḥaḍrata mudīri l-mustashfā l-muḥtaram,', 'Monsieur le Directeur de l’hôpital,'),
+        p('تَحِيَّةً طَيِّبَةً وَبَعْدُ،', 'taḥiyyatan ṭayyibatan wa-baʿd,', 'Je vous adresse mes salutations distinguées.'),
+        p('يُسْعِدُنِي أَنْ أُعْلِمَكُمْ بِأَنَّنِي دُعِيتُ إِلَى مُؤْتَمَرٍ طِبِّيٍّ دَوْلِيٍّ فِي بَيْرُوتَ.', 'yusʿidunī an uʿlimakum bi-annanī duʿītu ilā mu’tamarin ṭibbiyyin dawliyyin fī Bayrūt.', 'J’ai le plaisir de vous informer que j’ai été invitée à un congrès médical international à Beyrouth.'),
+        p('وَلَا شَكَّ أَنَّ هَذِهِ الْمُشَارَكَةَ سَتُفِيدُ قِسْمَنَا فَائِدَةً كَبِيرَةً.', 'wa-lā shakka anna hādhihi l-mushārakata sa-tufīdu qismanā fā’idatan kabīra.', 'Nul doute que cette participation profitera grandement à notre service.'),
+        p('لِذَا أَرْجُو التَّكَرُّمَ بِالْمُوَافَقَةِ عَلَى إِجَازَتِي مِنَ الْعَاشِرِ إِلَى الرَّابِعَ عَشَرَ مِنَ الشَّهْرِ الْقَادِمِ.', 'li-dhā arjū t-takarruma bi-l-muwāfaqati ʿalā ijāzatī mina l-ʿāshiri ilā r-rābiʿa ʿashara mina sh-shahri l-qādim.', 'Je vous prie donc de bien vouloir accepter mon congé du 10 au 14 du mois prochain.'),
+        p('وَتَفَضَّلُوا بِقَبُولِ فَائِقِ الِاحْتِرَامِ. — اَلدُّكْتُورَةُ جُولْيِيت', 'wa-tafaḍḍalū bi-qabūli fā’iqi l-iḥtirām. — ad-duktūra Jūliyet', 'Veuillez agréer l’expression de ma haute considération. — Docteure Juliette'),
+      ],
+    },
+    podcast: {
+      title: 'Trois registres, une matinée',
+      intro: 'La même docteure, trois manières de parler : au directeur, à un collègue, à une patiente.',
+      lines: [
+        { speaker: 'Juliette', ar: 'صَبَاحُ الْخَيْرِ يَا حَضْرَةَ الْمُدِيرِ، هَلْ تَسْمَحُ لِي بِدَقِيقَةٍ مِنْ وَقْتِكَ؟', fr: 'Bonjour, Monsieur le Directeur, m’accorderiez-vous une minute ?' },
+        { speaker: 'Directeur', ar: 'تَفَضَّلِي يَا دُكْتُورَة.', fr: 'Je vous en prie, docteure.' },
+        { speaker: 'Juliette', ar: 'سَامِي، لَسْتُ مُتَأَكِّدَةً مِنَ التَّشْخِيصِ، مَا رَأْيُكَ؟', fr: 'Sami, je ne suis pas sûre du diagnostic, qu’en penses-tu ?' },
+        { speaker: 'Sami', ar: 'لَا بَأْسَ، سَنَطْلُبُ تَحْلِيلًا آخَرَ.', fr: 'Pas de souci, on demandera une autre analyse.' },
+        { speaker: 'Juliette', ar: 'لَا تْخَافِي يَا خَالْتِي، مَا فِي شِي، سَلَامْتِك!', fr: 'N’ayez pas peur, ma tante, ce n’est rien, prompt rétablissement ! (levantin, avec affection)' },
+      ],
+    },
+    conversation: {
+      intro: 'Le directeur vous appelle. Restez dans le registre soutenu.',
+      steps: [
+        { bot: p('صَبَاحُ الْخَيْرِ يَا دُكْتُورَة، هَلْ وَصَلَتْكِ رِسَالَتِي؟', 'ṣabāḥu l-khayr yā duktūra, hal waṣalatki risālatī ?', 'Bonjour docteure, avez-vous reçu ma lettre ?'), expected: ['نعم', 'وصلتني', 'شكرا'], hint: p('نَعَمْ، وَصَلَتْنِي، شُكْرًا جَزِيلًا.', 'naʿam, waṣalatnī, shukran jazīlan.', 'Oui, je l’ai reçue, merci beaucoup.') },
+        { bot: p('هَلْ يُمْكِنُكِ الْحُضُورُ إِلَى الِاجْتِمَاعِ غَدًا؟', 'hal yumkinuki l-ḥuḍūru ilā l-ijtimāʿi ghadan ?', 'Pouvez-vous assister à la réunion demain ?'), expected: ['يسعدني', 'نعم', 'للاسف', 'غير ممكن', 'لست'], hint: p('يُسْعِدُنِي ذَلِكَ.', 'yusʿidunī dhālik.', 'Avec plaisir.') },
+        { bot: p('شُكْرًا لَكِ، إِلَى الْغَدِ إِذَنْ.', 'shukran laki, ilā l-ghadi idhan.', 'Merci à vous, à demain donc.'), expected: ['الي اللقاء', 'مع السلامه', 'الي الغد', 'شكرا'], hint: p('إِلَى اللِّقَاءِ، مَعَ فَائِقِ الِاحْتِرَامِ.', 'ilā l-liqā’, maʿa fā’iqi l-iḥtirām.', 'Au revoir, avec mes respects.') },
+      ],
+    },
+    dialect: [
+      { dialect: 'Levantin', ar: 'مَا فِي شِي', tr: 'ma fī shi', fr: 'ce n’est rien', msa: 'لَا بَأْسَ' },
+      { dialect: 'Levantin', ar: 'يَا خَالْتِي', tr: 'ya khālti', fr: '« ma tante » : appellation affectueuse d’une femme âgée', msa: 'يَا سَيِّدَتِي' },
+      { dialect: 'Égyptien', ar: 'مَفِيش حَاجَة', tr: 'mafīsh ḥāga', fr: 'ce n’est rien', msa: 'لَا بَأْسَ' },
+      { dialect: 'Égyptien', ar: 'يَا حَاجَّة', tr: 'ya ḥagga', fr: 'appellation respectueuse d’une femme âgée', msa: 'يَا سَيِّدَتِي' },
+      { dialect: 'Marocain', ar: 'مَا كَايْن وَالُو', tr: 'ma kāyn wālu', fr: 'ce n’est rien', msa: 'لَا بَأْسَ' },
+      { dialect: 'Marocain', ar: 'الْحَاجَّة', tr: 'l-ḥājja', fr: 'appellation respectueuse d’une femme âgée', msa: 'اَلسَّيِّدَةُ' },
+    ],
+  },
+
 ]
 
 export const tierById = (id: string) => TIERS.find((t) => t.id === id)
@@ -1654,7 +1940,7 @@ export const CEFR_LEVELS: { level: Cefr; title: string; description: string }[] 
   { level: 'A2', title: 'Survie', description: 'Le passé, le présent et le futur, la ville, le restaurant, l’annexion et les pluriels brisés.' },
   { level: 'B1', title: 'Seuil', description: 'Les formes dérivées en action, le maṣdar, raconter au passé, donner son avis.' },
   { level: 'B2', title: 'Avancé', description: 'La presse, le passif, les relatifs, la condition et l’argumentation, en lecture sans diacritiques.' },
-  { level: 'C1', title: 'Autonome', description: 'Littérature, nuances de registre, débats.' },
+  { level: 'C1', title: 'Autonome', description: 'La langue littéraire, les modes du verbe, les registres et la politesse soutenue.' },
 ]
 
 export const TIER_TABS = [

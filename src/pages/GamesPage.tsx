@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Ar } from '../components/Ar'
 import { ProgressBar } from '../components/ProgressBar'
@@ -6,11 +6,14 @@ import { SpeakButton } from '../components/SpeakButton'
 import { AVATARS } from '../data/avatars'
 import { FORM_ITEMS, FORM_PATTERNS, FORMS, ROOT_ITEMS } from '../data/games'
 import { shuffle, stripTashkeel } from '../lib/arabic'
+import { speak } from '../lib/speech'
+import { vocabularyCards } from '../lib/srs'
 import { useProgress } from '../store/progress'
 
 const GAMES = [
   { id: 'racines', title: 'Le chasseur de racines', ar: 'صَيَّادُ الْجُذُورِ', text: 'Retrouvez les trois consonnes cachées au cœur d’un mot.' },
   { id: 'formes', title: 'Devine la forme', ar: 'خَمِّنِ الْوَزْنَ', text: 'À quelle forme, de I à X, appartient ce verbe ?' },
+  { id: 'oreille', title: 'L’oreille des abysses', ar: 'أُذُنُ الْأَعْمَاقِ', text: 'Écoutez un mot, puis retrouvez-le parmi quatre mots écrits.' },
   { id: 'memoire', title: 'Le mémo des abysses', ar: 'ذَاكِرَةُ الْأَعْمَاقِ', text: 'Associez chaque animal marin à son nom arabe.' },
 ]
 
@@ -39,6 +42,8 @@ export function GamesHome() {
 interface Question {
   prompt: ReactNode
   speak?: string
+  /** Prononcer le mot dès l'affichage de la question. */
+  autoSpeak?: boolean
   options: { id: string; label: ReactNode }[]
   answer: string
   explain: ReactNode
@@ -55,6 +60,11 @@ function ChoiceGame({ id, title, build }: { id: string; title: string; build: ()
   const [picked, setPicked] = useState<string | null>(null)
   const [score, setScore] = useState(0)
   const q = questions[index]
+  const rate = useProgress((s) => s.settings.speechRate)
+
+  useEffect(() => {
+    if (q?.autoSpeak && q.speak) speak(q.speak, rate)
+  }, [q, rate])
 
   if (!q) {
     return (
@@ -160,6 +170,30 @@ function buildFormGame(): Question[] {
   })
 }
 
+/** Dictée : le vocabulaire déjà rencontré, ou celui du premier palier pour commencer. */
+function buildEarGame(): Question[] {
+  const seen = vocabularyCards(useProgress.getState())
+  // Les expressions longues se reconnaissent trop facilement : on garde les mots courts.
+  const byText = new Map(seen.filter((c) => c.frontAr && stripTashkeel(c.frontAr).length <= 12).map((c) => [stripTashkeel(c.frontAr!), c]))
+  const pool = [...byText.values()]
+  return shuffle(pool).slice(0, 10).map((card) => {
+    const others = shuffle(pool.filter((c) => c.id !== card.id)).slice(0, 3)
+    return {
+      prompt: (
+        <>
+          <p className="muted text-sm">Écoutez, puis touchez le mot entendu.</p>
+          <p className="lueur-or py-2 font-display text-4xl text-or-300" aria-hidden>?</p>
+        </>
+      ),
+      speak: card.frontAr,
+      autoSpeak: true,
+      options: shuffle([card, ...others]).map((c) => ({ id: c.id, label: <Ar text={c.frontAr ?? ''} className="text-2xl" /> })),
+      answer: card.id,
+      explain: <>« {card.backFr} » — <i>{card.backTr}</i></>,
+    }
+  })
+}
+
 const PAIRS = 6
 
 /** Mémo : retourner deux cartes, associer l'animal et son nom arabe. */
@@ -245,6 +279,7 @@ export function GamePlay() {
   const { gameId } = useParams()
   if (gameId === 'racines') return <ChoiceGame id="racines" title="Le chasseur de racines" build={buildRootGame} />
   if (gameId === 'formes') return <ChoiceGame id="formes" title="Devine la forme" build={buildFormGame} />
+  if (gameId === 'oreille') return <ChoiceGame id="oreille" title="L’oreille des abysses" build={buildEarGame} />
   if (gameId === 'memoire') return <MemoryGame />
   return <Navigate to="/jeux" replace />
 }

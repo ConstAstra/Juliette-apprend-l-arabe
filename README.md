@@ -8,14 +8,14 @@ Application web progressive (PWA) d’apprentissage de l’arabe, en français. 
 
 - **Tronc commun : l’arabe standard moderne** (اَلْفُصْحَى). Les expressions dialectales (levantin, égyptien, marocain) sont présentées à part, dans l’onglet « Dialectes » de chaque palier.
 - **Alphabet** : les 28 lettres et leurs quatre formes (isolée, initiale, médiane, finale), la prononciation en synthèse vocale, les lettres solaires et lunaires, un atelier de tracé et un exercice de reconnaissance.
-- **Paliers CECR** : A1.1 à A1.4, A2.1 à A2.3, B1.1, B1.2, B2.1 et B2.2 (C1 en préparation). Chaque palier comprend les onglets alphabet, grammaire (avec quiz), prononciation, écriture, vocabulaire, carte mentale, histoire, podcast dialogué (avec écoute active), conversation (reconnaissance vocale ou saisie) et dialectes.
+- **Paliers CECR** : quinze paliers, de A1.1 à C1.2. Chaque palier comprend les onglets alphabet, grammaire (avec quiz), prononciation, écriture, vocabulaire, carte mentale, histoire, podcast dialogué (avec écoute active), conversation (reconnaissance vocale ou saisie) et dialectes.
 - **Vocabulaire** : le vocabulaire spécial de Juliette (animaux marins, sports à voile, alcool et cocktails, écriture et lecture) ; « Comprendre ses patients » (le corps, maux et symptômes, maladies, consultation avec dialogue d’écoute, plaintes en dialecte égyptien, levantin et marocain) ; des thèmes généraux.
 - **Fiches de référence** : racines trilitères et dix formes verbales (I à X), les trois cas (iʿrāb), conjugaison avec le duel, article et lettres solaires, nombres, expressions idiomatiques.
 - **Révisions espacées (Leitner)** : deux paquets distincts, vocabulaire et grammaire.
 - **Test de niveau CECR** autoévalué (20 affirmations « je peux… »).
 - **Bibliothèque** : contes (Juḥā, Sindbad), fable de Kalīla wa Dimna, vers classiques du domaine public et textes modernes originaux, avec traductions voilées, glossaire et quiz.
 - **Histoire du monde arabophone** : frise en sept époques, des caravanes à la Nahda, avec la médecine arabe et les navigateurs.
-- **Jeux** : le chasseur de racines, devine la forme (I à X), le mémo des abysses.
+- **Jeux** : le chasseur de racines, devine la forme (I à X), l’oreille des abysses (dictée), le mémo des abysses.
 - **Avatars marins** : treize animaux, chacun avec son nom arabe à écouter, débloqués au fil des niveaux (du dauphin à la baleine bleue), sur sept fonds aux couleurs de la mer.
 - **Mode avec ou sans diacritiques**, translittération facultative.
 - **Progression** : XP, niveaux, série quotidienne, badges, calendrier de régularité.
