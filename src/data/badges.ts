@@ -1,5 +1,5 @@
 import { LETTERS } from './letters'
-import { JULIETTE_THEMES, MEDICAL_THEMES } from './vocabulary'
+import { ALL_THEMES, JULIETTE_THEMES, MEDICAL_THEMES } from './vocabulary'
 import { TIERS, tabsForTier } from './tiers'
 import { REFERENCE } from './reference'
 import { HISTORY } from './history'
@@ -41,5 +41,6 @@ export const BADGES: Badge[] = [
   { id: 'boussole', emoji: '🧭', title: 'Boussole', description: 'Passer le test de niveau.', earned: (p) => p.placement !== null },
   { id: 'aquarium', emoji: '🦈', title: 'Grand aquarium', description: 'Atteindre le niveau 8 et débloquer le requin.', earned: (p) => levelInfo(p.xp).level >= 8 },
   { id: 'blouse-blanche', emoji: '🩺', title: 'Blouse blanche', description: 'Explorer les cinq fiches « Comprendre ses patients ».', earned: (p) => MEDICAL_THEMES.every((t) => p.seenThemes[t.id]) },
+  { id: 'lexicographe', emoji: '📖', title: 'Lexicographe', description: 'Ouvrir quinze fiches de vocabulaire.', earned: (p) => ALL_THEMES.filter((t) => p.seenThemes[t.id]).length >= 15 },
   { id: 'juliette', emoji: '🐬', title: 'Le monde de Juliette', description: 'Explorer les quatre fiches du vocabulaire spécial.', earned: (p) => JULIETTE_THEMES.every((t) => p.seenThemes[t.id]) },
 ]
