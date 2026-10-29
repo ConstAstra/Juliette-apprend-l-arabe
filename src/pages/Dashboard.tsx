@@ -81,7 +81,7 @@ export function Dashboard() {
         <Link to="/vocabulaire" className="card flex flex-col gap-1">
           <span className="text-2xl">🐬 ⛵</span>
           <div className="font-bold">Le monde de Juliette</div>
-          <div className="muted text-sm">Mer, voile, cocktails, livres</div>
+          <div className="muted text-sm">Mer, voile, cocktails, livres, jeux</div>
         </Link>
         <Link to="/vocabulaire/plaintes-patients" className="card flex flex-col gap-1">
           <span className="text-2xl">🩺</span>

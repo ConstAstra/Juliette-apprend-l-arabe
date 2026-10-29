@@ -79,7 +79,7 @@ export function VocabularyPage() {
       )}
       <section className="rounded-3xl border border-lueur-400/30 bg-gradient-to-br from-lueur-600/35 to-abysse p-4">
         <h2 className="text-lg font-extrabold">✨ Le vocabulaire spécial de Juliette</h2>
-        <p className="mb-3 text-sm opacity-90">La mer, la voile, l’art de recevoir et l’amour des livres.</p>
+        <p className="mb-3 text-sm opacity-90">La mer, la voile, l’art de recevoir, l’amour des livres et des jeux de société.</p>
         <div className="grid gap-2 sm:grid-cols-2">
           {JULIETTE_THEMES.map((t) => <ThemeCard key={t.id} theme={t} />)}
         </div>

@@ -137,7 +137,7 @@ await step('Paliers A2 : neuf onglets, sans alphabet', async () => {
 
 await step('Vocabulaire spécial de Juliette', async () => {
   await go('/vocabulaire')
-  for (const t of ['Animaux marins', 'Sports à voile', 'Alcool et cocktails', 'Écriture et lecture']) await page.getByText(t, { exact: true }).waitFor()
+  for (const t of ['Animaux marins', 'Sports à voile', 'Alcool et cocktails', 'Écriture et lecture', 'Jeux de société']) await page.getByText(t, { exact: true }).waitFor()
   await shot('07-vocabulaire')
   for (const t of ['Le corps', 'Maux et symptômes', 'Les maladies', 'La consultation', 'Ce que disent les patients']) await page.getByText(t, { exact: true }).waitFor()
   await go('/vocabulaire/consultation')
@@ -159,6 +159,10 @@ await step('Vocabulaire spécial de Juliette', async () => {
   await page.getByText('la mer').first().waitFor()
   await shot('30-recherche')
   await page.getByLabel('Chercher un mot').fill('')
+  await go('/vocabulaire/jeux-de-societe')
+  await page.getByText('la dame (« le vizir »)').waitFor()
+  await page.getByText('Une partie de ṭāwla').waitFor()
+  await shot('31-jeux-de-societe')
   await go('/vocabulaire/verbes')
   await page.getByText('comprendre', { exact: true }).waitFor()
   await go('/vocabulaire/animaux-marins')
