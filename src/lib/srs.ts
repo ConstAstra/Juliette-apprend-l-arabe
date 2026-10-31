@@ -3,6 +3,7 @@ import { TIERS } from '../data/tiers'
 import type { Tier } from '../data/types'
 import { ALL_THEMES } from '../data/vocabulary'
 import { LIBRARY } from '../data/library'
+import { EXPRESSIONS } from '../data/expressions'
 import { shuffle } from './arabic'
 import { todayKey, type DeckId, type ProgressData } from '../store/progress'
 
@@ -26,6 +27,7 @@ export function vocabularyCards(p: ProgressData): ReviewCard[] {
     ...TIERS.filter((t) => tierStarted(p, t)).flatMap((t) => t.vocabulary),
     ...ALL_THEMES.filter((t) => p.seenThemes[t.id]).flatMap((t) => t.words),
     ...LIBRARY.filter((t) => p.readTexts[t.id]).flatMap((t) => t.glossary),
+    ...EXPRESSIONS.filter((e) => p.seenExpressions[e.id]).map((e) => ({ id: e.id, ar: e.ar, tr: e.tr, fr: e.meaning })),
   ]
   return words.map((w) => ({ id: w.id, frontAr: w.ar, backFr: w.fr, backTr: w.tr, speak: w.ar }))
 }

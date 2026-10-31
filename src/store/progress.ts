@@ -50,6 +50,8 @@ export interface ProgressData {
   bestRecognition: number
   seenRefs: Record<string, true>
   readTexts: Record<string, true>
+  /** Expressions du jour découvertes → date de découverte. */
+  seenExpressions: Record<string, string>
   /** Meilleur score par jeu. */
   games: Record<string, number>
   seenHistory: Record<string, true>
@@ -67,6 +69,7 @@ interface ProgressActions {
   recordRecognition: (score: number) => void
   markRefSeen: (id: string) => void
   markTextRead: (id: string) => void
+  markExpressionSeen: (id: string) => void
   recordGame: (id: string, score: number) => void
   markHistorySeen: (id: string) => void
   reviewCard: (deck: DeckId, cardId: string, known: boolean) => void
@@ -84,6 +87,7 @@ export const INITIAL_PROGRESS: ProgressData = {
   bestRecognition: 0,
   seenRefs: {},
   readTexts: {},
+  seenExpressions: {},
   games: {},
   seenHistory: {},
   srs: { vocabulaire: {}, grammaire: {} },
@@ -133,6 +137,11 @@ export const useProgress = create<ProgressData & ProgressActions>()(
       recordGame: (id, score) => {
         set({ games: { ...get().games, [id]: Math.max(get().games[id] ?? 0, score) } })
         get().addXp(score)
+      },
+      markExpressionSeen: (id) => {
+        if (get().seenExpressions[id]) return
+        set({ seenExpressions: { ...get().seenExpressions, [id]: todayKey() } })
+        get().addXp(2)
       },
       markHistorySeen: (id) => {
         if (get().seenHistory[id]) return

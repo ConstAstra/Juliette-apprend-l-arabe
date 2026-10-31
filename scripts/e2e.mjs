@@ -51,6 +51,18 @@ await step('Tableau de bord', async () => {
   await shot('01-accueil')
 })
 
+await step('Expression du jour, lune et carnet', async () => {
+  await go('/')
+  await page.getByRole('heading', { name: 'L’expression du jour' }).waitFor()
+  await page.getByRole('img', { name: /Lune de ce soir/ }).waitFor()
+  await page.getByText('Mot à mot :').scrollIntoViewIfNeeded()
+  await shot('32-expression-du-jour')
+  await page.getByRole('link', { name: /Mon carnet d’expressions · 1 \// }).click()
+  await page.getByText('1 découverte', { exact: true }).waitFor()
+  await noHorizontalScroll()
+  await shot('33-carnet')
+})
+
 await step('Alphabet : 28 lettres et formes médianes', async () => {
   await go('/alphabet')
   const tiles = page.locator('a[href^="#/alphabet/"]:not([href$="exercice"])')
@@ -281,7 +293,8 @@ await step('Cérémonie : un palier se scelle', async () => {
   assert(xp === 260, `XP après cérémonie : ${xp} (attendu 200 + 10 + 50)`)
   await pg.goto(URL_BASE + '#/')
   await pg.getByText('Objectif du jour').waitFor()
-  await pg.getByText(/60 \/ 30 XP/).waitFor()
+  // 60 XP de la cérémonie, plus 2 XP pour l'expression du jour découverte sur l'accueil.
+  await pg.getByText(/62 \/ 30 XP/).waitFor()
   await pg.screenshot({ path: join(SHOTS, '26-objectif.png') })
   await ctx.close()
 })

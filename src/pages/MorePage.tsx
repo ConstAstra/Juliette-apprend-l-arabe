@@ -4,6 +4,7 @@ import { useActiveProfile } from '../store/profiles'
 
 const LINKS = [
   { to: '/vocabulaire', emoji: '📚', title: 'Vocabulaire', text: 'Le vocabulaire spécial de Juliette, le vocabulaire médical et les thèmes généraux' },
+  { to: '/expressions', emoji: '💬', title: 'Le carnet d’expressions', text: 'Les expressions du jour déjà découvertes' },
   { to: '/jeux', emoji: '🎲', title: 'Les jeux', text: 'Racines, formes verbales, dictée à l’oreille, mémo des abysses' },
   { to: '/bibliotheque', emoji: '📜', title: 'La bibliothèque', text: 'Contes, fables, poésie et textes modernes, du A2 au B2' },
   { to: '/histoire', emoji: '🏛️', title: 'Histoire du monde arabophone', text: 'Des caravanes à la Nahda : sciences, médecine et navigateurs' },

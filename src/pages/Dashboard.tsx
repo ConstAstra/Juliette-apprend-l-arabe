@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import { Ar } from '../components/Ar'
 import { IconCards } from '../components/Icons'
+import { DailyExpression } from '../components/DailyExpression'
 import { DailyGoal } from '../components/DailyGoal'
+import { Moon } from '../components/Moon'
 import { NightWord } from '../components/NightWord'
 import { ProgressBar } from '../components/ProgressBar'
 import { TierCard } from '../components/TierCard'
@@ -28,6 +30,7 @@ export function Dashboard() {
         <Ar as="p" text={`${greeting}${profile.name === 'Juliette' ? ' يَا جُولْيِيت' : ''}`} className="lueur-or text-4xl text-or-300" />
         <h1 className="mt-1 text-2xl">Bienvenue, {profile.name}</h1>
         <p className="muted">Un peu chaque jour : quelques lettres, quelques mots.</p>
+        <div className="mt-3"><Moon /></div>
         <div className="mx-auto mt-4 max-w-sm space-y-1.5">
           <div className="flex justify-between text-sm">
             <span className="text-or-300">Niveau {lvl.level}</span>
@@ -37,6 +40,8 @@ export function Dashboard() {
           <p className="muted text-xs">{lvl.needed - lvl.current} XP avant le niveau {lvl.level + 1}</p>
         </div>
       </section>
+
+      <DailyExpression />
 
       <section className="card">
         <DailyGoal />
