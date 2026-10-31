@@ -18,6 +18,7 @@ import { MorePage } from './pages/MorePage'
 import { LibraryList, TextReader } from './pages/LibraryPage'
 import { HistoryPage } from './pages/HistoryPage'
 import { GamesHome, GamePlay } from './pages/GamesPage'
+import { ExpressionsPage } from './pages/ExpressionsPage'
 
 export function App() {
   return (
@@ -46,6 +47,7 @@ export function App() {
           <Route path="bibliotheque/:textId" element={<TextReader />} />
           <Route path="histoire" element={<HistoryPage />} />
           <Route path="jeux" element={<GamesHome />} />
+          <Route path="expressions" element={<ExpressionsPage />} />
           <Route path="jeux/:gameId" element={<GamePlay />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

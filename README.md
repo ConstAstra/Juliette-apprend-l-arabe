@@ -16,6 +16,7 @@ Application web progressive (PWA) d’apprentissage de l’arabe, en français. 
 - **Bibliothèque** : contes (Juḥā, Sindbad), fable de Kalīla wa Dimna, vers classiques du domaine public et textes modernes originaux, avec traductions voilées, glossaire et quiz.
 - **Histoire du monde arabophone** : frise en sept époques, des caravanes à la Nahda, avec la médecine arabe et les navigateurs.
 - **Jeux** : le chasseur de racines, devine la forme (I à X), l’oreille des abysses (dictée), le mémo des abysses.
+- **Expressions du jour** : 38 formules, images et proverbes (sens mot à mot, sens réel, usage, registre), un carnet à compléter jour après jour.
 - **Avatars marins** : treize animaux, chacun avec son nom arabe à écouter, débloqués au fil des niveaux (du dauphin à la baleine bleue), sur sept fonds aux couleurs de la mer.
 - **Mode avec ou sans diacritiques**, translittération facultative.
 - **Progression** : XP, niveaux, série quotidienne, badges, calendrier de régularité.

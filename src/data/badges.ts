@@ -3,6 +3,7 @@ import { ALL_THEMES, MEDICAL_THEMES } from './vocabulary'
 import { TIERS, tabsForTier } from './tiers'
 import { REFERENCE } from './reference'
 import { HISTORY } from './history'
+import { EXPRESSIONS } from './expressions'
 import { levelInfo, streak, type ProgressData } from '../store/progress'
 
 export interface Badge {
@@ -43,5 +44,6 @@ export const BADGES: Badge[] = [
   { id: 'blouse-blanche', emoji: '🩺', title: 'Blouse blanche', description: 'Explorer les cinq fiches « Comprendre ses patients ».', earned: (p) => MEDICAL_THEMES.every((t) => p.seenThemes[t.id]) },
   { id: 'lexicographe', emoji: '📖', title: 'Lexicographe', description: 'Ouvrir quinze fiches de vocabulaire.', earned: (p) => ALL_THEMES.filter((t) => p.seenThemes[t.id]).length >= 15 },
   { id: 'stratege', emoji: '♟️', title: 'Stratège', description: 'Ouvrir la fiche des jeux de société.', earned: (p) => !!p.seenThemes['jeux-de-societe'] },
+  { id: 'beau-parleur', emoji: '💬', title: 'Belle parleuse', description: 'Découvrir quinze expressions du jour.', earned: (p) => EXPRESSIONS.filter((e) => p.seenExpressions[e.id]).length >= 15 },
   { id: 'juliette', emoji: '🐬', title: 'Le monde de Juliette', description: 'Explorer les quatre premières fiches du vocabulaire spécial.', earned: (p) => ['animaux-marins', 'sports-voile', 'alcool-cocktails', 'ecriture-lecture'].every((id) => p.seenThemes[id]) },
 ]

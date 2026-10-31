@@ -3,6 +3,7 @@ import { TIERS } from '../data/tiers'
 import { ALL_THEMES } from '../data/vocabulary'
 import { todayKey } from '../store/progress'
 import { Ar } from './Ar'
+import { Ornate } from './Ornate'
 import { SpeakButton } from './SpeakButton'
 
 const POOL = [...TIERS.flatMap((t) => t.vocabulary), ...ALL_THEMES.flatMap((t) => t.words)]
@@ -19,8 +20,7 @@ export function NightWord() {
   const word = wordOfTheDay()
   const [open, setOpen] = useState(false)
   return (
-    <section className="card relative overflow-hidden">
-      <div className="pointer-events-none absolute -top-16 -right-10 size-40 rounded-full bg-lueur-400/10 blur-2xl" />
+    <Ornate>
       <div className="flex items-baseline justify-between gap-2">
         <h2 className="text-lg text-or-300">Le mot de la nuit</h2>
         <span className="text-xs tracking-[0.18em] text-brume uppercase">Un seul par jour</span>
@@ -44,6 +44,6 @@ export function NightWord() {
       ) : (
         <p className="muted text-center text-sm">Touchez pour lever le voile.</p>
       )}
-    </section>
+    </Ornate>
   )
 }
