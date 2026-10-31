@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="nuit" cx="0.5" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#1b2a52"/>
+      <stop offset="1" stop-color="#0a0f1f"/>
+    </radialGradient>
+    <linearGradient id="peau" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fe8d7"/>
+      <stop offset="1" stop-color="#1d7a72"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5fdcc9" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#5fdcc9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#nuit)"/>
+  <circle cx="256" cy="290" r="190" fill="url(#halo)"/>
+  <!-- croissant -->
+  <mask id="croissant"><rect width="512" height="512" fill="#fff"/><circle cx="372" cy="130" r="32" fill="#000"/></mask>
+  <circle cx="356" cy="142" r="36" fill="#ddbb72" mask="url(#croissant)"/>
+  <!-- plancton -->
+  <g fill="#9af3e4">
+    <circle cx="140" cy="150" r="4"/><circle cx="182" cy="118" r="2.5"/><circle cx="120" cy="400" r="3"/>
+    <circle cx="400" cy="390" r="3.5"/><circle cx="430" cy="250" r="2.5"/>
+  </g>
+  <g fill="#f0d9a0"><circle cx="250" cy="120" r="2.5"/><circle cx="300" cy="420" r="2.5"/></g>
+  <!-- bulles -->
+  <g fill="none" stroke="#9af3e4" stroke-width="4" opacity="0.8">
+    <circle cx="430" cy="300" r="9"/><circle cx="452" cy="268" r="6"/>
+  </g>
+  <!-- requin -->
+  <path d="M250 242C262 206 281 180 302 165c-2 30 0 55 10 73z" fill="url(#peau)"/>
+  <path d="M410 285c-30-40-110-57-180-45-35 6-60 18-80 30l-55-45c5 30 10 50 17 65-8 15-14 35-20 62l58-47c25 13 60 25 100 27 70 4 135-12 160-47z" fill="url(#peau)"/>
+  <path d="M405 293c-25 26-85 38-150 34-40-2-70-12-95-24 40 10 80 13 120 11 60-4 100-12 125-21z" fill="#ece4cf"/>
+  <path d="M272 322c-8 25-20 43-38 57 30-4 56-22 68-52z" fill="#1d7a72"/>
+  <g fill="none" stroke="#0f4c47" stroke-width="4" stroke-linecap="round">
+    <path d="M318 262q-6 14 0 28"/><path d="M330 260q-6 14 0 28"/><path d="M342 259q-6 14 0 28"/>
+    <path d="M374 302q14 2 26-8"/>
+  </g>
+  <circle cx="368" cy="268" r="10" fill="#0a0f1f"/>
+  <circle cx="371" cy="265" r="3.5" fill="#ffffff"/>
+</svg>
