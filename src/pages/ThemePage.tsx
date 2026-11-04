@@ -4,6 +4,7 @@ import { Ar } from '../components/Ar'
 import { PhraseRow } from '../components/PhraseRow'
 import { SpeakButton } from '../components/SpeakButton'
 import { Dialogue } from '../components/Dialogue'
+import { ZodiacFinder } from '../components/ZodiacFinder'
 import { JULIETTE_THEMES, MEDICAL_THEMES, themeById } from '../data/vocabulary'
 import { useProgress } from '../store/progress'
 
@@ -31,6 +32,7 @@ export function ThemePage() {
         <h1 className="text-2xl font-extrabold">{theme.emoji} {theme.title}</h1>
       </header>
       {theme.note && <p className="card border-l-4 border-lueur-400 text-sm">{theme.note}</p>}
+      {theme.id === 'signes-zodiaque' && <ZodiacFinder />}
       <div className="grid grid-cols-2 gap-1 rounded-xl bg-abysse-2 p-1">
         <button className={`min-h-10 rounded-lg font-semibold ${!cards ? 'bg-abysse shadow' : 'muted'}`} onClick={() => setCards(false)}>Liste</button>
         <button className={`min-h-10 rounded-lg font-semibold ${cards ? 'bg-abysse shadow' : 'muted'}`} onClick={() => setCards(true)}>Cartes</button>

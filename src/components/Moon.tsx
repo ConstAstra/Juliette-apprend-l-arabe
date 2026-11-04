@@ -1,9 +1,11 @@
 import { litPath, moonPhase } from '../lib/moon'
+import { sunSign } from '../lib/zodiac'
 import { Ar } from './Ar'
 
 /** La lune de ce soir, dessinée selon sa phase réelle, avec son nom arabe. */
 export function Moon() {
   const moon = moonPhase()
+  const sign = sunSign()
   return (
     <div className="flex items-center justify-center gap-3">
       <svg viewBox="0 0 40 40" className="size-10 drop-shadow-[0_0_8px_rgb(240_217_160/0.5)]" role="img" aria-label={`Lune de ce soir : ${moon.fr}`}>
@@ -15,6 +17,9 @@ export function Moon() {
         <div className="flex items-baseline gap-2">
           <Ar text={moon.ar} className="text-lg text-or-300" />
           <span className="muted text-sm">{moon.fr}</span>
+        </div>
+        <div className="muted text-xs">
+          Le soleil traverse <Ar text={sign.ar} className="text-sm text-or-300" /> ({sign.symbol} {sign.fr.replace(/^(le|la|les) /, '')})
         </div>
       </div>
     </div>
