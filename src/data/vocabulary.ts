@@ -1,4 +1,5 @@
 import type { VocabTheme, Word } from './types'
+import { ELEMENTS, SIGNS } from '../lib/zodiac'
 
 type Raw = [string, string, string]
 
@@ -170,6 +171,35 @@ export const JULIETTE_THEMES: VocabTheme[] = [
         { speaker: 'Juliette', ar: 'لَقَدْ فُزْتُ! حَظًّا أَوْفَرَ فِي الْمَرَّةِ الْقَادِمَةِ!', fr: 'J’ai gagné ! Plus de chance la prochaine fois !' },
       ],
     },
+  },
+  {
+    id: 'signes-zodiaque',
+    title: 'Les signes du zodiaque',
+    emoji: '✨',
+    note: 'Le zodiaque se dit مِنْطَقَةُ الْبُرُوجِ, et un signe بُرْجٌ, mot qui désigne aussi une tour : chaque signe était une « tour » du ciel. Le ciel garde la mémoire des astronomes arabes : Aldébaran (اَلدَّبَرَانُ, « la suivante »), Fomalhaut (فَمُ الْحُوتِ, « la bouche du poisson »), Deneb (ذَنَبٌ, « la queue »). Pour le plaisir des mots : l’astrologie (اَلتَّنْجِيمُ) n’est pas une science, contrairement à l’astronomie (عِلْمُ الْفَلَكِ), où ces savants ont excellé.',
+    words: [
+      ...SIGNS.map((sign) => ({
+        id: `signes-zodiaque-${sign.id}`,
+        ar: sign.ar,
+        tr: sign.tr,
+        fr: `${sign.symbol} ${sign.fr}${sign.literal ? ` (« ${sign.literal} »)` : ''} · ${sign.dates}`,
+      })),
+      ...words('signes-zodiaque', [
+        ['بُرْجٌ / أَبْرَاجٌ', 'burj / abrāj', 'un signe / des signes ; une tour'],
+        ['مَا بُرْجُكِ؟', 'mā burjuki ?', 'quel est ton signe ? (à une femme)'],
+        ['بُرْجِي…', 'burjī…', 'mon signe est…'],
+        ['تَارِيخُ الْمِيلَادِ', 'tārīkhu l-mīlād', 'la date de naissance'],
+        ['اَلْأَبْرَاجُ الْيَوْمِيَّةُ', 'al-abrāju l-yawmiyya', 'l’horoscope du jour'],
+        ...(Object.values(ELEMENTS).map((e) => [`بُرْجٌ ${e.ar}`, `burjun ${e.tr}`, `un signe ${e.fr}`]) as [string, string, string][]),
+        ['عِلْمُ الْفَلَكِ', 'ʿilmu l-falak', 'l’astronomie'],
+        ['اَلتَّنْجِيمُ', 'at-tanjīm', 'l’astrologie'],
+        ['نَجْمٌ / نُجُومٌ', 'najm / nujūm', 'une étoile / des étoiles'],
+        ['كَوْكَبٌ', 'kawkab', 'une planète'],
+        ['كَوْكَبَةٌ', 'kawkaba', 'une constellation'],
+        ['مَجَرَّةٌ', 'majarra', 'une galaxie'],
+        ['دَرْبُ التَّبَّانَةِ', 'darbu t-tabbāna', 'la Voie lactée (« le chemin des marchands de paille »)'],
+      ]),
+    ],
   },
 ]
 
